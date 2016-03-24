@@ -110,6 +110,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-centos-setup-l2tp-ipsec-psk-vpn" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/centos-setup-l2tp-ipsec-psk-vpn/" class="article-date">
+  <!--<time datetime="2014-01-18T18:32:08.000Z" itemprop="datePublished">2014-01-19</time>-->
+</a>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/centos-setup-l2tp-ipsec-psk-vpn/">CentOS搭建L2TP / IPSec VPN教程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div>建议使用最小化安装的centos纯净系统，此教程在centos 5.8和 centos 6.3上测试通过<br>首先确保关闭了selinux<br>导入第三方源</div><br><div></div><br><div></div><br><div><br><br>centos 5.x 32位使用<br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/5/i386/epel-release-5-4.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/5/i386/epel-release-5-4.noarch.rpm</a></pre><br>centos 5.x 64位使用<br><div><br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/5/x86_64/epel-release-5-4.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/5/x86_64/epel-release-5-4.noarch.rpm</a></pre><br></div><br>centos 6.x 32位使用<br><div><br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/6/i386/epel-release-6-8.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/6/i386/epel-release-6-8.noarch.rpm</a></pre><br></div><br>centos 6.x 64位使用<br><div><br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm</a></pre><br></div><br>开始安装<br><div><br><pre class="brush: bash; title: Bash">yum install openswan xl2tpd ppp lsof iptables -y</pre><br></div><br>编辑 /etc/sysctl.conf<br><div><br><pre class="brush: bash; title: Bash">nano /etc/sysctl.conf</pre><br></div><br>将<br><pre class="brush: bash; title: Bash">net.ipv4.ip_forward = 0</pre><br>修改为<br><pre class="brush: bash; title: Bash">net.ipv4.ip_forward = 1</pre><br>接下来依次执行<br><pre class="lang:default decode:true">echo “net.ipv4.conf.all.accept_redirects = 0” |  tee -a /etc/sysctl.conf<br>echo “net.ipv4.conf.all.send_redirects = 0” |  tee -a /etc/sysctl.conf<br>for vpn in /proc/sys/net/ipv4/conf/<em>; do echo 0 &gt; $vpn/accept_redirects; echo 0 &gt; $vpn/send_redirects; done<br>sysctl -p</em></pre><br>编辑 /etc/rc.local<br><div><br><pre class="brush: bash; title: Bash">nano /etc/rc.local</pre><br></div><br>在末尾加入<br><pre class="lang:default decode:true  ">for vpn in /proc/sys/net/ipv4/conf/; do echo 0 &gt; $vpn/accept_redirects; echo 0 &gt; $vpn/send_redirects; done</pre><br>编辑 /etc/ipsec.conf<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ipsec.conf</pre><br></div><br>将其中的<br><br></div><br><div><br><pre class="brush: bash; title: Bash">virtual_private=</pre><br></div><br><div><br><br>修改为<br><pre class="brush: bash; title: Bash">virtual_private=%v4:10.0.0.0/8,%v4:192.168.1.0/24,%v4:172.16.0.0/12,%v6:fd00::/8,%v6:fe80::/10</pre><br>并在文件末尾加入以下内容，注意将以下的111.111.111.111修改为你服务器 IP<br><pre class="brush: bash; title: Bash">conn L2TP-PSK-NAT<br>   rightsubnet=vhost:%priv<br>   also=L2TP-PSK-noNAT<br><br>conn L2TP-PSK-noNAT<br>   authby=secret<br>   pfs=no<br>   auto=add<br>   keyingtries=5<br>   rekey=no<br>   ikelifetime=8h<br>   keylife=1h<br>   type=transport<br>   left=111.111.111.111<br>   leftprotoport=17/1701<br>   right=%any<br>   rightprotoport=17/%any</pre><br>编辑 /etc/ipsec.secrets<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ipsec.secrets</pre><br></div><br>清空这个文件的内容，然后添加<br><pre class="brush: bash; title: Bash">111.111.111.111 %any: PSK “dilehost”</pre><br>注意111.111.111.111请修改为你的服务器ip ,PSK 后为共享密钥，自行更改<br><br>启动ipsec<br><div><br><pre class="brush: bash; title: Bash">service ipsec start</pre><br></div><br>查看系统IPSec安装和启动的正确性：<br><div><br><pre class="brush: bash; title: Bash">ipsec verify</pre><br></div><br>没有出现 [FAILED] 就可以了<br><br>编辑/etc/xl2tpd/xl2tpd.conf<br><div><br><pre class="brush: bash; title: Bash">nano /etc/xl2tpd/xl2tpd.conf</pre><br></div><br>修改<br><pre class="brush: bash; title: Bash">ip range = 192.168.1.128-192.168.1.254<br>local ip = 192.168.1.99</pre><br>为<br><pre class="brush: bash; title: Bash">ip range = 192.168.1.2-192.168.1.254<br>local ip = 192.168.1.1</pre><br>编辑 /etc/ppp/options.xl2tpd<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ppp/options.xl2tpd</pre><br></div><br>清空原有配置，加入以下配置内容<br><pre class="brush: bash; title: Bash">require-mschap-v2<br>ms-dns 8.8.8.8<br>ms-dns 8.8.4.4<br>auth<br>mtu 1200<br>mru 1000<br>crtscts<br>hide-password<br>modem<br>name l2tpd<br>proxyarp<br>lcp-echo-interval 30<br>lcp-echo-failure 4</pre><br>设置用户名密码及登录IP<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ppp/chap-secrets</pre><br></div><br>加入一个用户，比如用户名为username ,密码为password , <em> 为任意IP都可以登录<br><pre class="brush: bash; title: Bash">username    l2tpd     password      </pre></em><br>对应好就行，多个用户每行配置一个<br><br>重启服务并添加开机启动<br><div><br><pre class="brush: bash; title: Bash">service ipsec restart<br>service xl2tpd restart<br>chkconfig ipsec on<br>chkconfig xl2tpd on</pre><br></div><br>最后配置防火墙<br><div><br><pre class="brush: bash; title: Bash">iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE<br>iptables -I FORWARD -s 192.168.1.0/24 -j ACCEPT<br>iptables -I FORWARD -d 192.168.1.0/24 -j ACCEPT<br>iptables -A INPUT -p udp -m state –state NEW -m udp –dport 1701 -j ACCEPT<br>iptables -A INPUT -p udp -m state –state NEW -m udp –dport 500 -j ACCEPT<br>iptables -A INPUT -p udp -m state –state NEW -m udp –dport 4500 -j ACCEPT<br>/etc/rc.d/init.d/iptables save<br>/etc/rc.d/init.d/iptables restart</pre><br></div><br></div><br><div>参考：</div><br><div><a href="http://www.live-in.org/archives/818.html" target="_blank" rel="external">http://www.live-in.org/archives/818.html</a></div><br><div><a href="https://raymii.org/s/tutorials/IPSEC_L2TP_vpn_on_CentOS_-_Red_Hat_Enterprise_Linux_or_Scientific_-_Linux_6.html" target="_blank" rel="external">https://raymii.org/s/tutorials/IPSEC_L2TP_vpn_on<em>CentOS</em>-_Red_Hat_Enterprise_Linux_or<em>Scientific</em>-_Linux_6.html</a></div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ky0n.xyz/centos-setup-l2tp-ipsec-psk-vpn/" data-id="cim66hhx5000a2z5fph2kfdsz" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-despicable-me-2-5-things-to-know-about-the-minions" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/despicable-me-2-5-things-to-know-about-the-minions/" class="article-date">
@@ -150,150 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ky0n.xyz/despicable-me-2-5-things-to-know-about-the-minions/" data-id="cim66g151000o1u5fny55334v" class="article-share-link">分享</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-aaron-swartz" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/aaron-swartz/" class="article-date">
-  <!--<time datetime="2013-12-30T15:04:08.000Z" itemprop="datePublished">2013-12-30</time>-->
-</a>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/aaron-swartz/">紀念亞倫·斯沃茨：2013，記住這位年輕人</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><pre class="brush: applescript; title: AppleScript">“亞倫，我從未見過你。我只比你大一歲。是互聯網將我們聯結在了一起。<br>……聽說你去世的消息後，我忍不住哭了。<br>我想對你說：‘好樣的，黑暗騎士！’”這是一位普通網民致斯沃茨的悼詞。<br>2013年1月11日，亞倫·斯沃茨在紐約家中自縊身亡，年僅26歲。</pre><br>神祕訪客</p>
-<p>神祕訪客與JSTOR數字圖書館、麻省理工學院之間，展開了一場“貓捉老鼠”的遊戲</p>
-<p><img src="http://static.cnbetacdn.com/newsimg/2013/1230/27_1388404489.jpg_w600.jpg" alt=""></p>
-<p>2011年1月4日，麻省理工學院16號樓機房的監控攝像，拍下了從JSTOR下載480萬篇論文的神祕訪客的身影。</p>
-<p>2010年9月25日，JSTOR工作人員發現，網站的下載流量在毫無徵兆的情況下驟增，服務器不堪重負。監測顯示，有人正通過麻省理工學院的校園網絡，利用程序批量下載儲存於服務器上的期刊論文。</p>
-<p>JSTOR是美國的一家學術期刊數字圖書館，建於1995年，館內藏有兩千多種期刊、近五千萬頁學術論文，絕大多數僅向付費購買許可的大學、圖書館及科研機構的學生和內部人員開放，個人用戶須付費閱讀。</p>
-<p>禁止IP地址訪問等封堵手段毫無效果，半個月內，JSTOR又多次監測到來自麻省理工學院網絡的異常下載，且下載速度更快。截至10月中旬，這位身份不明的訪客已下載45萬篇學術論文，動機未知。</p>
-<p>JSTOR隨即封鎖了來自麻省理工學院的所有訪問請求，並聯系校方，要求協助調查。但身份覈查難度極大。麻省理工學院的校園網絡是一個開放空間，訪客無需密碼即可登錄。任何使用這一IP地址段的人，均可自由進出JSTOR數據庫。</p>
-<p>協商後，雙方決定引入身份認證機制——麻省理工學院的用戶必須首先以真實身份登錄本校圖書館，然後纔可以訪問JSTOR數據庫。</p>
-<p>2010年12月底，JSTOR發現，這位神祕訪客仍在以一種更爲隱祕的方式下載論文。至2011年1月初，其下載的論文數量已達480萬篇，相當於整個數據庫80%的館藏。直到這時，JSTOR才確定，對方的目的是爲了將數據庫的所有資料全部下載至自己的電腦上。</p>
-<p>2011年1月3日，JSTOR啓動針對麻省理工學院的身份認證機制。兩天後，他們收到麻省理工學院的電子郵件，稱已鎖定正在批量下載論文的那臺電腦，但“幕後黑手”尚未現身，暫不希望打草驚蛇。</p>
-<p>很快，JSTOR又收到麻省理工學院的另一封電子郵件，稱此事件的調查已移交警方。</p>
-<p>獲知這個消息後，JSTOR頗感意外：“我們不清楚，警方是怎麼會介入此事的。”</p>
-<p>“數字時代的羅賓漢”，“一位難以捉摸的天才，業內前輩們都會對他滿懷敬意”</p>
-<p><img src="http://static.cnbetacdn.com/newsimg/2013/1230/97_1388404553.jpg" alt=""></p>
-<p>曾爲奧巴馬政府擔任顧問的蘇珊稱他爲“難以捉摸的天才”，而他的支持者則稱他爲“數字時代的羅賓漢”。</p>
-<p>2011年1月4日上午8點，麻省理工學院找到了那臺正從JSTOR批量下載論文的電腦。這是一臺宏碁筆記本電腦，被藏在紙盒後面，放在16號樓一間狹小的地下機房內，與交換機及外接硬盤相連。16號樓是一幢不起眼的長方形建築，樓內的教室、實驗室、機房，從不上鎖。</p>
-<p>麻省理工學院面對兩種選擇：一是取走電腦，鎖上機房，查明神祕訪客的真實身份，要求其刪除所下載內容，並確保這些內容不會外傳；二是聯絡警方處理此事，一旦警方介入，校方將失去對局勢的控制。</p>
-<p>麻省理工學院選擇了後者。一個多小時後，校警、劍橋市警察相繼趕到。當天中午，美國特勤局特工及計算機犯罪研究專家抵達現場。在後者的建議下，校方爲機房安裝了一臺監控攝像頭，並在交換機上安裝了另一臺筆記本電腦，以追蹤流量。</p>
-<p>很快，監控攝像頭記錄下了這位神祕訪客的蹤跡：地下機房的門被推開，一名身穿黑色外套的年輕人，揹着雙肩包走了進來，包的一側掛着自行車頭盔。進屋後，他把包放在地上，打開拉鍊，取出紙盒，拿出一塊外接硬盤，然後走至監控畫面以外，更換硬盤。八分鐘後，他收拾好揹包，關掉電燈，離開機房。</p>
-<p>兩天後，1月6日，這名年輕人再次出現在監控畫面中。或許已有所察覺，這一次，他舉起自行車頭盔，遮住臉，走進機房，迅速取走筆記本電腦、外接硬盤和網線，放入揹包，兩分鐘後便離開了機房。</p>
-<p>下午兩點多，這名年輕人騎自行車出現在距離麻省理工學院一英里外的街道上。校警將他攔下時，他丟下自行車企圖逃跑，被校警及特勤局特工抓獲。</p>
-<p>他就是亞倫·斯沃茨（Aaron Swartz）。“一位難以捉摸的天才，業內前輩們都會對他滿懷敬意。”曾爲奧巴馬政府擔任技術顧問的蘇珊·克勞福德如此評價他。</p>
-<p>而亞倫·斯沃茨的支持者們，更喜歡將他比喻爲“數字時代的羅賓漢”。</p>
-<p>&nbsp;</p>
-<p>數字時代的羅賓漢</p>
-<p>斯沃茨創立“求進會”，呼籲民衆反對政府的互聯網審查行爲，保護並爭取信息公開</p>
-<p><img src="http://static.cnbetacdn.com/newsimg/2013/1230/94_1388404667.jpg" alt=""></p>
-<p>少年斯沃茨與“超文本”概念創造者泰德·尼爾森（左）、“<a target="_blank" data-type="2" data-keyword="鼠標" data-rd="1" data-style="1" data-tmpl="290x380">鼠標</a>之父”道格·恩格爾巴特（右）合影。</p>
-<p>1986年11月，亞倫·斯沃茨出生於美國芝加哥。父親經營一家軟件公司，令他從小即有機會接觸計算機和互聯網。</p>
-<p>斯沃茨少年成名，14歲時參與制訂RSS 1.0規則，後加入萬維網聯盟的RDF工作組。19歲時，他離開斯坦福大學，與朋友共同創辦Infogami公司，後與Reddit合併，今天的Reddit已是美國最大的網絡社區之一。</p>
-<p>他開發的web.py框架，令全世界的Python程序員得以更自由、更快捷地構建網站。他參與設計的Markdown排版語言，可以將純文字形式的信息及結構直接轉換爲HTML格式。</p>
-<p>除了技術開發，斯沃茨還長期致力於推進互聯網信息的自由共享。19歲時，他把自己喜愛的《異語溝通》雜誌掃描後上傳至網絡，這本雜誌當時已經停刊。2007年，他創辦開放圖書館（Open Library），旨在“將所有已出版的書籍搬上網站”。他還積极參與維基百科、知識共享（Creative Commons）等信息共享項目。</p>
-<p>2008年，斯沃茨第一次向美國政府發起挑戰，目標是電子司法卷宗公共存取系統（以下簡稱“PACER”）。PACER是儲存美國聯邦司法卷宗的數據庫，用戶查閱該數據庫的文件時，每頁須付費10美分。斯沃茨認爲，政府文件屬於公共領域，沒有版權，其運營經費出自納稅人的稅款，理應向公衆免費開放。</p>
-<p>於是，他和朋友共同編寫了一個小程序，從PACER數據庫批量下載270萬份司法卷宗文件，放在“公衆資源網”上，供所有人免費使用。美國聯邦調查局及司法部對此事展開調查，但並未對斯沃茨提起訴訟。</p>
-<p>2010年，斯沃茨創立“求進會”（Demand Progress），以促進公民自由、民權、政府改革爲己任，呼籲民衆反對政府的互聯網審查行爲，保護並爭取信息公開。在抵制《禁止網絡盜版法案》（SOPA）和《保護知識產權法案》（PIPA）的<a target="_blank" data-type="2" data-keyword="運動" data-rd="1" data-style="1" data-tmpl="290x380">運動</a>中，“求進會”成爲主要力量之一。</p>
-<p>美國聯邦政府執意介入，以計算機欺詐、網絡欺詐等13項重罪罪名，對斯沃茨提起訴訟</p>
-<p><img src="http://static.cnbetacdn.com/newsimg/2013/1230/77_1388404734.jpg_w600.jpg" alt=""></p>
-<p>馬薩諸塞州地區檢察官奧蒂茲及其領導的檢察部門，被媒體抨擊“對亞倫的指控有着非同尋常的亢奮”。</p>
-<p>2011年1月6日，亞倫·斯沃茨被警方逮捕。警方從他的<a target="_blank" data-type="2" data-keyword="移動硬盤" data-rd="1" data-style="1" data-tmpl="290x380">移動硬盤</a>中，找到了480萬份下載自JSTOR的期刊論文。在確保這些論文不會被公開傳播後，JSTOR放棄了對斯沃茨的起訴：“我們已經確保他手上的資料不會外傳，因此，如先前所述，我們並無興趣追究其法律責任。”</p>
-<p>然而，美國聯邦政府卻執意介入，2011年7月，以計算機欺詐、網絡欺詐等13項重罪罪名，對斯沃茨提起訴訟。若罪名成立，斯沃茨可能面臨35年監禁及100萬美元罰款。負責起訴的馬薩諸塞州地區檢察官卡門·奧蒂茲宣稱：“偷竊就是偷竊，無論你用的是計算機指令還是一根撬棍，也無論你偷的是文件、數據還是錢財。”</p>
-<p>事後，奧蒂茲及其領導的檢察部門被媒體抨擊“對亞倫的指控有着非同尋常的亢奮”。走進一間從不上鎖、曾經有很多不速之客在此留下塗鴉的機房，使用從合法渠道取得的賬號，以自己編寫的程序，從數據庫批量下載論文，最終竟演變爲13項重罪。</p>
-<p>被捕前，斯沃茨供職於哈佛大學埃德蒙德·J·薩芙拉倫理研究中心。該中心主管、哈佛大學法學教授勞倫斯·萊西格在一篇題爲《檢察官欺凌》的博文中寫道：</p>
-<p>“如果政府宣稱的那些事情是真實的，那麼，亞倫的行爲是錯誤的，至少在道德上是錯誤的。但怎樣的懲罰才合適？……政府竭盡所能以極其荒謬的方式描述亞倫的行爲。政府告訴我們，亞倫‘竊取’的‘財產’價值‘數百萬美元’，似乎他的目標就是爲了錢。認爲一堆學術論文可以賣錢的人，不是白癡就是騙子。……</p>
-<p>“政府必須回答的問題是：爲何一定要將亞倫定性爲‘重案犯’？在過去的十八個月中，他始終拒絕承認自己是一名重案犯。……雖然結局是千錯萬錯而且他媽的令人難過，但我可以理解，這個天資聰穎卻飽受困擾的孩子無助地面對這場戰爭時，會覺得一了百了是一種合理的選擇。”</p>
-<p>知識的保存和管理，“人們應該看到些什麼、知道些什麼”的決定權，不應握於一人之手</p>
-<p><img src="http://static.cnbetacdn.com/newsimg/2013/1230/26_1388404784.jpg_w600.jpg" alt=""></p>
-<p>在抵制《禁止網絡盜版法案》和《保護知識產權法案》的運動中，斯沃茨領導的“求進會”發揮了重要作用。</p>
-<p>斯沃茨被起訴後的第二天，著名下載網站“海盜灣”上出現了一個種子文件，內含18592篇來自JSTOR數據庫的《英國皇家學會哲學學報》論文，容量近33G，發佈者署名“格雷戈·麥克斯韋爾”。</p>
-<p>這些論文發表於1923年以前，版權已經到期，但在JSTOR上仍需付費閱讀。一篇論文的價格通常爲19美元，較古老的論文爲8美元。18592篇論文，需花費數十萬美元購買，且僅限一人在一臺電腦上使用一個月。</p>
-<p>上傳論文的同時，格雷戈·麥克斯韋爾寫了一封公開信，抨擊封鎖知識的行爲，表達對斯沃茨的支持：</p>
-<p>“學術出版是一套詭異的系統——作者沒有拿到錢，同行評議者沒有拿到錢，在某些領域，就連期刊編輯也沒有拿到錢。有時候，作者甚至還得付錢給出版商。……</p>
-<p>“著作權這個法律名詞，代表某種狹隘意義上的妥協：我們自願放棄交換信息的自然權利，爲作者提供經濟上的鼓勵，最終目的是爲了享受到更多的作品。當出版商濫用這套機制以維持自己的生存，當他們打着著作權的旗號無限上綱上線，當他們濫用法律壓制屬於公共領域的著作，他們的行爲與偷竊無異。……</p>
-<p>“保存和管理知識是有價值的，但如果保存和管理知識的權力集中於一人之手，如果‘人們應該看到些什麼、應該知道些什麼’的決定權操縱於一人之手，其價值是負的。……</p>
-<p>“知識的自由傳播對於科學研究極爲重要。這不僅影響全人類的利益，甚至可能決定人類的存亡。……</p>
-<p>“對於這個阻礙科學與歷史知識傳播的毒瘤產業，如果我能讓它少賺一塊黑心錢，即便我個人將不得不爲此付出代價，也是值得的。……</p>
-<p>“我曾經考慮匿名上傳這些論文，但有人指出，起訴亞倫·斯沃茨的那些狂熱分子會把這筆帳也記在他頭上，令他多出一條莫須有的罪名。這有悖我的良知。並且，這是一件有意義的事，我決定附上自己的姓名。”</p>
-<p>天才之死</p>
-<p>從一個社會對待行爲古怪、離經叛道的天才的態度上，我們即可判斷出這個社會的好壞</p>
-<p><img src="http://static.cnbetacdn.com/newsimg/2013/1230/12_1388404839.jpg_w600.jpg" alt=""></p>
-<p>2013年1月，一百五十多人在波士頓杜威廣場集會遊行，悼念亞倫·斯沃茨，反對網絡安全法案（CISPA）。</p>
-<p>亞倫·斯沃茨的案件定於今年4月開庭審理。他的前女友奎因·諾頓回憶說：“那些人調查他的生活，威脅他的朋友，翻閱我們的電子檔案，搜查他的房間，監視他，卻從不讀他的博客。”</p>
-<p>這場訴訟成爲了壓垮斯沃茨的最後一根稻草，兩年來，他揹負着沉重的精神壓力和經濟負擔。諾頓說，斯沃茨很少談及即將面對的這場審判，每次說起這件事，都會表現得“精疲力竭，超過了他的承受能力”。</p>
-<p>斯沃茨患抑鬱症多年，在2007年的一篇題爲《病了》的帖子中，他描述道：</p>
-<p>“有時候你會感到悲傷。也許是愛人離你而去，也許是計劃全盤出錯。……你覺得自己活得毫無價值。你懷疑是否值得繼續下去。所有的一切變得黯淡無光，你曾經做過的一切，你希望做的一切，你周圍的人。你只想躺在牀上，關掉燈。沮喪的心情，沒有任何理由，而且揮之不去。出門呼吸新鮮空氣，或是擁抱自己所愛的人，並不會感到絲毫好轉，只會覺得更加不安，體會不到其他人所能體會到的快樂。悲傷浸染了一切。”</p>
-<p>2013年1月9日，斯沃茨的律師艾略特·彼得斯再次聯繫助理檢察官斯蒂芬·黑曼，希望避免開庭，以免“毀了亞倫的一生”。但黑曼堅持，斯沃茨必須承認所有13項罪名，纔有可能將刑期減至六個月。</p>
-<p>兩天後，亞倫·斯沃茨在紐約布魯克林的家中自縊身亡，未留下任何遺言。</p>
-<p>哥倫比亞大學法學教授吳修銘在《紐約客》上發表文章，評論道：“從一個社會對待行爲古怪、離經叛道的天才的態度上，我們即可判斷出這個社會的好壞。……</p>
-<p>“1970年代，斯蒂夫·喬布斯與斯蒂夫·沃茲尼亞克不僅犯下了與斯沃茨類似的罪行，而且造成的經濟損失更大。他們侵入AT&amp;T的電話系統，免費撥打長途電話，並且製造了非法設備（藍盒子）拿來賣錢。他們的導師約翰·德雷珀被關了幾個月，在監獄裏寫出世界上最早的文字處理軟件之一。而喬布斯和沃茲尼亞克從未被起訴。……如果當初是卡門·奧蒂茲辦理這起案件，我們可能將永遠看不到蘋果電腦。”</p>
-<p>有一天，他可能會成爲偉大的發明家和創造家。而現在，我們永遠沒有機會知道答案</p>
-<p><img src="http://static.cnbetacdn.com/newsimg/2013/1230/60_1388404895.jpg_w600.jpg" alt=""></p>
-<p>知名黑客組織“匿名者”成員手捧斯沃茨的肖像，在街頭抗議。該組織曾多次攻擊麻省理工學院的官方網站。</p>
-<p>2010年至2012年，亞倫·斯沃茨曾經17次使用《信息自由法》，向美國政府提交信息公開申請。</p>
-<p>2010年12月，與JSTOR、麻省理工學院進行“貓捉老鼠”的遊戲時，他向美國司法部刑事司提交申請，要求查詢“與我，亞倫·斯沃茨，有關的檔案，以及與PACER調查有關的所有檔案”。</p>
-<p>2011年2月，被捕後一個月，他向美國特勤局提交信息公開申請，要求查詢“特勤局讀取加密硬盤所需手續的所有記錄”。這條申請直至他去世時，仍處於待響應狀態。</p>
-<p>斯沃茨去世後，他的家人發表公開聲明，譴責美國聯邦政府與麻省理工學院：“亞倫之死，不僅僅是一場個人悲劇。這是充斥恐嚇及訴訟越權的刑事司法制度所導致的後果。”</p>
-<p>斯沃茨自殺次日，互聯網先驅、萬維網（WWW）發明者蒂姆·伯納斯·李爵士發出一封標題爲“亞倫死了”的電子郵件：“亞倫死了。在這個瘋狂世界漫遊的人們，我們失去了一位導師，一位智者。”</p>
-<p>隨後數日，麻省理工學院、美國司法部量刑委員會的官方網站多次遭黑客攻擊。短短一週內，白宮網站上要求將檢察官奧蒂茲及黑曼革職的請願簽名，超過兩萬五千人的門檻，白宮必須作出迴應。</p>
-<p>web.py框架的一位用戶留言道：“我不太清楚JSTOR這個案件的細節，或是他在Reddit做過些什麼。但從他的程序代碼中，我可以看出他的用心。他一心想把程序變得更好、更簡潔、更優雅，對此我深感敬佩。”</p>
-<p>爲了向斯沃茨致敬，人們在Twitter、Google+等社交平臺上發起“PDF Tribute”的活動，學者們紛紛上傳自己所著論文的PDF文檔並公佈網址，供人免費下載。</p>
-<p>在國會山舉行的悼念儀式上，衆議院監督和政府改革委員會主席達萊爾·伊薩致辭：“知識終將屬於全世界所有人。亞倫深知這一點。……版權保護法的目的在於鼓勵更多作品問世，而不是把它們藏起來。”</p>
-<p>亞倫·斯沃茨自殺後的第三天，美國聯邦地區法院宣佈，因被告死亡，撤銷對他的所有指控。</p>
-<p>游擊隊開放訪問宣言</p>
-<p>“遵從不公正的法律不會帶來公正。……我們要奪回信息，無論它們被存在何處”</p>
-<p><img src="http://static.cnbetacdn.com/newsimg/2013/1230/67_1388404990.jpg_w600.jpg" alt=""></p>
-<p>“信息就是力量。但就像所有力量一樣，有些人只想佔爲己有。”斯沃茨在《游擊隊開放訪問宣言》中寫道。</p>
-<p>五年前，2008年7月，亞倫·斯沃茨發表《游擊隊開放訪問宣言》（Guerilla Open Access Manifesto），這篇宣言曾被檢察官作爲斯沃茨意圖公開傳播JSTOR論文的“罪證”之一：</p>
-<p>“信息就是力量。但就像所有力量一樣，有些人只想將其佔爲己有。世界上所有的科學和文化遺產，已在書籍和期刊上發佈了數個世紀，正漸漸地被少數私有公司數字化並上鎖。想要閱讀那些有着最著名研究成果的論文？你必須<a target="_blank" data-type="2" data-keyword="支付" data-rd="1" data-style="1" data-tmpl="290x380">支付</a>給裏德·愛思唯爾（Reed Elsevier）那樣的出版商大把鈔票。……</p>
-<p>“爲此付出的代價實在太大。強制學者付錢以閱讀同行的成果？掃描整個圖書館卻只允許Google的人閱讀它們？提供學術論文給第一世界的精英大學，卻不給身在南半球的兒童？這些行爲蠻橫而令人無法接受。</p>
-<p>“‘我同意，’很多人說，‘但我們能做些什麼呢？那些公司握有版權，他們靠限制訪問賺取大把鈔票，而且這完全是合法的——我們無力阻止他們。’但有些事我們能做，而且已經在做：反擊。</p>
-<p>“那些能夠訪問這些資源的人——學生、圖書管理員、科學家——你們被賦予了特權。你們能享受到這場知識的盛宴，而其他人卻被排除在外。但是你們不必——事實上，從道義層面來說，你們不能——僅爲自己保留這份特權。你們有義務與全世界分享它，而且你們已經在做了：與同行交換密碼，迴應朋友的下載請求。</p>
-<p>“同時，那些被拒之門外的人們，並沒有守株待兔。你們悄悄地穿過洞穴，翻過圍牆，解放那些被出版商封鎖的信息，分享給你們的朋友。</p>
-<p>“但所有這些行動都是在黑暗中進行，隱藏於地下。它們被稱爲‘偷竊’或‘盜版’，彷彿分享大量知識等同於搶劫船隻並謀殺船員。但分享並非不道德，而是一種道德使命。只有利慾薰心者纔會拒絕讓朋友複製。</p>
-<p>“大公司自然利慾薰心。它們賴以生存的法律要求它們如此——稍微賺得少點，投資人就會暴動。它們花錢收買政治家的支持，通過法律賦予它們特權，決定誰纔可以複製。</p>
-<p>“遵從不公正的法律不會帶來公正。步入光明的時候到了，在公民不服從的偉大傳統下，宣告我們對這種盜竊公共文化的行爲的反抗。</p>
-<p>“我們要奪回信息，無論它們被存在何處，複製它們並與全世界共享。我們要取得版權到期的作品並將它們歸檔。我們要買下祕密數據庫並將它們放在網上。我們要下載科學期刊並將它們上傳至文件共享網絡。我們要爲‘游擊隊開放訪問’而戰。</p>
-<p>“只要全世界擁有足夠多的成員，我們就不僅僅是在傳達一個反對知識私有化的強有力的信號，我們還將令這一切成爲過去。你願意加入我們嗎？</p>
-<p>“亞倫·斯沃茨（Aaron Swartz）”</p>
-<p>結束語</p>
-<p>“電影結尾處強調，蝙蝠俠必須成爲惡人，而小丑纔是真正的英雄。……布魯斯·韋恩走投無路，除了導演自殺這一幕外，別無選擇。”自殺前兩個月，亞倫·斯沃茨在他的個人博客上如此分析《蝙蝠俠：黑暗騎士》。</p>
-<p>這是一場孤獨的戰鬥，但並非毫無希望。</p>
-<p>2013年3月，亞倫·斯沃茨被追授“詹姆斯·麥迪遜獎”。該獎項由美國圖書館協會頒發，旨在表彰那些爲捍衛並促進政府信息公開及公衆對國家事務的知情權而作出傑出貢獻的個人和團體。</p>
-<p>一年多前，在一場公開活動中，亞倫·斯沃茨發表題爲《我們如何阻止SOPA法案》的演講：</p>
-<p>“（若該法案成立，）新技術將不是帶給我們自由，而是會扼殺那些我們理應擁有的基本權利。……我們贏得了這場戰鬥，因爲我們每個人都視自己爲英雄，我們每個人都在努力爭取寶貴的自由。我們從未停下腳步，乞求他人的施捨。”</p>
-<p>2013年即將逝去，記住這位年輕人，記住所有和他一樣爲“我們理應擁有的基本權利”而鬥爭的人。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ky0n.xyz/aaron-swartz/" data-id="cim66g14000041u5f039g4ral" class="article-share-link">分享</a>
+      <a data-url="https://ky0n.xyz/despicable-me-2-5-things-to-know-about-the-minions/" data-id="cim66hhxk000n2z5f0g53r0u7" class="article-share-link">分享</a>
       
       
     </footer>
@@ -306,7 +203,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/25/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/27/">Next</a>
+      <a class="extend prev" rel="prev" href="/page/25/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/27/">Next</a>
     </nav>
   
 

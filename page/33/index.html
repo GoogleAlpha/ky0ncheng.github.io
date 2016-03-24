@@ -110,6 +110,80 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-what-is-raspbian" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/what-is-raspbian/" class="article-date">
+  <!--<time datetime="2013-07-18T18:44:09.000Z" itemprop="datePublished">2013-07-19</time>-->
+</a>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/what-is-raspbian/">Raspbian：世界上“最小的”操作系統是怎樣煉成的？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://ww3.sinaimg.cn/large/6d9bd6a5jw1e6rjn0vj2ij20hs0a00wf.jpg" alt=""></p>
+<p>當你花35美元買到一部樹莓派（Raspberry Pi）計算機的時候，機器裏面是沒有預裝操作系統（OS）的。這個時候你要自己下載一個OS到SD卡，插到樹莓派上重啓完成OS的安裝。這一切看起來很簡便，但你考慮過這個跟樹莓派兼容的OS是哪裏來的嗎？</p>
+<p>其實，樹莓派的操作系統<a href="http://www.raspbian.org/" target="_blank" rel="external">Raspbian</a>的來歷可不簡單。它誕生的前提是，每週60個小時的工作量，處理一大堆自建的ARM計算機以及重建19000組Linux軟件包。而這一切，都是由兩名志願者完成的。他們是：麥克·湯姆森（Mike Thompson）和彼得·格林（Peter Green）。</p>
+<p><img src="http://ww3.sinaimg.cn/large/6d9bd6a5jw1e6rjmpt3hnj20ic07agmm.jpg" alt=""></p>
+<p><strong>正像樹莓派機器本身一樣，它的操作系統也是一次意外的成功</strong></p>
+<p>適合於樹莓派的OS有很多，儘管如此樹莓派基金會還是要爲你指定一個最兼容的來用。當一年前樹莓派誕生的時候，首選的OS是紅帽爲ARM處理器特別訂製的Fedora；而幾個月後Fedora就失寵被Raspbian取代。</p>
+<p>Raspbian的基礎是Debian操作系統。兩位志願者針對樹莓派硬件對Debian進行了專門的優化和移植。而Raspbian不僅僅是一個OS，它附帶着35000個軟件包以及預編譯的軟件。</p>
+<p>Raspbian項目的開展得益於麥克·湯姆森。他曾是Atomz公司的聯合創始人和CTO，在2005年該公司被WebSideStory收購，湯姆森獲得了450萬美元的分紅。之後他便帶着家人四處旅遊。直到一年前，湯姆森決定迴歸科技領域再創一番事業，並把目光投向了機器人科學。而樹莓派看起來像是一個不錯的發展平臺；它價格足夠低廉，體積足夠輕便，特別適合嵌入到其他大的系統中。可惜樹莓派沒有一個針對其<a href="http://zh.wikipedia.org/wiki/%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E5%99%A8" target="_blank" rel="external">浮點單元</a>（Floating-point Unit，又稱浮點運算器）全面優化的OS；而浮點單元在機器人技術以及其他需要大量數學計算的應用中都是至關重要的。</p>
+<p>“當我第一次聽說樹莓派的時候，我感到很失望。因爲所有適用於該機器的Linux發行版中，沒有現在樹莓派上具備的浮點單元。”湯姆森說道，“做爲一個長期的Debian用戶，我更希望看到Debian（而不是Fedora）運行在樹莓派上。而我也希望看到一個能支持浮點單元的OS”。</p>
+<p>Debian系統爲ARMv7處理器添加了浮點單元支持，但對於樹莓派使用的ARMv6處理器則沒有。“Debian這時看起來不像是能在樹莓派上運行的系統；即便ARMv6處理器具備運行浮點單元的能力，但Debian就是不支持。”湯姆森回憶道，“這樣一來，Debian上成千上萬的軟件包（Software Package）在樹莓派上就沒有了用武之地”。</p>
+<p>就好比一個GPU能快速處理圖像編譯工作一樣，“一個浮點單元同樣能進行高速的數學計算，”湯姆森稱，“它不是一臺計算機必備的附件，但當它運作的時候你就想把它的功能發揮到最大”。現在浮點單元是樹莓派片上系統（SoC）Broadcom BCM2835的一部分。</p>
+<p>“如果你不讓硬件上的浮點單元發揮最大計算水平，那麼很多的數學運算都要交給軟件處理。這就延長了樹莓派執行任務的時間。這在機器人技術很重要，因爲要處理來自像是攝像頭、傳感以及馬達等設備的數據，並進行復雜的數學運算，以控制精度和速度。”湯姆森說道。同時浮點單元的計算能力對於多媒體數據處理也很重要，比如解碼音樂文件和進行物理模擬，或者是“任何需要大量計算的操作”。</p>
+<p><strong>一次富有成效的合作</strong></p>
+<p>擺在湯姆森面前的路十分清晰：重建Debian系統，以讓其能在樹莓派上運行。但這需要從Debian上移植19000組軟件包至Raspbian上，工作量十分龐大。</p>
+<p>爲此，湯姆森在樹莓派論壇開設了一個帖子，召集對於將Debian移植到樹莓派感興趣的人。而這個帖子引起了彼得·格林的注意。彼得·格林是一個Debian系統開發者，英國的PhD，同時也是論壇中的“plugwash”（他的ID）。</p>
+<p>“我覺得我是在論壇中討論將Debian變成Raspbian的人中，唯一一具備足夠的Debian知識、能讓項目成功的人。”格林說道，“我想其他Debian開發者如果足夠執着和瘋狂，他們也能完成Raspbian這項工作”。</p>
+<p>當湯姆森和格林開始Raspbian項目的時候，樹莓派的機器其實還沒有成型。即便成型、量產了，也未必有足夠的時間去重建Debian系統。爲此，湯姆森用8個飛思卡爾iMX53快速啓動主板，每個配備1G內存和1GHz ARMv7處理器，以及SATA硬盤組建了一臺試驗機。這臺機器花費了湯姆森近3000美元，不過好來通過募捐填補了這部分花銷。除了這套單片機ARM系統外，還有一臺Linux PC用來當服務器，作爲Raspbian的存儲庫（Repository ）。這臺服務器從Debian的存儲庫中檢索資源包，爲飛思卡爾系統分配任務，並收集二進制軟件包。“重建好的軟件包都被放在存儲庫中，然後同步到www.raspbian.org服務器上的外部存儲庫中，供用戶抽取軟件包”。湯姆森解釋道。</p>
+<p>起初，湯姆森採用了基於ARM的惠普Media Vault MV5150 來當軟件存儲庫，但後來當存儲需求上升時便升級到了基於英特爾的系統。儘管每塊飛思卡爾主板都有自己的硬盤用來存儲構建中的軟件包，但是主要的存儲任務還是交給了服務器上的500G硬盤來處理（目前已用完2/3的空間了）。下圖是湯姆森組建的這臺試驗機。</p>
+<p><img src="http://ww2.sinaimg.cn/large/6d9bd6a5jw1e6rjm41g3dj20hs0buq4i.jpg" alt=""></p>
+<p>當然，湯姆森和格林並非是從零開始。Debian已經成爲了應用範圍很廣的Linux OS，它對ARMv7的支持爲研發工作提供了一個堅實的基礎。“我們充分利用了Debian項目組之前在ARMv7上運行浮點單元所得到的成果。”湯姆森說道，“除了要重建19000組軟件包以外，其實對於在樹莓派上運行Debian的工程，Debian項目組已經完成了95%”。當然這並不是說湯姆森和格林把ARMv6及浮點單元帶到Debian上是徒勞無功的。對此，湯姆森解釋道：</p>
+<blockquote>
+<p>Debian系統中的編譯器有內置的默認設置。這些默認設置設定了CPU單元、CPU最低需求以及應用二進制界面（ABI）等。而大部分軟件包並不受這些設定控制。我們在ARMv6上對編譯包進行了改良，減少了默認設置的數量。<br>大部分的原始工作都是人工的，不過格林最終創建了一個自動構建器軟件來完成所有的軟件包構建工作。這個基於Chroot環境的構建器至今仍在運行，它能及時地把Debian存儲庫中的新軟件包自動轉譯到Raspbian中。同時，這些自動構建器還能監測到各種阻礙自動轉譯程序的問題。2012年4月20日，Raspbian的限制版開放下載，只包含了5%的Debian軟件包。</p>
+</blockquote>
+<p><strong>重建19000個軟件包</strong></p>
+<p>Debian ARM版中有36000個軟件包需要進行移植。幸運的是，有17000個不包含任何可執行代碼，因此直接轉移到Raspbian上即可。這些軟件包包括諸如幫助文件、說明書、軟件包文檔、字體等不可執行的東西。而其餘19000個軟件包則包含可執行代碼，龐大的工作量直到去年6月初才全部完成。對於湯姆森來說，這簡直就是3個月的全職工作，“有幾周我的工作時間達到了60至80個小時”。</p>
+<p>湯姆森估計約有5%的Debian軟件包無法成功地通過自動構建器進行編譯。這意味着他和格林要手動改寫任何專門爲ARMv7設計的代碼，並將其重建以適應ARMv6處理器。此外，大約有50至100個軟件包是壓根不能轉譯的。“這些軟件包是諸如調試器等專門給ARMv7處理器設計的東西。有一些甚至在樹莓派上根本沒有存在的意義。”湯姆森解釋道。</p>
+<p>Raspbian的用戶界面其實是可有可無的。由於樹莓派主要用於編程教學，它的默認用戶界面包含了一個Python開發環境。下圖是Raspbian的默認界面。</p>
+<p><img src="http://ww4.sinaimg.cn/large/6d9bd6a5jw1e6rjlmzxssj20ic0e5wfg.jpg" alt=""></p>
+<p><strong>Raspbian取代了Fedora——而且還會繼續改進</strong></p>
+<p>上文提到過，樹莓派起初採用的是一款基於ARM的Fedora OS。然而Fedora對內存的需求成了絆腳石——樹莓派的初版只有256M內容（現在新版的有512M內存）。樹莓派的創始人Eben Upton表示，他們在2012年5月份放棄了Fedora，然後又向用戶推薦Debian系統，“當Raspbian在8月份誕生時又轉而推薦這款OS”。</p>
+<p>較小的內存佔用、易用性以及對浮點單元的支持成爲了Raspbian制勝的關鍵因素。目前針對樹莓派的Fedora系統仍然在研發中，不過樹莓派官方的下載頁面只推薦了Raspbian、Arch Linux ARM和RISC OS。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>轉自  <a href="http://pingwest.com/building-the-raspbian-os/" target="_blank" rel="external">http://pingwest.com/building-the-raspbian-os/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ky0n.xyz/what-is-raspbian/" data-id="cim66hi1m003m2z5f4tpordjz" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-fb2kdouban" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/fb2kdouban/" class="article-date">
@@ -171,62 +245,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ky0n.xyz/fb2kdouban/" data-id="cim66g15k00121u5fsghrolk1" class="article-share-link">分享</a>
+      <a data-url="https://ky0n.xyz/fb2kdouban/" data-id="cim66hhy2000z2z5for16xd7r" class="article-share-link">分享</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-potplayer" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/potplayer/" class="article-date">
-  <!--<time datetime="2013-07-18T11:35:05.000Z" itemprop="datePublished">2013-07-18</time>-->
-</a>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/potplayer/">Potplayer 美化版</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Daum PotPlayer</strong>（<a href="http://zh.wikipedia.org/wiki/%E6%9C%9D%E9%AE%AE%E8%AA%9E" title="朝鮮語" target="_blank" rel="external">朝鮮語</a>：<strong>다음 팟플레이어</strong>），是<a href="http://zh.wikipedia.org/wiki/The_KMPlayer" title="The KMPlayer" target="_blank" rel="external">KMPlayer</a>的原作者<a href="http://zh.wikipedia.org/w/index.php?title=%E5%A7%9C%E5%8B%87%E5%9B%8D&amp;action=edit&amp;redlink=1" title="姜勇囍（頁面不存在）" target="_blank" rel="external">姜勇囍</a>進入<a href="http://zh.wikipedia.org/wiki/Daum" title="Daum" target="_blank" rel="external">Daum</a>公司後的新一代作品，目前正在全力開發中。由於採用<a href="http://zh.wikipedia.org/wiki/Delphi" title="Delphi" target="_blank" rel="external">Delphi</a>編譯程序的KMPlayer有一些弊端，姜龍喜為改進播放器本身的一些性能而重新用<a href="http://zh.wikipedia.org/wiki/VC%2B%2B" title="VC++" target="_blank" rel="external">VC++</a>進行構架。</p>
-<p><img src="http://ww4.sinaimg.cn/large/6d9bd6a5jw1e6r6yotuyaj20dc048q32.jpg" alt=""></p>
-<p>由於PotPlayer與KMPlayer同屬一個開發者的產品，所以PotPlayer擁有KMPlayer的硬件加速、支持高清影片播放、界面整潔、操作簡單、使用輕鬆、皮膚豐富多彩等特點，能夠滿足不同用戶的使用需求。Daum PotPlayer也可以在64位元Windows系統上運行。</p>
-<p>Potplayer支持多種格式的視頻和音頻，幾乎可以擔當一般的常用媒體的播放</p>
-<p><img src="http://ww2.sinaimg.cn/large/6d9bd6a5jw1e6r72lry8bj21410nsn10.jpg" alt=""></p>
-<p>&nbsp;</p>
-<p>支持更換皮膚，皮膚的特殊效果需要在設置中開啓特效！  <a href="http://browse.deviantart.com/?qh=&amp;section=&amp;global=1&amp;q=potplayer" target="_blank" rel="external">更多皮膚下載</a></p>
-<p><img src="http://ww1.sinaimg.cn/large/6d9bd6a5jw1e6r70lcxwuj20ke0el40y.jpg" alt=""></p>
-<p>軟件設置方面更是有豐富的選項供用戶定製自己喜好播放模式</p>
-<p>&nbsp;</p>
-<p><a href="http://pan.baidu.com/s/1c0iVfOG" target="_blank" rel="external"><img src="http://bcs.duapp.com/chromelab/blog/201307/download.png" alt=""></a></p>
-<p>&nbsp;</p>
-<p>Copyleft 2013    圖標來自 <a href="http://browse.deviantart.com/art/Plex-287022406" target="_blank" rel="external">PLEX</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ky0n.xyz/potplayer/" data-id="cim66g17d002f1u5fm082m3mp" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Potplayer/">Potplayer</a></li></ul>
-
     </footer>
   </div>
   
@@ -237,7 +258,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/32/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/34/">Next</a>
+      <a class="extend prev" rel="prev" href="/page/32/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/34/">Next</a>
     </nav>
   
 

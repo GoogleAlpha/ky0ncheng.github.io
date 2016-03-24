@@ -110,6 +110,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-chrome33-adkill-rework" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/chrome33-adkill-rework/" class="article-date">
+  <!--<time datetime="2014-02-21T10:15:01.000Z" itemprop="datePublished">2014-02-21</time>-->
+</a>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/chrome33-adkill-rework/">Chrome33+  Adkill的失效解決方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>這個PPAPI版flash插件是經過Google加工過的   所以版本號略奇葩  返回到chrome32自帶的ppapi flash plug-in就可以了</p>
+<p>Windows 32位用戶</p>
+<p>C:Program FilesGoogleChromeApplication33.0.1750.117PepperFlash</p>
+<p>Windows 64位用戶</p>
+<p>C:Program Files (x86)GoogleChromeApplication33.0.1750.117PepperFlash</p>
+<p>下載地址   <a href="http://pan.baidu.com/s/1jG4vWSQ" target="_blank" rel="external">http://pan.baidu.com/s/1jG4vWSQ</a></p>
+<p>&nbsp;</p>
+<p>Mac用戶  自行提取 /Applications/Google Chrome.app/Contents/Versions/32.xxxxx(你的chrome32的程序文件夾)/Google Chrome Framework.framework/Internet Plug-Ins/PepperFlash/PepperFlashPlayer.plugin</p>
+<p>Linux用戶 下載 <a href="http://pan.baidu.com/s/1bnGf7h9" target="_blank" rel="external">http://pan.baidu.com/s/1bnGf7h9</a>    覆蓋至/opt/google/chrome/pepperflash下</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ky0n.xyz/chrome33-adkill-rework/" data-id="cim66hhxb000f2z5fxpjan20w" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chrome/">Chrome</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-love-is-404" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/love-is-404/" class="article-date">
@@ -166,49 +216,9 @@ audiojs.events.ready(function() {     var as = audiojs.createAll();   });
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ky0n.xyz/love-is-404/" data-id="cim66g16o001v1u5ffv8q35pi" class="article-share-link">分享</a>
+      <a data-url="https://ky0n.xyz/love-is-404/" data-id="cim66hhzk001v2z5fgydrpxwm" class="article-share-link">分享</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-centos-setup-l2tp-ipsec-psk-vpn" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/centos-setup-l2tp-ipsec-psk-vpn/" class="article-date">
-  <!--<time datetime="2014-01-18T18:32:08.000Z" itemprop="datePublished">2014-01-19</time>-->
-</a>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/centos-setup-l2tp-ipsec-psk-vpn/">CentOS搭建L2TP / IPSec VPN教程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div>建议使用最小化安装的centos纯净系统，此教程在centos 5.8和 centos 6.3上测试通过<br>首先确保关闭了selinux<br>导入第三方源</div><br><div></div><br><div></div><br><div><br><br>centos 5.x 32位使用<br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/5/i386/epel-release-5-4.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/5/i386/epel-release-5-4.noarch.rpm</a></pre><br>centos 5.x 64位使用<br><div><br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/5/x86_64/epel-release-5-4.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/5/x86_64/epel-release-5-4.noarch.rpm</a></pre><br></div><br>centos 6.x 32位使用<br><div><br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/6/i386/epel-release-6-8.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/6/i386/epel-release-6-8.noarch.rpm</a></pre><br></div><br>centos 6.x 64位使用<br><div><br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm</a></pre><br></div><br>开始安装<br><div><br><pre class="brush: bash; title: Bash">yum install openswan xl2tpd ppp lsof iptables -y</pre><br></div><br>编辑 /etc/sysctl.conf<br><div><br><pre class="brush: bash; title: Bash">nano /etc/sysctl.conf</pre><br></div><br>将<br><pre class="brush: bash; title: Bash">net.ipv4.ip_forward = 0</pre><br>修改为<br><pre class="brush: bash; title: Bash">net.ipv4.ip_forward = 1</pre><br>接下来依次执行<br><pre class="lang:default decode:true">echo “net.ipv4.conf.all.accept_redirects = 0” |  tee -a /etc/sysctl.conf<br>echo “net.ipv4.conf.all.send_redirects = 0” |  tee -a /etc/sysctl.conf<br>for vpn in /proc/sys/net/ipv4/conf/<em>; do echo 0 &gt; $vpn/accept_redirects; echo 0 &gt; $vpn/send_redirects; done<br>sysctl -p</em></pre><br>编辑 /etc/rc.local<br><div><br><pre class="brush: bash; title: Bash">nano /etc/rc.local</pre><br></div><br>在末尾加入<br><pre class="lang:default decode:true  ">for vpn in /proc/sys/net/ipv4/conf/; do echo 0 &gt; $vpn/accept_redirects; echo 0 &gt; $vpn/send_redirects; done</pre><br>编辑 /etc/ipsec.conf<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ipsec.conf</pre><br></div><br>将其中的<br><br></div><br><div><br><pre class="brush: bash; title: Bash">virtual_private=</pre><br></div><br><div><br><br>修改为<br><pre class="brush: bash; title: Bash">virtual_private=%v4:10.0.0.0/8,%v4:192.168.1.0/24,%v4:172.16.0.0/12,%v6:fd00::/8,%v6:fe80::/10</pre><br>并在文件末尾加入以下内容，注意将以下的111.111.111.111修改为你服务器 IP<br><pre class="brush: bash; title: Bash">conn L2TP-PSK-NAT<br>   rightsubnet=vhost:%priv<br>   also=L2TP-PSK-noNAT<br><br>conn L2TP-PSK-noNAT<br>   authby=secret<br>   pfs=no<br>   auto=add<br>   keyingtries=5<br>   rekey=no<br>   ikelifetime=8h<br>   keylife=1h<br>   type=transport<br>   left=111.111.111.111<br>   leftprotoport=17/1701<br>   right=%any<br>   rightprotoport=17/%any</pre><br>编辑 /etc/ipsec.secrets<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ipsec.secrets</pre><br></div><br>清空这个文件的内容，然后添加<br><pre class="brush: bash; title: Bash">111.111.111.111 %any: PSK “dilehost”</pre><br>注意111.111.111.111请修改为你的服务器ip ,PSK 后为共享密钥，自行更改<br><br>启动ipsec<br><div><br><pre class="brush: bash; title: Bash">service ipsec start</pre><br></div><br>查看系统IPSec安装和启动的正确性：<br><div><br><pre class="brush: bash; title: Bash">ipsec verify</pre><br></div><br>没有出现 [FAILED] 就可以了<br><br>编辑/etc/xl2tpd/xl2tpd.conf<br><div><br><pre class="brush: bash; title: Bash">nano /etc/xl2tpd/xl2tpd.conf</pre><br></div><br>修改<br><pre class="brush: bash; title: Bash">ip range = 192.168.1.128-192.168.1.254<br>local ip = 192.168.1.99</pre><br>为<br><pre class="brush: bash; title: Bash">ip range = 192.168.1.2-192.168.1.254<br>local ip = 192.168.1.1</pre><br>编辑 /etc/ppp/options.xl2tpd<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ppp/options.xl2tpd</pre><br></div><br>清空原有配置，加入以下配置内容<br><pre class="brush: bash; title: Bash">require-mschap-v2<br>ms-dns 8.8.8.8<br>ms-dns 8.8.4.4<br>auth<br>mtu 1200<br>mru 1000<br>crtscts<br>hide-password<br>modem<br>name l2tpd<br>proxyarp<br>lcp-echo-interval 30<br>lcp-echo-failure 4</pre><br>设置用户名密码及登录IP<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ppp/chap-secrets</pre><br></div><br>加入一个用户，比如用户名为username ,密码为password , <em> 为任意IP都可以登录<br><pre class="brush: bash; title: Bash">username    l2tpd     password      </pre></em><br>对应好就行，多个用户每行配置一个<br><br>重启服务并添加开机启动<br><div><br><pre class="brush: bash; title: Bash">service ipsec restart<br>service xl2tpd restart<br>chkconfig ipsec on<br>chkconfig xl2tpd on</pre><br></div><br>最后配置防火墙<br><div><br><pre class="brush: bash; title: Bash">iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE<br>iptables -I FORWARD -s 192.168.1.0/24 -j ACCEPT<br>iptables -I FORWARD -d 192.168.1.0/24 -j ACCEPT<br>iptables -A INPUT -p udp -m state –state NEW -m udp –dport 1701 -j ACCEPT<br>iptables -A INPUT -p udp -m state –state NEW -m udp –dport 500 -j ACCEPT<br>iptables -A INPUT -p udp -m state –state NEW -m udp –dport 4500 -j ACCEPT<br>/etc/rc.d/init.d/iptables save<br>/etc/rc.d/init.d/iptables restart</pre><br></div><br></div><br><div>参考：</div><br><div><a href="http://www.live-in.org/archives/818.html" target="_blank" rel="external">http://www.live-in.org/archives/818.html</a></div><br><div><a href="https://raymii.org/s/tutorials/IPSEC_L2TP_vpn_on_CentOS_-_Red_Hat_Enterprise_Linux_or_Scientific_-_Linux_6.html" target="_blank" rel="external">https://raymii.org/s/tutorials/IPSEC_L2TP_vpn_on<em>CentOS</em>-_Red_Hat_Enterprise_Linux_or<em>Scientific</em>-_Linux_6.html</a></div>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ky0n.xyz/centos-setup-l2tp-ipsec-psk-vpn/" data-id="cim66g14m000b1u5f126j5qpi" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
     </footer>
   </div>
   
@@ -219,7 +229,7 @@ audiojs.events.ready(function() {     var as = audiojs.createAll();   });
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/24/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/26/">Next</a>
+      <a class="extend prev" rel="prev" href="/page/24/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/26/">Next</a>
     </nav>
   
 
