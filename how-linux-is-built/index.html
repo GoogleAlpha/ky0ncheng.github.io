@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    
+        <title>無名小站</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="平臺之爭：Linux vs Windows vs 蘋果系同宗之爭：Linux vs BSD桌面之爭：Ubuntu N種桌面 vs MacOS桌面 vs Windows 桌面版權之爭：自由軟件基金會 GPL證書類 vs Android聯盟 Apache證書/BSD證書類 vs Windows/蘋果閉源世界開放性之爭：Linux 強制開源 vs Windows、蘋果多數閉源版本兼容性之爭：Li">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux是如何建立的">
+<meta property="og:url" content="https://ky0n.xyz/how-linux-is-built/index.html">
+<meta property="og:site_name" content="無名小站">
+<meta property="og:description" content="平臺之爭：Linux vs Windows vs 蘋果系同宗之爭：Linux vs BSD桌面之爭：Ubuntu N種桌面 vs MacOS桌面 vs Windows 桌面版權之爭：自由軟件基金會 GPL證書類 vs Android聯盟 Apache證書/BSD證書類 vs Windows/蘋果閉源世界開放性之爭：Linux 強制開源 vs Windows、蘋果多數閉源版本兼容性之爭：Li">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1e6i44j0e74j21400p0ajr.jpg">
+<meta property="og:updated_time" content="2015-06-26T07:08:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux是如何建立的">
+<meta name="twitter:description" content="平臺之爭：Linux vs Windows vs 蘋果系同宗之爭：Linux vs BSD桌面之爭：Ubuntu N種桌面 vs MacOS桌面 vs Windows 桌面版權之爭：自由軟件基金會 GPL證書類 vs Android聯盟 Apache證書/BSD證書類 vs Windows/蘋果閉源世界開放性之爭：Linux 強制開源 vs Windows、蘋果多數閉源版本兼容性之爭：Li">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1e6i44j0e74j21400p0ajr.jpg">
+            
+                    <link rel="icon" href="../favicon.ico">
+                    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+                    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+                    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+                    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+                    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+                    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+                    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+                    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+                    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+                    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+                    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+                    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+                    <link rel="manifest" href="/manifest.json">
+                    <meta name="msapplication-TileColor" content="#ffffff">
+                    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+                    <meta name="theme-color" content="#ffffff">
+                    <meta name="google" content="notranslate">
+                    <link rel="stylesheet" href="/css/style.css">
+                        <style type="text/css">
+                            html {
+                                background-color: white
+                            }
+                        </style>
+                        <script language="JavaScript">
+                            function check_secure() {
+                                var httpsRE = /^https/i;
+                                if (!window.location.origin.match(httpsRE)) {
+                                    window.location = "https://" + window.location.hostname + window.location.pathname + window.location.search;
+                                }
+                            }
+                            check_secure();
+                        </script>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+      </h1>
+      
+      <div id="rss-wrap">
+      
+      
+      </div>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <a class="title"></a>
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+    </nav>
+    <nav id="sub-nav">
+      <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ky0n.xyz"></form>
+    </div>
+    <div id="sub-profile">
+    </div>
+  </div>
+  <div class="site-nav">
+    <ul>
+    
+      <li>
+        <a href="/">首頁</a>
+      </li>
+    
+      <li>
+        <a href="/archives">過往</a>
+      </li>
+    
+      <li>
+        <a href="/friends">摯友</a>
+      </li>
+    
+      <li>
+        <a href="/atom.xml">訂閱</a>
+      </li>
+    
+      <li>
+        <a href="/about">關於</a>
+      </li>
+    
+    </ul>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-how-linux-is-built" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/how-linux-is-built/" class="article-date">
+  <!--<time datetime="2013-07-10T13:53:36.000Z" itemprop="datePublished">2013-07-10</time>-->
+</a>
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/日誌/">日誌</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux是如何建立的
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <head><br><link href="http://ippotsuko.com/videojs/video-js.css" rel="stylesheet"><br><script src="http://ippotsuko.com/videojs/video.js"></script><br></head>
+
+<body><br><left><video id="my_video_1" class="video-js vjs-default-skin" controls preload="none" width="685" height="438" data-setup="{}"><br><source src="http://jianiloli.duapp.com/18653279/2896373533/linux.mp4" type="video/mp4"><br></video></left><br><br></body>
+
+<p>平臺之爭：Linux vs Windows vs 蘋果系<br>同宗之爭：Linux vs BSD<br>桌面之爭：Ubuntu N種桌面 vs MacOS桌面 vs Windows 桌面<br>版權之爭：自由軟件基金會 GPL證書類 vs Android聯盟 Apache證書/BSD證書類 vs Windows/蘋果閉源世界<br>開放性之爭：Linux 強制開源 vs Windows、蘋果多數閉源<br>版本兼容性之爭：Linux 多變 Kernel、API 接口 vs 穩定API接口的Windows、Mac、iOS<br>驅動程序(版權+開放性+版本兼容性)之爭：Linux 驅動程序老、少、弱 vs Windows 驅動程序新、多、強 vs 蘋果獨家使用<br>嵌入式跨平臺之爭：Linux 廣泛CPU、設備支持 vs Windows有限支持 vs 蘋果獨家使用<br>安全性之爭：Linux 極少病毒 vs Windows多病毒 vs Android不少病毒 vs 蘋果極少病毒<br>費用之爭：Linux 免費 vs Windows 高額費用<br>市場之爭：Linux 多數用在服務器 vs Windows 多數用在桌面</p>
+<p>Linux開源，全世界都在開發<br>Windows是微軟的，一家掌管<br>linux面向的是程序員，windows面向的是用戶<br>linux的使用者更注重高效的性能，而且因爲他使服務器不需要額外的負擔<br>windows的使用者喜歡便利，沒有windows這樣的圖形系統，就不會有電腦白癡只會玩遊戲卻不會裝遊戲，也不會有去女生宿舍修電腦的好人</p>
+<p>我的Linux桌面 是不是很像某水果的？ 哈哈哈<br>Dock本來也是linux的 只不過被水果拿去發揚光大了<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1e6i44j0e74j21400p0ajr.jpg" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ky0n.xyz/how-linux-is-built/" data-id="cim669r56001zx05fyp1z4z3l" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/theworld6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          世界之窗6.0 初試
+        
+      </div>
+    </a>
+  
+  
+    <a href="/shinkai-shoujo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">深海少女-koma&#39;n_piano.ver</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            Copyleft
+            2016
+              <br> #freeandopen
+              <br>This site is licensed under a <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0</a>
+          </div>
+          <script>
+            (function(i, s, o, g, r, a, m) {
+              i['GoogleAnalyticsObject'] = r;
+              i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+              }, i[r].l = 1 * new Date();
+              a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+              a.async = 1;
+              a.src = g;
+              m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-70500040-1', 'auto', {'allowLinker': true});
+            ga('require', 'linker');
+            ga('linker:autoLink', ['blog.akarin.xyz']);
+            ga('send', 'pageview');
+          </script>
+          <script src="../console.js" type="text/javascript"></script>
+        </div>
+        </div>
+        </div>
+</footer>
+
+    </div>
+    
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/0.1.2/scrollReveal.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script>
+  window.scrollReveal = new scrollReveal();
+</script>
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

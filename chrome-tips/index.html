@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    
+        <title>無名小站</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Chrome是Google公司開發的一個現代化的網頁瀏覽器，作爲三大瀏覽器之一 它搭載了被稱爲V8的高效率Javascript引擎。
+
+由於簡潔的界面風格 和便捷易用的特點  Chrome的市場份額已經升至45% ，一舉超越了Internet Explorer和Mozilla Firefox成爲全球第一大瀏覽器。(數據來自Wikipedia)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="關於Chrome的那些小技巧">
+<meta property="og:url" content="https://ky0n.xyz/chrome-tips/index.html">
+<meta property="og:site_name" content="無名小站">
+<meta property="og:description" content="Chrome是Google公司開發的一個現代化的網頁瀏覽器，作爲三大瀏覽器之一 它搭載了被稱爲V8的高效率Javascript引擎。
+
+由於簡潔的界面風格 和便捷易用的特點  Chrome的市場份額已經升至45% ，一舉超越了Internet Explorer和Mozilla Firefox成爲全球第一大瀏覽器。(數據來自Wikipedia)">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epn9m03252j20rs0hswgk.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnaugo0rnj20gc0a4ab7.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnawzvjabj20hd0b2404.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnazdgwsmj20h00a1jso.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/6d9bd6a5gw1epnb2kdzn6j20d6095ta5.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnb4fbixej20hi0avgoa.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnb95jkgtj20gv07ht8u.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnb82kafbj20gu091tb4.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnbakh6naj20h00amq51.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnbbs4tw5j20hg090t9s.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnbwmw11zj20c10atmyl.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnbzdwvv7j20ek08g0td.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnfw9tiuij20hr0ao777.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epncazn7moj20hn0awmyx.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epncnjun7bj20g70at0um.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epncovvvhuj20fq09xgnl.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epncqfg6tfj20hr0ajtce.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epncrnf0zdj20gw0avwf9.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnchg5lp7j20hh0a80v3.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnckxpt9vj20h70azq4q.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epncdi7t54j20hj0akdhx.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnc8uuq5tj20gy09xmyw.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnd435w6ej20tv04at9l.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnd5i22qhj20pt1a1th5.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnd6f63ioj20fy0rojvh.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epndf039g9j20sr09odht.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epndfadq1yj20us0870uz.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epndmjgx7dj20vq08ejuc.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/6d9bd6a5gw1epndqedkluj20jm0aajt4.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnduj5nqij20hh0jg41n.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epndzb9w49j20ow0ky0xi.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epne1rw2m6j20hl05f0u6.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epne5dhzjwj20se05lq3r.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epne5dhzjwj20se05lq3r.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnep9f4abj20s209cac4.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epner2fhafj20t50ghgpi.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnfr0oo8uj20rp0djta1.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnfrjlnf1j20u20c540h.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/6d9bd6a5gw1epng1lmxp9j21kw17kdpq.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnfy16qdej20i90cw0v1.jpg">
+<meta property="og:updated_time" content="2015-03-30T14:55:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="關於Chrome的那些小技巧">
+<meta name="twitter:description" content="Chrome是Google公司開發的一個現代化的網頁瀏覽器，作爲三大瀏覽器之一 它搭載了被稱爲V8的高效率Javascript引擎。
+
+由於簡潔的界面風格 和便捷易用的特點  Chrome的市場份額已經升至45% ，一舉超越了Internet Explorer和Mozilla Firefox成爲全球第一大瀏覽器。(數據來自Wikipedia)">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epn9m03252j20rs0hswgk.jpg">
+            
+                    <link rel="icon" href="../favicon.ico">
+                    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+                    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+                    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+                    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+                    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+                    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+                    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+                    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+                    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+                    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+                    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+                    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+                    <link rel="manifest" href="/manifest.json">
+                    <meta name="msapplication-TileColor" content="#ffffff">
+                    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+                    <meta name="theme-color" content="#ffffff">
+                    <meta name="google" content="notranslate">
+                    <link rel="stylesheet" href="/css/style.css">
+                        <style type="text/css">
+                            html {
+                                background-color: white
+                            }
+                        </style>
+                        <script language="JavaScript">
+                            function check_secure() {
+                                var httpsRE = /^https/i;
+                                if (!window.location.origin.match(httpsRE)) {
+                                    window.location = "https://" + window.location.hostname + window.location.pathname + window.location.search;
+                                }
+                            }
+                            check_secure();
+                        </script>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+      </h1>
+      
+      <div id="rss-wrap">
+      
+      
+      </div>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <a class="title"></a>
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+    </nav>
+    <nav id="sub-nav">
+      <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ky0n.xyz"></form>
+    </div>
+    <div id="sub-profile">
+    </div>
+  </div>
+  <div class="site-nav">
+    <ul>
+    
+      <li>
+        <a href="/">首頁</a>
+      </li>
+    
+      <li>
+        <a href="/archives">過往</a>
+      </li>
+    
+      <li>
+        <a href="/friends">摯友</a>
+      </li>
+    
+      <li>
+        <a href="/atom.xml">訂閱</a>
+      </li>
+    
+      <li>
+        <a href="/about">關於</a>
+      </li>
+    
+    </ul>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-chrome-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/chrome-tips/" class="article-date">
+  <!--<time datetime="2015-02-26T18:03:30.000Z" itemprop="datePublished">2015-02-27</time>-->
+</a>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      關於Chrome的那些小技巧
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Chrome是Google公司開發的一個現代化的網頁瀏覽器，作爲三大瀏覽器之一 它搭載了被稱爲V8的高效率Javascript引擎。</p>
+<p><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epn9m03252j20rs0hswgk.jpg" alt=""></p>
+<p>由於簡潔的界面風格 和便捷易用的特點  Chrome的市場份額已經升至45% ，一舉超越了Internet Explorer和Mozilla Firefox成爲全球第一大瀏覽器。(數據來自Wikipedia)</p>
+<a id="more"></a> 
+<p><iframe height="480" width="800" src="http://player.youku.com/embed/XMzMyODkyMzI4" frameborder="0" allowfullscreen></iframe></p>
+<div align="right"> <sup>初音未來代言Chrome瀏覽器的廣告 ♪ Tell Your World</sup></div>
+
+<p><br><br>作爲一個現代化的瀏覽器，就像智能手機的APP ，每裝一個APP，意味着你的手機又多了一個功能。Chrome瀏覽器也是如此，Google也提供了<a href="https://chrome.google.com/webstore/category/extensions?hl=zh-CN" target="_blank" rel="external">網上應用商店</a>供人下載擴展自定義使用。</p>
+<p>接下來我會介紹一些大家常用的擴展</p>
+<ul>
+<li><p><a href="https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb" target="_blank" rel="external">ABP廣告過濾 / Adblock Plus</a><br>超過5000萬人使用，適用於 Chrome 的免費的廣告攔截器，可阻止所有煩人的廣告及惡意軟件和跟蹤。<br>享受沒有惱人廣告的網絡世界。<br><img src="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnaugo0rnj20gc0a4ab7.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/better-history/obciceimmggglbmelaidpjlmodcebijb" target="_blank" rel="external">更好的歷史記錄 / Better History</a><br>替換瀏覽器自帶的歷史查看頁面。本擴展能更好地查看您的歷史記錄。爲查看您的歷史記錄帶來最好的搜索體驗，最清晰的界面和最有幫助的篩選。<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnawzvjabj20hd0b2404.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc" target="_blank" rel="external">印象筆記 剪藏 / Evernote Web Clipper</a><br>使用印象筆記擴展程序一鍵保存精彩網頁內容到印象筆記帳戶。<br>印象筆記•剪藏，以最快的速度，幫你保存網頁、截取屏幕、添加標註、輕鬆歸檔，隨時隨地快速找到所需一切。<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnazdgwsmj20h00a1jso.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/hangouts/nckgahadagoaajjgafhacjanaoiihapd" target="_blank" rel="external">環聊 / Hangouts</a><br>環聊讓對話更生動有趣：不但可以發送圖片和表情符，還能免費視頻聊天。<br>環聊融入了照片、表情符和視頻，讓一對一和多人對話更加生動有趣，而且完全免費。你可以通過手機、計算機和平板電腦與朋友溝通交流。<br><img src="http://ww3.sinaimg.cn/large/6d9bd6a5gw1epnb2kdzn6j20d6095ta5.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/眼不見心不煩（新浪微博）/aognaapdfnnldnjglanfbbklaakbpejm" target="_blank" rel="external">新浪微博眼不見心不煩</a><br>新浪微博（weibo.com）非官方功能增強插件，可以無限制地屏蔽關鍵詞、用戶、來源，去除頁面廣告和推廣微博，反刷屏，還您一個清爽乾淨的微博！<br><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnb4fbixej20hi0avgoa.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/新浪微博圖牀/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博圖牀</a><br>簡單好用的新浪微博圖牀,支持選擇/拖拽/粘貼上傳本地圖片,並生成圖片地址,HTML和Markdown三種格式<br><img src="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnb95jkgtj20gv07ht8u.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/awesome-screenshot-captur/alelhddbbhepgpmgidjdcjakblofbmce" target="_blank" rel="external">網頁截圖:註釋&amp;批註</a><br>捕獲整個頁面或任何部分，矩形，圓形，箭頭，線條和文字，模糊敏感信息，一鍵上傳分享註釋。支持PNG和鏈接<br><img src="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnb82kafbj20gu091tb4.jpg" alt=""></p>
+</li>
+</ul>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/網易雲音樂/cojibhccojpmllbgpmhcoidohgbpdhkj" target="_blank" rel="external">網易雲音樂</a><br>不用打開網頁，收聽網易雲音樂，更簡單更易用。<br>網易雲音樂Chrome擴展，追求簡單體驗，不用打開網頁不用客戶端即可收聽網易雲音樂，歌單，大牌DJ，我的收藏。與其他終端同步，更簡單，更易用。<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnbakh6naj20h00amq51.jpg" alt=""></li>
+</ul>
+<ul>
+<li><p><a href="https://chrome.google.com/webstore/detail/stylish/fjnbnpbmkenffdnngjfgmeleoegfcffe" target="_blank" rel="external">Stylish</a><br>Stylish 是一款用戶樣式管理器，可讓您調整網頁的樣式。<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnbbs4tw5j20hg090t9s.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/simpleundoclose/emhohdghchmjepmigjojkehidlielknj" target="_blank" rel="external">SimpleUndoClose</a><br>簡單的恢復您曾經關閉的網站標籤<br><img src="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnbwmw11zj20c10atmyl.jpg" alt=""></p>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="external">Proxy SwitchyOmega</a><br>輕鬆快捷地管理和切換多個代理設置。你懂的~<br><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnbzdwvv7j20ek08g0td.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/bulk-download-imageszig/gfjhimhkjmipphnaminnnnjpnlneeplk" target="_blank" rel="external">小樂圖客(ZIG)</a><br>取圖(網頁圖片批量下載) + 截圖(矢量標記) + 美圖 + 拼圖<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnfw9tiuij20hr0ao777.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/prism-pretty/hjjcdjnncffbbhlglkipjhljmocnehim" target="_blank" rel="external">Prism Pretty</a><br>前端神器  代碼高亮顯示網頁HTML/CSS/JS<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epncazn7moj20hn0awmyx.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/eye-dropper/hmdcmlfkchdmnmnmheododdhjedfccka" target="_blank" rel="external">Eye Dropper</a><br>設計獅神器  網頁取色器<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epncnjun7bj20g70at0um.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/google-input-tools/mclkkofklkfljcocdinagocijmpgbhab" target="_blank" rel="external">Google 輸入工具</a><br>谷歌業界良心的雲輸入法  可以支持輸入90多種國家的語言文字<br><img src="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epncovvvhuj20fq09xgnl.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/fawave/aicelmgbddfgmpieedjiggifabdpcnln" target="_blank" rel="external">發微 / Fawave</a><br>Chrome上的微博插件，支持多微博，真正的實時同步發送微博，多微博發送不再煩。目前支持的微博有騰訊微博(qq)、新浪微博(sina)、搜狐微博(sohu)、飯否、做啥、嘀咕(digu)、人間網、雷猴、豆瓣、Google Buzz、網易微博(163)和一些不存在的網站。 功能全面、強大，還可以批量發送圖片。<br><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epncqfg6tfj20hr0ajtce.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj" target="_blank" rel="external">Pocket</a><br>輕鬆地保存文章、視頻等供以後查看。有了 Pocket，您的所有內容可匯聚到一個地方，以便在任何設備上隨時查看。甚至不需要網絡連接。<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epncrnf0zdj20gw0avwf9.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="external">tampermonkey</a><br>用戶腳本管理 Chrome上面的油猴腳本管理器<br>添加你的自定義功能請去<a href="https://greasyfork.org/zh-CN/" target="_blank" rel="external">https://greasyfork.org/zh-CN/</a> 尋找<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnchg5lp7j20hh0a80v3.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/惠惠購物助手/ohjkicjidmohhfcjjlahfppkdblibkkb" target="_blank" rel="external">惠惠購物助手</a><br>砍手黨必備擴展 在您網購瀏覽商品的同時，自動對比其他優質電商同款商品價格，並提供商品價格歷史，幫您輕鬆抄底，聰明網購不吃虧！<br><img src="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnckxpt9vj20h70azq4q.jpg" alt=""></p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb" target="_blank" rel="external">Google翻譯</a><br>適合外語學習者 哪裏不會劃哪裏  so easy~<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epncdi7t54j20hj0akdhx.jpg" alt=""></p>
+</li>
+</ul>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/rikaikun/jipdnfibhldikgcjhfnomkfpcebammhp" target="_blank" rel="external">rikaikun</a><br>可以把網頁中的日文漢字顯示平假名和羅馬音 適合日語學習者<br><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnc8uuq5tj20gy09xmyw.jpg" alt=""></li>
+</ul>
+<p>我最喜歡的兩個Chrome擴展是Evernote和Pocket了<br>前者可以很詳細的記錄自己的筆記  後者是一個強大的在線收藏夾 雖然前者也有收藏夾的功能 但是非付費用戶每月限制60MB流量  如果要收藏的網頁有許多圖片  可能就不夠用了  所以我選擇了Pocket  把喜歡的網頁全部藏進Pocket 找也好找  兩個一起用簡直神器  學習工作效率也能上去不少<br><br><br>身在牆內，或許很多人不習慣這個來自國外的瀏覽器產品，有許許多多的“適合”國人使用習慣的瀏覽器 比如大數字極速/安全瀏覽器、傲遊瀏覽器、搜狗瀏覽器、獵豹瀏覽器 甚至國外有名的Opera瀏覽器都是基於Chromium(Chrome的開放源代碼版本)的“套殼”瀏覽器，因爲開源所以會很容易衍生出很多的第三方版本，同時Chrome的擴展也基本(除非有些改的面目全非←_←)適用於它們。</p>
+<p>下面介紹一些Chrome的自定義優化設置</p>
+<p>比如我喜歡讓我的瀏覽器把顯示字體強制爲Google的Noto字體 就可以用剛剛介紹的Stylish這個擴展自定義css</p>
+<pre><code>*:not([class*=&quot;icon&quot;]):not([class*=&quot;mui-amount&quot;]):not([class*=&quot;chaoshi&quot;]):not([class*=&quot;top-nav&quot;]):not([href*=&quot;ju.taobao.com&quot;]):not([class*=&quot;Icon&quot;]):not([class*=&quot;prev&quot;]):not([class*=&quot;next&quot;]):not([class*=&quot;pay-&quot;]):not([class*=&quot;tm-shop-list-&quot;]):not(b):not(ins):not(i):not(s){font-family:&quot;Noto Sans CJK SC Regular&quot;!important;}
+</code></pre><p>或者讓文字URL鏈接的下劃線消失</p>
+<pre><code>* {text-decoration:none!important;}
+</code></pre><p>或者自定義瀏覽器的滾動條樣式 <a href="http://www.yuxiaoxi.com/2013-05-21-css-custom-scroll-bar-style.html" target="_blank" rel="external">參考鏈接</a> *新版本Chrome或許取消此功能</p>
+<pre><code>::-webkit-scrollbar{
+width:3px;
+height:6px;
+background-color:#fff;
+}
+::-webkit-scrollbar:hover{
+background-color:#eee;
+}
+::-webkit-scrollbar-thumb{
+min-height:5px;
+min-width:5px;
+-webkit-border-radius:20px;border:1px solid#888;
+::-webkit-border-radius:1px;
+background-color: #AAA;
+}
+::-webkit-scrollbar-thumb:hover{
+min-height:4px;
+min-width:4px;
+-webkit-border-radius:20px;border:1px solid#444;
+background-color: #AAA;
+}
+::-webkit-scrollbar-thumb:active{
+-webkit-border-radius:20px;border:1px solid#444;
+background-color: #AAA;
+}
+</code></pre><p>更多的css樣式可以去<a href="https://userstyles.org" target="_blank" rel="external">https://userstyles.org</a> 獲取</p>
+<p>Chrome本身還有很多強大的功能 下面推薦幾個常用的隱藏設置<br>我也不是專業的前端人員  下面就簡單的介紹一下常用的幾個工具<br>自帶的開發者工具  繼承了webkit的一些功能<br><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnd435w6ej20tv04at9l.jpg" alt=""></p>
+<p>左上角的手機圖標按鈕是開發者工具的模擬器  可以通過改變UA等設置模擬顯示移動設備的網頁兼容情況<br><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnd5i22qhj20pt1a1th5.jpg" alt=""></p>
+<p>最下面還有模擬器的更多設置<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnd6f63ioj20fy0rojvh.jpg" alt=""></p>
+<p>開發者工具還有個常用的網頁元素嗅探功能<br>可以用這個功能找到一些你想要的頁面內的元素  比如禁止保存的圖片 音頻 視頻等<br><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epndf039g9j20sr09odht.jpg" alt=""></p>
+<p>也可以獲知此頁面內元素的加載狀況<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epndfadq1yj20us0870uz.jpg" alt=""></p>
+<p>如果頁面內容顯示或者功能不正常  可以嘗試清除Cookie(此文件記錄了用戶的一些信息 打碼處理(//∇//)  或者頁面Cache緩存<br><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epndmjgx7dj20vq08ejuc.jpg" alt=""></p>
+<p>在開發者工具打開的情況下  清除頁面緩存可以長時間單擊左上角的刷新按鈕 出現清理的菜單選項<br><img src="http://ww3.sinaimg.cn/large/6d9bd6a5gw1epndqedkluj20jm0aajt4.jpg" alt=""></p>
+<p>另外長按返回按鈕 可以選擇曾經打開過的頁面（這個不需要開啓開發者工具<br><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnduj5nqij20hh0jg41n.jpg" alt=""></p>
+<p>接下來介紹一些Chrome的隱藏調試設置<br>地址欄打開 <code>chrome://flags</code><br>按下 <code>Ctrl+F</code>或者 <code>Command+F</code> 頁面內搜索 <code>quic</code><br>啓用實驗性QUIC協議和SPDY/4（HTTP/2標準）訪問那些不存在的網站可能有加速的效果 你懂的~</p>
+<p><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epndzb9w49j20ow0ky0xi.jpg" alt=""></p>
+<p>非Mac用戶建議開啓重疊式滾動條<br>開啓之後  頁面內的滾動條會消失  直到你滾動頁面纔會漸漸出現<br><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epne1rw2m6j20hl05f0u6.jpg" alt=""></p>
+<p>非Windows用戶強烈推薦禁用Flash插件 保證瀏覽器的流暢和穩定_(:з」∠)、<br>打開<code>chrome://plugins</code>找到Adobe Flash Player這個插件  停用即可<br><img src="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epne5dhzjwj20se05lq3r.jpg" alt=""></p>
+<p>並改用HTML5的播放器  <a href="http://zythum.sinaapp.com/youkuhtml5playerbookmark/" target="_blank" rel="external">http://zythum.sinaapp.com/youkuhtml5playerbookmark/</a></p>
+<p>或者添加書籤</p>
+<pre><code>javascript:(function(){var l = document.createElement(&apos;link&apos;);l.setAttribute(&apos;rel&apos;,&apos;stylesheet&apos;);l.setAttribute(&apos;media&apos;,&apos;all&apos;);l.setAttribute(&apos;href&apos;,&apos;http://zythum.sinaapp.com/youkuhtml5playerbookmark/youkuhtml5playerbookmark2.css&apos;);document.body.appendChild(l);var s = document.createElement(&apos;script&apos;);s.setAttribute(&apos;src&apos;,&apos;http://zythum.sinaapp.com/youkuhtml5playerbookmark/youkuhtml5playerbookmark2.js&apos;);document.body.appendChild(s);})();
+</code></pre><p>打開含有視頻的網頁 點擊書籤即可使用HTML5播放器<br>畫質也彆強求  國內的視頻網站都是一票裏貨色  國外那個不存在的視頻網站已經捨棄該死的Flash播放器全面HTML5化了  視頻清晰度也是最高達到4K <em>(:з」∠)/ 國內的1080p還要買會員呢 不買會員還要乖乖看60秒的廣告 如果是個10幾秒的短視頻也要看60秒的廣告先  如果廣告加載卡住  對不起 刷新頁面之後再看一段60秒的廣告吧~  真是去年買表←</em>←</p>
+<p><img src="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epne5dhzjwj20se05lq3r.jpg" alt=""></p>
+<p>如果需要訪問某些不存在的網站強制HTTPS可以安裝<a href="https://chrome.google.com/webstore/detail/https-everywhere/gcbommkclmclpchllfjekcdonpmejbdp" target="_blank" rel="external">HTTPS Everywhere</a>這個擴展</p>
+<p>也可以在<code>chrome://net-internals/#hsts</code>裏面設置網址列表</p>
+<p>列如把維基百科 <a href="https://wikipedia.org/" target="_blank" rel="external">https://wikipedia.org/</a>  和所有子域名（記得勾選關於subdomin的兩個選項）加入HSTS列表</p>
+<p><img src="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnep9f4abj20s209cac4.jpg" alt=""></p>
+<p>然後打開頁面就是強制使用HTTPS加密連接了<br><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epner2fhafj20t50ghgpi.jpg" alt=""></p>
+<p>打開 <code>chrome://chrome-urls/</code>你可以找到很多隱藏的設置入口<br>慢慢探索吧 騷年們~</p>
+<p>一行代碼，還可以把Chrome瀏覽器變臨時的文字編輯器(來自<a href="http://blog.jobbole.com/32823/" target="_blank" rel="external">伯樂在線</a></p>
+<pre><code>data:text/html, &lt;html contenteditable&gt;
+</code></pre><p><img src="http://ww2.sinaimg.cn/large/6d9bd6a5gw1epnfr0oo8uj20rp0djta1.jpg" alt=""></p>
+<p>這是用了數據URI的格式（Data URI’s format），並告訴瀏覽器渲染 HTML。不過 contenteditable 是 HTML5 的一個新全局屬性，所以這個小技巧只能用於支持該屬性的現代瀏覽器。<br>除了複製粘貼文字  也可以粘貼圖片</p>
+<p>jakeonrails大神然後改了一下 支持了代碼高亮 參考<a href="https://gist.github.com/jakeonrails/4666256" target="_blank" rel="external">https://gist.github.com/jakeonrails/4666256</a></p>
+<pre><code>data:text/html, &lt;style type=&quot;text/css&quot;&gt;#e{position:absolute;top:0;right:0;bottom:0;left:0;}&lt;/style&gt;&lt;div id=&quot;e&quot;&gt;&lt;/div&gt;&lt;script src=&quot;http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;script&gt;var e=ace.edit(&quot;e&quot;);e.setTheme(&quot;ace/theme/monokai&quot;);e.getSession().setMode(&quot;ace/mode/python&quot;);&lt;/script&gt;
+</code></pre><p><img src="http://ww1.sinaimg.cn/large/6d9bd6a5gw1epnfrjlnf1j20u20c540h.jpg" alt=""></p>
+<p>提示說：如果把上面的 ace/mode/python 改成 ace/mode/ruby，那麼就得到了一個 Ruby 版的編輯器咯。其他語言依此類推。</p>
+<p>改造成支持其他語言語法高亮的，可把 ace/mode/ruby 替換爲：</p>
+<p>Python -&gt; ace/mode/python<br>C/C++ -&gt; ace/mode/c_cpp<br>Javscript -&gt; ace/mode/javascript<br>Java -&gt; ace/mode/java<br>Scala -&gt; ace/mode/scala<br>Markdown -&gt; ace/mode/markdown<br>CoffeeScript -&gt; ace/mode/coffee<br>其他……</p>
+<p>jakeonrails 語法高亮風格用的是 monokai。<br>如果需要換成其他風格，，可把 ace/theme/monokai 替換爲：</p>
+<p>Eclipse -&gt; ace/theme/eclipse<br>TextMate -&gt; ace/theme/textmate<br>其他……</p>
+<p>不想複製粘貼代碼的懶漢童鞋，可以直接戳下面這些鏈接：</p>
+<p><a href="data:text/html, &lt;style type=%22text/css%22&gt;#e{position:absolute;top:0;right:0;bottom:0;left:0;}&lt;/style&gt;&lt;div id=%22e%22&gt;&lt;/div&gt;&lt;script src=%22http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js%22 type=%22text/javascript%22 charset=%22utf-8%22&gt;&lt;/script&gt;&lt;script&gt;var e=ace.edit(%22e%22);e.setTheme(%22ace/theme/monokai%22);e.getSession().setMode(%22ace/mode/ruby%22);&lt;/script&gt;" target="_blank">Ruby 編輯器</a>&nbsp;、<a href="data:text/html, &lt;style type=%22text/css%22&gt;#e{position:absolute;top:0;right:0;bottom:0;left:0;}&lt;/style&gt;&lt;div id=%22e%22&gt;&lt;/div&gt;&lt;script src=%22http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js%22 type=%22text/javascript%22 charset=%22utf-8%22&gt;&lt;/script&gt;&lt;script&gt;var e=ace.edit(%22e%22);e.setTheme(%22ace/theme/monokai%22);e.getSession().setMode(%22ace/mode/python%22);&lt;/script&gt;" target="_blank">Python 編輯器</a>、<a href="data:text/html, &lt;style type=%22text/css%22&gt;#e{position:absolute;top:0;right:0;bottom:0;left:0;}&lt;/style&gt;&lt;div id=%22e%22&gt;&lt;/div&gt;&lt;script src=%22http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js%22 type=%22text/javascript%22 charset=%22utf-8%22&gt;&lt;/script&gt;&lt;script&gt;var e=ace.edit(%22e%22);e.setTheme(%22ace/theme/monokai%22);e.getSession().setMode(%22ace/mode/php%22);&lt;/script&gt;" target="_blank">PHP 編輯器</a>&nbsp;、<a href="data:text/html, &lt;style type=%22text/css%22&gt;#e{position:absolute;top:0;right:0;bottom:0;left:0;}&lt;/style&gt;&lt;div id=%22e%22&gt;&lt;/div&gt;&lt;script src=%22http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js%22 type=%22text/javascript%22 charset=%22utf-8%22&gt;&lt;/script&gt;&lt;script&gt;var e=ace.edit(%22e%22);e.setTheme(%22ace/theme/monokai%22);e.getSession().setMode(%22ace/mode/javascript%22);&lt;/script&gt;" target="_blank">Javascript 編輯器</a>&nbsp;、<a href="data:text/html, &lt;style type=%22text/css%22&gt;#e{position:absolute;top:0;right:0;bottom:0;left:0;}&lt;/style&gt;&lt;div id=%22e%22&gt;&lt;/div&gt;&lt;script src=%22http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js%22 type=%22text/javascript%22 charset=%22utf-8%22&gt;&lt;/script&gt;&lt;script&gt;var e=ace.edit(%22e%22);e.setTheme(%22ace/theme/monokai%22);e.getSession().setMode(%22ace/mode/java%22);&lt;/script&gt;" target="_blank">Java 編輯器</a>&nbsp;、<a href="data:text/html, &lt;style type=%22text/css%22&gt;#e{position:absolute;top:0;right:0;bottom:0;left:0;}&lt;/style&gt;&lt;div id=%22e%22&gt;&lt;/div&gt;&lt;script src=%22http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js%22 type=%22text/javascript%22 charset=%22utf-8%22&gt;&lt;/script&gt;&lt;script&gt;var e=ace.edit(%22e%22);e.setTheme(%22ace/theme/monokai%22);e.getSession().setMode(%22ace/mode/c_cpp%22);&lt;/script&gt;" target="_blank">C/C++ 編輯器</a>&nbsp;（也可把這些鏈接作爲瀏覽器書籤收藏哦。）</p>
+
+
+<p><br><br>關於Chrome的快捷鍵 參考<a href="https://support.google.com/chrome/answer/157179?hl=zh-Hans" target="_blank" rel="external">官方說明</a> 和<a href="http://zhi.hu/b38W" target="_blank" rel="external">知乎</a></p>
+<ul>
+<li>想把網頁保存爲PDF？按快捷鍵Ctrl+P，然後在顯示出來的打印頁面上把目標打印機更改爲“另存爲PDF”，最後按保存就完成了，逼格爆滿。</li>
+<li>Ctrl+Shift+N，打開隱身模式。你的瀏覽記錄和Cookies就不會被保留。盡情享受吧。</li>
+<li>苦於Chrome打開太多的頁面以至於太卡？只要按Shift+Esc就可以打開任務管理器，想關那裏就關那裏，再也不用Ctrl+W一個一個關閉了。</li>
+<li>組合鍵Ctrl+Shift+T用於恢復不小心關掉的頁面。</li>
+<li>Alt+Home快速返回你設置你的主頁。</li>
+<li>Ctrl+H快速查看歷史記錄。</li>
+<li>Ctrl+J快速查看下載記錄。</li>
+<li>想要快速選定地址欄？按F6，等同於按Ctrl+L，再等同於Alt+D</li>
+<li>想快速刪除你的瀏覽記錄，只要按住Ctrl+Shift+Delete鍵就可以快速刪除。</li>
+<li>Ctrl+Tab從左到右切換頁面標籤，Ctrl+Shift+Tab則是從右到左切換。</li>
+<li>Ctrl+1用於快速返回最開始（即最左邊的頁面），Ctrl+9快速返回最右邊的頁面。</li>
+<li>想要看各種小說卻又抱怨屏幕太小？按F11立刻享受全屏帶來的快感。</li>
+</ul>
+<p>沒有PDF閱覽器  沒關係 直接把pdf文件拖到Chrome窗口裏面就可以查看了~<br><img src="http://ww3.sinaimg.cn/large/6d9bd6a5gw1epng1lmxp9j21kw17kdpq.jpg" alt=""></p>
+<p>重要的網頁標籤可以固定 防止誤關閉<br><img src="http://ww4.sinaimg.cn/large/6d9bd6a5gw1epnfy16qdej20i90cw0v1.jpg" alt=""></p>
+<p>更多關於Chrome的奇技淫巧等你發現~</p>
+<p><br></p>
+<p>本博客採用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW" target="_blank" rel="external">署名-相同方式共享 4.0 許可協議</a>進行許可。</p>
+<p>This site is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="external">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ky0n.xyz/chrome-tips/" data-id="cim669r3d000sx05f5iavuk6w" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/raspberry-pi-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          樹莓派2上手
+        
+      </div>
+    </a>
+  
+  
+    <a href="/get-chrome/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">牆內鏡像Chrome安裝文件下載服務</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            Copyleft
+            2016
+              <br> #freeandopen
+              <br>This site is licensed under a <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0</a>
+          </div>
+          <script>
+            (function(i, s, o, g, r, a, m) {
+              i['GoogleAnalyticsObject'] = r;
+              i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+              }, i[r].l = 1 * new Date();
+              a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+              a.async = 1;
+              a.src = g;
+              m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-70500040-1', 'auto', {'allowLinker': true});
+            ga('require', 'linker');
+            ga('linker:autoLink', ['blog.akarin.xyz']);
+            ga('send', 'pageview');
+          </script>
+          <script src="../console.js" type="text/javascript"></script>
+        </div>
+        </div>
+        </div>
+</footer>
+
+    </div>
+    
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/0.1.2/scrollReveal.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script>
+  window.scrollReveal = new scrollReveal();
+</script>
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

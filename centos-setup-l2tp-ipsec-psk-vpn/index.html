@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    
+        <title>無名小站</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="建议使用最小化安装的centos纯净系统，此教程在centos 5.8和 centos 6.3上测试通过首先确保关闭了selinux导入第三方源centos 5.x 32位使用rpm -ivh http://mirror.karneval.cz/pub/linux/fedora/epel/5/i386/epel-release-5-4.noarch.rpmcentos 5.x 64位使用rpm -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS搭建L2TP / IPSec VPN教程">
+<meta property="og:url" content="https://ky0n.xyz/centos-setup-l2tp-ipsec-psk-vpn/index.html">
+<meta property="og:site_name" content="無名小站">
+<meta property="og:description" content="建议使用最小化安装的centos纯净系统，此教程在centos 5.8和 centos 6.3上测试通过首先确保关闭了selinux导入第三方源centos 5.x 32位使用rpm -ivh http://mirror.karneval.cz/pub/linux/fedora/epel/5/i386/epel-release-5-4.noarch.rpmcentos 5.x 64位使用rpm -">
+<meta property="og:updated_time" content="2015-03-16T07:43:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS搭建L2TP / IPSec VPN教程">
+<meta name="twitter:description" content="建议使用最小化安装的centos纯净系统，此教程在centos 5.8和 centos 6.3上测试通过首先确保关闭了selinux导入第三方源centos 5.x 32位使用rpm -ivh http://mirror.karneval.cz/pub/linux/fedora/epel/5/i386/epel-release-5-4.noarch.rpmcentos 5.x 64位使用rpm -">
+            
+                    <link rel="icon" href="../favicon.ico">
+                    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+                    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+                    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+                    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+                    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+                    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+                    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+                    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+                    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+                    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+                    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+                    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+                    <link rel="manifest" href="/manifest.json">
+                    <meta name="msapplication-TileColor" content="#ffffff">
+                    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+                    <meta name="theme-color" content="#ffffff">
+                    <meta name="google" content="notranslate">
+                    <link rel="stylesheet" href="/css/style.css">
+                        <style type="text/css">
+                            html {
+                                background-color: white
+                            }
+                        </style>
+                        <script language="JavaScript">
+                            function check_secure() {
+                                var httpsRE = /^https/i;
+                                if (!window.location.origin.match(httpsRE)) {
+                                    window.location = "https://" + window.location.hostname + window.location.pathname + window.location.search;
+                                }
+                            }
+                            check_secure();
+                        </script>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+      </h1>
+      
+      <div id="rss-wrap">
+      
+      
+      </div>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <a class="title"></a>
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+    </nav>
+    <nav id="sub-nav">
+      <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ky0n.xyz"></form>
+    </div>
+    <div id="sub-profile">
+    </div>
+  </div>
+  <div class="site-nav">
+    <ul>
+    
+      <li>
+        <a href="/">首頁</a>
+      </li>
+    
+      <li>
+        <a href="/archives">過往</a>
+      </li>
+    
+      <li>
+        <a href="/friends">摯友</a>
+      </li>
+    
+      <li>
+        <a href="/atom.xml">訂閱</a>
+      </li>
+    
+      <li>
+        <a href="/about">關於</a>
+      </li>
+    
+    </ul>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-centos-setup-l2tp-ipsec-psk-vpn" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/centos-setup-l2tp-ipsec-psk-vpn/" class="article-date">
+  <!--<time datetime="2014-01-18T18:32:08.000Z" itemprop="datePublished">2014-01-19</time>-->
+</a>
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>►<a class="article-category-link" href="/categories/未分类/项目/">项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CentOS搭建L2TP / IPSec VPN教程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div>建议使用最小化安装的centos纯净系统，此教程在centos 5.8和 centos 6.3上测试通过<br>首先确保关闭了selinux<br>导入第三方源</div><br><div></div><br><div></div><br><div><br><br>centos 5.x 32位使用<br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/5/i386/epel-release-5-4.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/5/i386/epel-release-5-4.noarch.rpm</a></pre><br>centos 5.x 64位使用<br><div><br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/5/x86_64/epel-release-5-4.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/5/x86_64/epel-release-5-4.noarch.rpm</a></pre><br></div><br>centos 6.x 32位使用<br><div><br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/6/i386/epel-release-6-8.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/6/i386/epel-release-6-8.noarch.rpm</a></pre><br></div><br>centos 6.x 64位使用<br><div><br><pre class="brush: bash; title: Bash">rpm -ivh <a href="http://mirror.karneval.cz/pub/linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm" target="_blank" rel="external">http://mirror.karneval.cz/pub/linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm</a></pre><br></div><br>开始安装<br><div><br><pre class="brush: bash; title: Bash">yum install openswan xl2tpd ppp lsof iptables -y</pre><br></div><br>编辑 /etc/sysctl.conf<br><div><br><pre class="brush: bash; title: Bash">nano /etc/sysctl.conf</pre><br></div><br>将<br><pre class="brush: bash; title: Bash">net.ipv4.ip_forward = 0</pre><br>修改为<br><pre class="brush: bash; title: Bash">net.ipv4.ip_forward = 1</pre><br>接下来依次执行<br><pre class="lang:default decode:true">echo “net.ipv4.conf.all.accept_redirects = 0” |  tee -a /etc/sysctl.conf<br>echo “net.ipv4.conf.all.send_redirects = 0” |  tee -a /etc/sysctl.conf<br>for vpn in /proc/sys/net/ipv4/conf/<em>; do echo 0 &gt; $vpn/accept_redirects; echo 0 &gt; $vpn/send_redirects; done<br>sysctl -p</em></pre><br>编辑 /etc/rc.local<br><div><br><pre class="brush: bash; title: Bash">nano /etc/rc.local</pre><br></div><br>在末尾加入<br><pre class="lang:default decode:true  ">for vpn in /proc/sys/net/ipv4/conf/; do echo 0 &gt; $vpn/accept_redirects; echo 0 &gt; $vpn/send_redirects; done</pre><br>编辑 /etc/ipsec.conf<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ipsec.conf</pre><br></div><br>将其中的<br><br></div><br><div><br><pre class="brush: bash; title: Bash">virtual_private=</pre><br></div><br><div><br><br>修改为<br><pre class="brush: bash; title: Bash">virtual_private=%v4:10.0.0.0/8,%v4:192.168.1.0/24,%v4:172.16.0.0/12,%v6:fd00::/8,%v6:fe80::/10</pre><br>并在文件末尾加入以下内容，注意将以下的111.111.111.111修改为你服务器 IP<br><pre class="brush: bash; title: Bash">conn L2TP-PSK-NAT<br>   rightsubnet=vhost:%priv<br>   also=L2TP-PSK-noNAT<br><br>conn L2TP-PSK-noNAT<br>   authby=secret<br>   pfs=no<br>   auto=add<br>   keyingtries=5<br>   rekey=no<br>   ikelifetime=8h<br>   keylife=1h<br>   type=transport<br>   left=111.111.111.111<br>   leftprotoport=17/1701<br>   right=%any<br>   rightprotoport=17/%any</pre><br>编辑 /etc/ipsec.secrets<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ipsec.secrets</pre><br></div><br>清空这个文件的内容，然后添加<br><pre class="brush: bash; title: Bash">111.111.111.111 %any: PSK “dilehost”</pre><br>注意111.111.111.111请修改为你的服务器ip ,PSK 后为共享密钥，自行更改<br><br>启动ipsec<br><div><br><pre class="brush: bash; title: Bash">service ipsec start</pre><br></div><br>查看系统IPSec安装和启动的正确性：<br><div><br><pre class="brush: bash; title: Bash">ipsec verify</pre><br></div><br>没有出现 [FAILED] 就可以了<br><br>编辑/etc/xl2tpd/xl2tpd.conf<br><div><br><pre class="brush: bash; title: Bash">nano /etc/xl2tpd/xl2tpd.conf</pre><br></div><br>修改<br><pre class="brush: bash; title: Bash">ip range = 192.168.1.128-192.168.1.254<br>local ip = 192.168.1.99</pre><br>为<br><pre class="brush: bash; title: Bash">ip range = 192.168.1.2-192.168.1.254<br>local ip = 192.168.1.1</pre><br>编辑 /etc/ppp/options.xl2tpd<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ppp/options.xl2tpd</pre><br></div><br>清空原有配置，加入以下配置内容<br><pre class="brush: bash; title: Bash">require-mschap-v2<br>ms-dns 8.8.8.8<br>ms-dns 8.8.4.4<br>auth<br>mtu 1200<br>mru 1000<br>crtscts<br>hide-password<br>modem<br>name l2tpd<br>proxyarp<br>lcp-echo-interval 30<br>lcp-echo-failure 4</pre><br>设置用户名密码及登录IP<br><div><br><pre class="brush: bash; title: Bash">nano /etc/ppp/chap-secrets</pre><br></div><br>加入一个用户，比如用户名为username ,密码为password , <em> 为任意IP都可以登录<br><pre class="brush: bash; title: Bash">username    l2tpd     password      </pre></em><br>对应好就行，多个用户每行配置一个<br><br>重启服务并添加开机启动<br><div><br><pre class="brush: bash; title: Bash">service ipsec restart<br>service xl2tpd restart<br>chkconfig ipsec on<br>chkconfig xl2tpd on</pre><br></div><br>最后配置防火墙<br><div><br><pre class="brush: bash; title: Bash">iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE<br>iptables -I FORWARD -s 192.168.1.0/24 -j ACCEPT<br>iptables -I FORWARD -d 192.168.1.0/24 -j ACCEPT<br>iptables -A INPUT -p udp -m state –state NEW -m udp –dport 1701 -j ACCEPT<br>iptables -A INPUT -p udp -m state –state NEW -m udp –dport 500 -j ACCEPT<br>iptables -A INPUT -p udp -m state –state NEW -m udp –dport 4500 -j ACCEPT<br>/etc/rc.d/init.d/iptables save<br>/etc/rc.d/init.d/iptables restart</pre><br></div><br></div><br><div>参考：</div><br><div><a href="http://www.live-in.org/archives/818.html" target="_blank" rel="external">http://www.live-in.org/archives/818.html</a></div><br><div><a href="https://raymii.org/s/tutorials/IPSEC_L2TP_vpn_on_CentOS_-_Red_Hat_Enterprise_Linux_or_Scientific_-_Linux_6.html" target="_blank" rel="external">https://raymii.org/s/tutorials/IPSEC_L2TP_vpn_on<em>CentOS</em>-_Red_Hat_Enterprise_Linux_or<em>Scientific</em>-_Linux_6.html</a></div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ky0n.xyz/centos-setup-l2tp-ipsec-psk-vpn/" data-id="cim669r33000gx05fhfejfov1" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/love-is-404/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          love is 404
+        
+      </div>
+    </a>
+  
+  
+    <a href="/despicable-me-2-5-things-to-know-about-the-minions/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">關於《卑鄙的我 2》小黃人你要知道的5點</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            Copyleft
+            2016
+              <br> #freeandopen
+              <br>This site is licensed under a <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0</a>
+          </div>
+          <script>
+            (function(i, s, o, g, r, a, m) {
+              i['GoogleAnalyticsObject'] = r;
+              i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+              }, i[r].l = 1 * new Date();
+              a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+              a.async = 1;
+              a.src = g;
+              m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-70500040-1', 'auto', {'allowLinker': true});
+            ga('require', 'linker');
+            ga('linker:autoLink', ['blog.akarin.xyz']);
+            ga('send', 'pageview');
+          </script>
+          <script src="../console.js" type="text/javascript"></script>
+        </div>
+        </div>
+        </div>
+</footer>
+
+    </div>
+    
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/0.1.2/scrollReveal.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script>
+  window.scrollReveal = new scrollReveal();
+</script>
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1735 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>無名小站</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://ky0n.xyz/"/>
+  <updated>2016-03-17T13:31:15.000Z</updated>
+  <id>https://ky0n.xyz/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>洛天依 Chrome 主题</title>
+    <link href="https://ky0n.xyz/luotianyi-chrome-theme/"/>
+    <id>https://ky0n.xyz/luotianyi-chrome-theme/</id>
+    <published>2016-03-17T12:03:01.000Z</published>
+    <updated>2016-03-17T13:31:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://github.com/ky0ncheng/chrome-luotianyi-theme/raw/master/miscsrc/view2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/ky0ncheng/chrome-luotianyi-theme/raw/master/miscsrc/view1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.themebeta.com/chrome/theme/373477&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;安裝此主題樣式&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;Chrome 擴展商店的舊版本不再更新, 我也想上傳到官方平臺， 可惜註冊費用太貴算了。。。&lt;/p&gt;
+&lt;p&gt;原始檔已經放到 &lt;a href=&quot;https://github.com/ky0ncheng/chrome-luotianyi-theme&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt; 了，要的自取。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;版權說明&lt;/p&gt;
+&lt;p&gt;背景圖片來自 セルゲイ&lt;/p&gt;
+&lt;p&gt;洛天依 影像及商標來自 ideolo＠二日目西あ60a &amp;amp; VOCALOID-CHINA&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://github.com/ky0ncheng/chrome-luotianyi-theme/raw/master/miscsrc/view2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/k
+    
+    </summary>
+    
+    
+      <category term="Chrome" scheme="https://ky0n.xyz/tags/Chrome/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>牆內Google開</title>
+    <link href="https://ky0n.xyz/ngx-http-google-filter-module/"/>
+    <id>https://ky0n.xyz/ngx-http-google-filter-module/</id>
+    <published>2016-03-10T14:51:29.000Z</published>
+    <updated>2016-03-14T06:36:50.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/wenlu.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;配上免費的 &lt;a href=&quot;https://letsencrypt.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;letsencrypt&lt;/a&gt; SSL/TLS 證書，一個個安全快速的谷歌又出現了。&lt;/p&gt;
+&lt;p&gt;作為 letsencrypt 的 MAJOR SPONSORS ，可以試試看這個開源的項目。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h4 id=&quot;依賴庫&quot;&gt;&lt;a href=&quot;#依賴庫&quot; class=&quot;headerlink&quot; title=&quot;依賴庫&quot;&gt;&lt;/a&gt;依賴庫&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.pcre.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;pcre&lt;/code&gt;&lt;/a&gt; &lt;em&gt;正則&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://nginx.org/en/docs/http/ngx_http_proxy_module.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;ngx_http_proxy_module&lt;/code&gt;&lt;/a&gt; &lt;em&gt;反向代理&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yaoweibin/ngx_http_substitutions_filter_module&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;ngx_http_substitutions_filter_module&lt;/code&gt;&lt;/a&gt; &lt;em&gt;多重替換&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;安裝&quot;&gt;&lt;a href=&quot;#安裝&quot; class=&quot;headerlink&quot; title=&quot;安裝&quot;&gt;&lt;/a&gt;安裝&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;以 ubuntu 14.04 爲例&lt;/strong&gt;&lt;br&gt;&lt;em&gt;i386, x86_64 均適用&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&quot;最簡安裝&quot;&gt;&lt;a href=&quot;#最簡安裝&quot; class=&quot;headerlink&quot; title=&quot;最簡安裝&quot;&gt;&lt;/a&gt;最簡安裝&lt;/h5&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;88&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 安裝 gcc &amp;amp; git&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-get install build-essential git gcc g++ make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 下載最新版源碼&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# nginx 官網:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# http://nginx.org/en/download.html&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wget &lt;span class=&quot;string&quot;&gt;&quot;http://nginx.org/download/nginx-1.9.12.tar.gz&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 下載最新版 pcre&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# pcre 官網:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# http://www.pcre.org/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wget &lt;span class=&quot;string&quot;&gt;&quot;ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 下載最新版 openssl&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# opessl 官網:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# https://www.openssl.org/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wget &lt;span class=&quot;string&quot;&gt;&quot;https://www.openssl.org/source/openssl-1.0.1s.tar.gz&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 下載最新版 zlib&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# zlib 官網:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# http://www.zlib.net/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wget &lt;span class=&quot;string&quot;&gt;&quot;http://zlib.net/zlib-1.2.8.tar.gz&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 下載本擴展&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; https://github.com/cuber/ngx_http_google_filter_module&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 下載 substitutions 擴展&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; https://github.com/yaoweibin/ngx_http_substitutions_filter_module&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 解壓縮&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar xzvf nginx-1.9.12.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar xzvf pcre-8.38.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar xzvf openssl-1.0.1s.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar xzvf zlib-1.2.8.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 進入 nginx 源碼目錄&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; nginx-1.9.12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 設置編譯選項&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --prefix=/opt/nginx-1.9.12 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-pcre=../pcre-8.38 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-openssl=../openssl-1.0.1s \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-zlib=../zlib-1.2.8 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_ssl_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-ipv6 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_v2_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --add-module=../ngx_http_google_filter_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --add-module=../ngx_http_substitutions_filter_module&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 編譯, 安裝&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 如果擴展有報錯, 請發 issue 到&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# https://github.com/cuber/ngx_http_google_filter_module/issues&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo make install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 啓動, 安裝過程到此結束&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo /opt/nginx-1.9.12/sbin/nginx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 配置修改後, 需要 reload nginx 來讓配置生效,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo /opt/nginx-1.9.12/sbin/nginx &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; reload&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;從發行版遷移&quot;&gt;&lt;a href=&quot;#從發行版遷移&quot; class=&quot;headerlink&quot; title=&quot;從發行版遷移&quot;&gt;&lt;/a&gt;從發行版遷移&lt;/h5&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;88&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;89&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;90&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;91&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;92&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;93&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;94&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;95&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;96&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;97&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;98&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;99&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;101&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;102&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;103&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;104&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;105&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;106&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;107&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;108&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;109&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;110&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;111&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;112&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;113&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;114&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;115&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;116&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;117&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;118&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;119&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;120&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;121&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;122&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;123&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 安裝 gcc &amp;amp; git&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-get install build-essential git gcc g++ make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 安裝發行版&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# (已安裝的請忽略)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-get install nginx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 查看發行版編譯選項及版本&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;nginx -V&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# nginx version: nginx/1.4.7&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# built by gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# TLS SNI support enabled&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# configure arguments:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-cc-opt=&#39;-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2&#39; \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-ld-opt=&#39;-Wl,-Bsymbolic-functions -Wl,-z,relro&#39; \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --prefix=/usr/share/nginx \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --conf-path=/etc/nginx/nginx.conf \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --http-log-path=/var/log/nginx/access.log \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --error-log-path=/var/log/nginx/error.log \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --lock-path=/var/lock/nginx.lock \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --pid-path=/run/nginx.pid \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --http-client-body-temp-path=/var/lib/nginx/body \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --http-fastcgi-temp-path=/var/lib/nginx/fastcgi \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --http-proxy-temp-path=/var/lib/nginx/proxy \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --http-scgi-temp-path=/var/lib/nginx/scgi \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --http-uwsgi-temp-path=/var/lib/nginx/uwsgi \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-debug \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-pcre-jit \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-ipv6 \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-http_ssl_module \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-http_stub_status_module \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-http_realip_module \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-http_addition_module \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-http_dav_module \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-http_geoip_module \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-http_gzip_static_module \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-http_image_filter_module \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-http_spdy_module \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-http_sub_module \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-http_xslt_module \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-mail \&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#  --with-mail_ssl_module&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 下載對應 nginx 大版本&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# nginx 官網:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# http://nginx.org/en/download.html&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wget &lt;span class=&quot;string&quot;&gt;&quot;http://nginx.org/download/nginx-1.4.7.tar.gz&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 下載本擴展&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; https://github.com/cuber/ngx_http_google_filter_module&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 下載 substitutions 擴展&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; https://github.com/yaoweibin/ngx_http_substitutions_filter_module&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 安裝依賴庫的 dev 包&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-get install libpcre3-dev libssl-dev zlib1g-dev libxslt1-dev libgd-dev libgeoip-dev&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 請對照自己發行版的 configure 參數進行 configure, 勿直接 copy 以下配置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-cc-opt=&lt;span class=&quot;string&quot;&gt;&#39;-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2&#39;&lt;/span&gt; \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-ld-opt=&lt;span class=&quot;string&quot;&gt;&#39;-Wl,-Bsymbolic-functions -Wl,-z,relro&#39;&lt;/span&gt; \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --prefix=/usr/share/nginx \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --conf-path=/etc/nginx/nginx.conf \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --http-log-path=/var/&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;/nginx/access.log \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --error-log-path=/var/&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;/nginx/error.log \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --lock-path=/var/lock/nginx.lock \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --pid-path=/run/nginx.pid \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --http-client-body-temp-path=/var/lib/nginx/body \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --http-fastcgi-temp-path=/var/lib/nginx/fastcgi \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --http-proxy-temp-path=/var/lib/nginx/proxy \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --http-scgi-temp-path=/var/lib/nginx/scgi \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --http-uwsgi-temp-path=/var/lib/nginx/uwsgi \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-debug \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-pcre-jit \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-ipv6 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_ssl_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_stub_status_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_realip_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_addition_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_dav_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_geoip_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_gzip_static_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_image_filter_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_spdy_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_sub_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_xslt_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-mail \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-mail_ssl_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --with-http_v2_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --add-module=../ngx_http_google_filter_module \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  --add-module=../ngx_http_substitutions_filter_module&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 覆蓋二進制文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cp -rf objs/nginx /usr/sbin/nginx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 重啓 nginx 至此, 遷移工作結束&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;service nginx stop&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;service nginx start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 配置修改後, 需要 restart nginx 來讓配置生效&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;service nginx restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;基本配置方法&quot;&gt;&lt;a href=&quot;#基本配置方法&quot; class=&quot;headerlink&quot; title=&quot;基本配置方法&quot;&gt;&lt;/a&gt;基本配置方法&lt;/h4&gt;&lt;p&gt;&lt;code&gt;http&lt;/code&gt;配置方式&lt;br&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;server&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;server_name&lt;/span&gt; &amp;lt;你的域名&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;resolver&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;8.8.8.8&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;location&lt;/span&gt; / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https&lt;/code&gt;配置方式&lt;br&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;server&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;server_name&lt;/span&gt; &amp;lt;你的域名&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;443&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;ssl&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;ssl_certificate&lt;/span&gt; &amp;lt;你的證書路徑&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;ssl_certificate_key&lt;/span&gt; &amp;lt;你的私鑰路徑&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;resolver&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;8.8.8.8&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;location&lt;/span&gt; / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;免費的 letsencrypt 證書簽發教程請移至文章末尾&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;進階配置方法&quot;&gt;&lt;a href=&quot;#進階配置方法&quot; class=&quot;headerlink&quot; title=&quot;進階配置方法&quot;&gt;&lt;/a&gt;進階配置方法&lt;/h4&gt;&lt;h5 id=&quot;基本搜索&quot;&gt;&lt;a href=&quot;#基本搜索&quot; class=&quot;headerlink&quot; title=&quot;基本搜索&quot;&gt;&lt;/a&gt;基本搜索&lt;/h5&gt;&lt;p&gt;需要配置 &lt;code&gt;resolver&lt;/code&gt; 用於域名解析&lt;br&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;server&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;# ... 僅列舉部分配置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;resolver&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;8.8.8.8&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;location&lt;/span&gt; / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;# ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h5 id=&quot;谷歌學術&quot;&gt;&lt;a href=&quot;#谷歌學術&quot; class=&quot;headerlink&quot; title=&quot;谷歌學術&quot;&gt;&lt;/a&gt;谷歌學術&lt;/h5&gt;&lt;p&gt;&lt;code&gt;google_scholar&lt;/code&gt; 依賴於 &lt;code&gt;google&lt;/code&gt;, 所以 &lt;code&gt;google_scholar&lt;/code&gt; 無法獨立使用.&lt;br&gt;由於谷歌學術近日升級, 強制使用 &lt;code&gt;https&lt;/code&gt; 協議, 並且 &lt;code&gt;ncr&lt;/code&gt; 已經支持, 所以不再需要指定谷歌學術的 &lt;code&gt;tld&lt;/code&gt;&lt;br&gt;配置 nginx&lt;br&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;location&lt;/span&gt; / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;google_scholar&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h5 id=&quot;默認語言偏好&quot;&gt;&lt;a href=&quot;#默認語言偏好&quot; class=&quot;headerlink&quot; title=&quot;默認語言偏好&quot;&gt;&lt;/a&gt;默認語言偏好&lt;/h5&gt;&lt;p&gt;默認的語言偏好可用 &lt;code&gt;google_language&lt;/code&gt; 來設置, 如果沒有設置, 默認使用 &lt;code&gt;zh-CN&lt;/code&gt; (中文)&lt;br&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;location&lt;/span&gt; / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;google_scholar&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;# 設置成德文&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;google_language&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;de&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;支持的語言如下.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ar    -&amp;gt; 阿拉伯&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bg    -&amp;gt; 保加利亞&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ca    -&amp;gt; 加泰羅尼亞&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;zh-CN -&amp;gt; 中國 (簡體)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;zh-TW -&amp;gt; 中國 (繁體)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hr    -&amp;gt; 克羅地亞&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cs    -&amp;gt; 捷克&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;da    -&amp;gt; 丹麥&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;nl    -&amp;gt; 荷蘭&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;en    -&amp;gt; 英語&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tl    -&amp;gt; 菲律賓&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fi    -&amp;gt; 芬蘭&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fr    -&amp;gt; 法國&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;de    -&amp;gt; 德國&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;el    -&amp;gt; 希臘&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iw    -&amp;gt; 希伯來&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hi    -&amp;gt; 印地文&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hu    -&amp;gt; 匈牙利&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;id    -&amp;gt; 印度尼西亞&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;it    -&amp;gt; 意大利&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ja    -&amp;gt; 日本&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ko    -&amp;gt; 朝鮮&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;lv    -&amp;gt; 拉脫維亞&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;lt    -&amp;gt; 立陶宛&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;no    -&amp;gt; 挪威&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fa    -&amp;gt; 波斯&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pl    -&amp;gt; 波蘭&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pt-BR -&amp;gt; 葡萄牙 (巴西)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pt-PT -&amp;gt; 葡萄牙 (葡萄牙)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ro    -&amp;gt; 羅馬尼亞&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ru    -&amp;gt; 俄羅斯&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sr    -&amp;gt; 塞爾維亞&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sk    -&amp;gt; 斯洛伐克&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sl    -&amp;gt; 斯洛文尼亞&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;es    -&amp;gt; 西班牙&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sv    -&amp;gt; 瑞典&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;th    -&amp;gt; 泰國&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tr    -&amp;gt; 土耳其&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;uk    -&amp;gt; 烏克蘭&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;vi    -&amp;gt; 越南&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h5 id=&quot;搜索引擎爬蟲許可&quot;&gt;&lt;a href=&quot;#搜索引擎爬蟲許可&quot; class=&quot;headerlink&quot; title=&quot;搜索引擎爬蟲許可&quot;&gt;&lt;/a&gt;搜索引擎爬蟲許可&lt;/h5&gt;&lt;p&gt;任何搜索引擎爬蟲都不被允許爬取 google 鏡像&lt;br&gt;如下的默認 &lt;code&gt;robots.txt&lt;/code&gt; 已經內置.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;User-agent: *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Disallow: /&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果想要使用 &lt;code&gt;google&lt;/code&gt; 自己的 &lt;code&gt;robots.txt&lt;/code&gt; 請將 &lt;code&gt;google_robots_allow&lt;/code&gt; 設爲 &lt;code&gt;on&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;location&lt;/span&gt; / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;google_robots_allow&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h5 id=&quot;Upstreaming&quot;&gt;&lt;a href=&quot;#Upstreaming&quot; class=&quot;headerlink&quot; title=&quot;Upstreaming&quot;&gt;&lt;/a&gt;Upstreaming&lt;/h5&gt;&lt;p&gt;&lt;code&gt;upstream&lt;/code&gt; 減少一次域名解析的開銷, 並且通過配置多個網段的 google ip 能夠一定程度上減少被 google 機器人識別程序偵測到的機率 (彈驗證碼).&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 可以通過如下方法獲取 google ip&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;➜  ~  dig www.google.com @8.8.8.8 +short&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;173.194.38.209&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;173.194.38.211&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;173.194.38.212&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;173.194.38.210&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;173.194.38.208&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然後將獲取到的 ip 配置如下即可&lt;br&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;upstream&lt;/span&gt; www.google.com &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;173.194.38.209:443&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;173.194.38.211:443&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;173.194.38.212:443&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;173.194.38.210:443&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;173.194.38.208:443&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h5 id=&quot;Proxy-Protocal&quot;&gt;&lt;a href=&quot;#Proxy-Protocal&quot; class=&quot;headerlink&quot; title=&quot;Proxy Protocal&quot;&gt;&lt;/a&gt;Proxy Protocal&lt;/h5&gt;&lt;p&gt;默認採用 &lt;code&gt;https&lt;/code&gt; 與後端服務器通信.&lt;br&gt;你可以使用 &lt;code&gt;google_ssl_off&lt;/code&gt; 來強制將一些域降到 &lt;code&gt;http&lt;/code&gt; 協議.&lt;br&gt;這個設置可以讓一些需要二次轉發的域通過 &lt;code&gt;http&lt;/code&gt; 協議進行轉發, 從而不再依賴 &lt;code&gt;ssl&lt;/code&gt; 證書.&lt;br&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 例如 &#39;www.google.com&#39; 按如下方式代理&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# vps(hk) -&amp;gt; vps(us) -&amp;gt; google&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# vps(hk) 配置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;server&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;# ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;location&lt;/span&gt; / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;google_ssl_off&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;www.google.com&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;# ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;upstream&lt;/span&gt; www.google.com &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;server&lt;/span&gt; &amp;lt; vps(us) 的 ip &amp;gt;:&lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# vps(us) 配置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;server&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;server_name&lt;/span&gt; www.google.com;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;# ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;location&lt;/span&gt; / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_pass&lt;/span&gt; https://www.google.com;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;# ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;cloudxns DNS 驗證方式快速獲取 lets-encrypt 證書的 shell 腳本&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/xdtianyu/scripts/tree/master/le-dns&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xdtianyu/scripts/tree/master/le-dns&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;腳本基於 letsencrypt.sh，通過調用 cloudxns API 更新 TXT 記錄用於認證，實現快速獲取 lets-encrypt 證書。無需 root 權限，無需指定網站目錄及 DNS 解析&lt;/p&gt;
+&lt;p&gt;下載&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://github.com/xdtianyu/scripts/raw/master/le-dns/le-cloudxns.sh
+wget https://github.com/xdtianyu/scripts/raw/master/le-dns/cloudxns.conf
+chmod +x le-cloudxns.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;配置&lt;/p&gt;
+&lt;p&gt;cloudxns.conf 文件內容&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;API_KEY=&amp;quot;YOUR_API_KEY&amp;quot;
+SECRET_KEY=&amp;quot;YOUR_SECRET_KEY&amp;quot;
+DOMAIN=&amp;quot;example.com&amp;quot;
+CERT_DOMAINS=&amp;quot;example.com www.example.com im.example.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改其中的 API_KEY 及 SECRET_KEY 爲您的 &lt;a href=&quot;https://www.cloudxns.net/AccountManage/apimanage.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;cloudxns api key&lt;/a&gt; ，修改 DOMAIN 爲你的根域名，&lt;/p&gt;
+&lt;p&gt;修改 CERT_DOMAINS 爲您要籤的域名列表&lt;/p&gt;
+&lt;p&gt;運行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;./le-cloudxns.sh cloudxns.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最後生成的文件在當前目錄的 certs 目錄下，然後使用 nginx 加載ssl_certificate字段的fullchain.pem 和 ssl_certificate_key字段的privkey.pem;&lt;/p&gt;
+&lt;p&gt;cron 定時任務&lt;/p&gt;
+&lt;p&gt;每兩個月自動更新一次證書，可以在 le-cloudxns.sh 腳本最後加入 service nginx reload 等重新加載服務。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;* * * */2 * /etc/nginx/le-cloudxns.sh /etc/nginx/le-cloudxns.conf &amp;gt;&amp;gt; /var/log/le-cloudxns.log 2&amp;gt;&amp;amp;1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其他問題見 &lt;a href=&quot;http://v2ex.com/t/260965&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://v2ex.com/t/260965&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/wenlu.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;配上免費的 &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;letsencrypt&lt;/a&gt; SSL/TLS 證書，一個個安全快速的谷歌又出現了。&lt;/p&gt;
+&lt;p&gt;作為 letsencrypt 的 MAJOR SPONSORS ，可以試試看這個開源的項目。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="google nginx encrypt" scheme="https://ky0n.xyz/tags/google-nginx-encrypt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sleep Tight, PSP.</title>
+    <link href="https://ky0n.xyz/sleep-tight-psp/"/>
+    <id>https://ky0n.xyz/sleep-tight-psp/</id>
+    <published>2016-03-01T13:02:36.000Z</published>
+    <updated>2016-03-13T15:56:49.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/psp.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;看到 &lt;a href=&quot;http://www.cnbeta.com/articles/479461.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Cnbeta&lt;/a&gt; 的新聞，我也打算拿起我的PSP給它重生到最新的系統。&lt;/p&gt;
+&lt;p&gt;PSP從二零零四年十二月十二日出世，已經度過了十二年共七次硬件更新，實在是索尼大法的良心作。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;如果要升級到最新的6.61系統，可以嘗試使用把系統鏡像放到儲存卡內進行更新作業。詳見 &lt;a href=&quot;https://asia.playstation.com/tw/cht/support/sysupdate?id=-99&amp;amp;platformId=4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SONY 支援&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2015.01.15日的6.61更新日誌：（等於沒寫&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;6.61版本更新的主要機能
+已改善了使用部分機能時系統軟件的穩定性。
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;6.61 SONY 官方鏡像下載&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;開發者Wololo 的系統完美破解 &lt;a href=&quot;http://wololo.net/talk/viewtopic.php?f=17&amp;amp;t=41249&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下載&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;反正大法要關PSP的PSN了，未來只能玩UMD或者盜版的遊戲了。在大陸也很難買到正版的PSP遊戲，你懂的。&lt;/p&gt;
+&lt;p&gt;自己整理的一些文件分享給大家 &lt;a href=&quot;https://mega.nz/#F!8hpXFbbD!8ylbuJrFyWYNm5k4MAnoYA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mega網盤&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最後感謝PSP給我打發了很多的無聊時間。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/photo_2016-03-01_21-33-54.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Sleep Tight, PSP.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/psp.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;看到 &lt;a href=&quot;http://www.cnbeta.com/articles/479461.htm&quot;&gt;Cnbeta&lt;/a&gt; 的新聞，我也打算拿起我的PSP給它重生到最新的系統。&lt;/p&gt;
+&lt;p&gt;PSP從二零零四年十二月十二日出世，已經度過了十二年共七次硬件更新，實在是索尼大法的良心作。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="PSP SONY" scheme="https://ky0n.xyz/tags/PSP-SONY/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2015年的寒冬</title>
+    <link href="https://ky0n.xyz/fall-in-2015/"/>
+    <id>https://ky0n.xyz/fall-in-2015/</id>
+    <published>2016-02-06T14:40:36.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;令人失望的一年又過去了，在這一年裡，努力過、堅持過、認真過，但是最後的結果都是失望。&lt;/p&gt;
+&lt;p&gt;這漫長的一年，夢想的公司倒了，喜歡的人也和別人走了，一個個希望都破碎了。&lt;/p&gt;
+&lt;p&gt;我之前許諾的或許再也完不成了，我尊重你的選擇。&lt;/p&gt;
+&lt;p&gt;怒過，痛恨自己是多麼沒用。沉迷於酒精的效果裡，醒來還是這個**的世界。&lt;/p&gt;
+&lt;p&gt;接下來要在一個不熟悉的城市裡繼續生活了，希望來年能和我想像的一樣，希望付出能獲得令人滿意的收穫。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/photo_2016-02-06_23-08-19.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;寫完發現散落在桌子上的那些郵票再也沒用了，和那盒沒發完的明信片真是對這個世界的諷刺。&lt;/p&gt;
+&lt;p&gt;這是我經歷過的最慘的一年。&lt;/p&gt;
+&lt;p&gt;生活還是要繼續，大不了從頭再開始。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;令人失望的一年又過去了，在這一年裡，努力過、堅持過、認真過，但是最後的結果都是失望。&lt;/p&gt;
+&lt;p&gt;這漫長的一年，夢想的公司倒了，喜歡的人也和別人走了，一個個希望都破碎了。&lt;/p&gt;
+&lt;p&gt;我之前許諾的或許再也完不成了，我尊重你的選擇。&lt;/p&gt;
+&lt;p&gt;怒過，痛恨自己是多麼沒用
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>樹莓派初始化安裝配置筆記</title>
+    <link href="https://ky0n.xyz/raspberry-init/"/>
+    <id>https://ky0n.xyz/raspberry-init/</id>
+    <published>2015-11-24T08:10:23.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://www.raspberrypi.org/learning/resources/lamp-web-server-with-wordpress/cover.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;樹莓派（Raspberry Pi），是一款基於Linux系統的只有信用卡大小的單片機。它由英國的樹莓派基金會所開發，目的是以低價硬件及自由軟件刺激在學校的基本計算機科學教育。&lt;/p&gt;
+&lt;p&gt;2015年2月，樹莓派基金會發布了第二代產品——樹莓派2，售價35美元。樹莓派2採用4核 Broadcom BCM2836 (ARMv7-A) 芯片、雙核 VideoCore IV GPU 和 1GB 內存，其餘配置與樹莓派B+型一致，除了支持第一代樹莓派支持的操作系統外，樹莓派2將能夠運行Windows 10 IOT 以及 Snappy Ubuntu Core。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;此文供 樹莓派 + Raspbian Jessie 操作系統初始化安裝配置 使用。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;一個嶄新的樹莓派2需要自備 5V 2A 電源適配器 + MicroUSB連接線 + 鍵盤(或者配合網線/Wifi模塊通過 SSH 遠程連接) + 鼠標(可選) + HDMI (rev 1.3 &amp;amp; 1.4)&lt;br&gt;連接線/VGA2HDMI 轉接顯示連接線 + 網線/(特定驅動支持的)Wifi模塊 + TF 儲存卡 + 樹莓派保護外殼(可選)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/pi-demo.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;先去  &lt;a href=&quot;https://www.raspberrypi.org/downloads/raspbian/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Raspbian Jessie 頁面&lt;/a&gt; 下載系統鏡像壓縮包文件&lt;/p&gt;
+&lt;p&gt;下載完成解壓出 img 鏡像文件 使用 &lt;a href=&quot;http://sourceforge.net/projects/win32diskimager/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Win32 Disk Imager&lt;/a&gt; 或者 &lt;a href=&quot;https://www.raspberrypi.org/documentation/installation/installing-images/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;dd 命令 (for Linux / Mac OS X)&lt;/a&gt; 燒寫系統啓動鏡像&lt;/p&gt;
+&lt;p&gt;然後燒寫 TF 儲存卡製作 Raspbian Jessie 系統啓動盤&lt;/p&gt;
+&lt;p&gt;連接完成之後連接電源啓動系統&lt;/p&gt;
+&lt;p&gt;如果使用鍵盤+鼠標(可選) 請鏈接 顯示器 完成操作。 系統默認進入 GUI 界面，若沒有鼠標請 &lt;code&gt;CTRL+ALT+F1&lt;/code&gt; 切換至 CLI 界面。&lt;/p&gt;
+&lt;p&gt;或使用 &lt;a href=&quot;http://cmder.net&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Cmder&lt;/a&gt; / &lt;a href=&quot;http://ice.hotmint.com/putty/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;日本大神修改的Putty&lt;/a&gt; 連接虛擬終端&lt;/p&gt;
+&lt;p&gt;Raspbian Jessie 默認用戶賬戶與密碼爲：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;username: pi
+passwd: raspberry
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;若需要修改默認賬戶密碼&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ passwd
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之後輸入兩次新密碼即可&lt;/p&gt;
+&lt;p&gt;設置 root 賬戶密碼，輸入兩次新密碼即可&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo passwd root
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;啓用 root 賬戶登錄&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo passwd --unlock root
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;編輯 &lt;code&gt;/etc/apt/sources.list.d/raspi.list&lt;/code&gt; 替換系統默認的 &lt;code&gt;archive.raspberrypi.org&lt;/code&gt; 源&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# nano /etc/apt/sources.list.d/raspi.list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;源地址內容如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ jessie main
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;編輯 &lt;code&gt;/etc/apt/sources.list&lt;/code&gt; 替換系統默認的軟件源&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# nano /etc/apt/sources.list
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;源地址內容如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main non-free contrib
+deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main non-free contrib
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;更改軟件源之後 請更新系統軟件源&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# apt-get update -y &amp;amp;&amp;amp; apt-get upgrade -y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之後本人推薦 Zsh 作爲系統默認 Shell 環境&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# apt-get install zsh -y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用一鍵開箱的 Zsh 的配置 &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;oh-my-zsh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通過 curl 安裝&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;或通過 wget 安裝&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sh -c &amp;quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安裝完成按提示輸入用戶密碼替換系統當前 Shell 環境 如果沒有提升請手動設置 Zsh 爲默認 Shell 環境&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ chsh -s /bin/zsh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;到此爲止 系統基礎的設置已經完成&lt;/p&gt;
+&lt;p&gt;接下來可以裝一下自己需要的功能 例如 screen、tree、htop、cow、shadowsocks 、 chinaDNS、xunlei-fastdick 等&lt;/p&gt;
+&lt;p&gt;切記：請勿隨意斷開電源！ 關閉電源前請執行關機命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# poweroff
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 靜待系統關閉完成再拔掉電源連接線&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://www.raspberrypi.org/learning/resources/lamp-web-server-with-wordpress/cover.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;樹莓派（Raspberry Pi），是一款基於Linux系統的只有信用卡大小的單片機。它由英國的樹莓派基金會所開發，目的是以低價硬件及自由軟件刺激在學校的基本計算機科學教育。&lt;/p&gt;
+&lt;p&gt;2015年2月，樹莓派基金會發布了第二代產品——樹莓派2，售價35美元。樹莓派2採用4核 Broadcom BCM2836 (ARMv7-A) 芯片、雙核 VideoCore IV GPU 和 1GB 內存，其餘配置與樹莓派B+型一致，除了支持第一代樹莓派支持的操作系統外，樹莓派2將能夠運行Windows 10 IOT 以及 Snappy Ubuntu Core。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;此文供 樹莓派 + Raspbian Jessie 操作系統初始化安裝配置 使用。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="raspberry" scheme="https://ky0n.xyz/tags/raspberry/"/>
+    
+      <category term="樹莓派" scheme="https://ky0n.xyz/tags/%E6%A8%B9%E8%8E%93%E6%B4%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 10 技巧筆記</title>
+    <link href="https://ky0n.xyz/windows10-tips/"/>
+    <id>https://ky0n.xyz/windows10-tips/</id>
+    <published>2015-11-18T08:10:23.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://compass-ssl.xboxlive.com/assets/1f/90/1f907bc1-98e7-440c-956c-74e764ba1c61.jpg?n=Surface_Homepage_no_H_Win10_1920_img.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;近期 M$ 正式向 Windows 10 用戶推送了 Threshold 2 更新，也就是傳說中的 November Update。（微軟改名部工作真多，我只想問一句，你們還缺人嗎？我來幫你們想名字。&lt;/p&gt;
+&lt;p&gt;平時也只是用 Windows 玩玩遊戲，在使用的這個新系統的時候覺得還是有些地方要去修改的。&lt;/p&gt;
+&lt;p&gt;接下來，我要開始裝逼了。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/win10ad1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div align=&quot;right&quot;&gt; &lt;sup&gt;臺灣地區的 Win10 廣告&lt;/sup&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/win10ad2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div align=&quot;right&quot;&gt; &lt;sup&gt;大陸地區的 Win10 廣告&lt;/sup&gt;&lt;/div&gt;
+
+&lt;p&gt;微軟的 i18n 做的和水果半斤八兩，坐和放寬，開了又開。&lt;/p&gt;
+&lt;p&gt;M$ 之後更新了 TH2 大補之後的完整 ISO 鏡像下載&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;ed2k://|file|cn_windows_10_multiple_editions_version_1511_x86_dvd_7223635.iso|3175995392|55D8EF251EEF617DE4D69B54E17B3625|/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Win10 TH2正式版32位简体中文版（含家庭版、专业版）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SHA1：B521719BAEE84772363B2EF52339DEFAD1FFCEBB&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;ed2k://|file|cn_windows_10_multiple_editions_version_1511_x64_dvd_7223622.iso|4187224064|FE3F221D193FEF02627F7F8CF0041BB3|/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Win10 TH2正式版64位简体中文版（含家庭版、专业版）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SHA1：9B71AD5604B3816BCC7E9AFA3052AE7D823163E8&lt;/p&gt;
+&lt;p&gt;来自 &lt;a href=&quot;https://msdn.microsoft.com/subscriptions/securedownloads/?#searchTerm=&amp;amp;ProductFamilyId=606&amp;amp;Languages=cn&amp;amp;PageSize=10&amp;amp;PageIndex=0&amp;amp;FileId=0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MSDN订阅&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;開機之後發現鎖屏時數字小鍵盤沒有自動開&lt;/p&gt;
+&lt;p&gt;可以修改註冊表解決 另存爲bootNumberLock.reg 管理員運行權限執行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  Windows Registry Editor Version 5.00
+
+[HKEY_USERS\.DEFAULT\Control Panel\Keyboard]
+&amp;quot;InitialKeyboardIndicators&amp;quot;=&amp;quot;80000002&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在 Windows8 / 8.1 /10 下，其數值爲：80000002 （在 Windows 7 中數值取十六進制值最後一位爲：2&lt;/p&gt;
+&lt;p&gt;80000000 – 關閉全部鎖定 (包括 NumLock, CapsLock, ScrollLock)&lt;/p&gt;
+&lt;p&gt;80000001 – 開啓  CapsLock&lt;/p&gt;
+&lt;p&gt;80000002 – 開啓 NumLock&lt;/p&gt;
+&lt;p&gt;80000003 – 開啓 CapsLock 和 NumLock&lt;/p&gt;
+&lt;p&gt;80000004 – 開啓 ScrollLock&lt;/p&gt;
+&lt;p&gt;80000005 – 開啓 CapsLock 和 ScrollLock&lt;/p&gt;
+&lt;p&gt;80000006 – 開啓 NumLock 和 ScrollLock&lt;/p&gt;
+&lt;p&gt;80000007 – 開啓全部鎖定 (包括 NumLock, CapsLock, ScrollLock)&lt;/p&gt;
+&lt;p&gt;這些具體數值 M$ 的 TechNet 也偷懶不寫 &lt;a href=&quot;https://technet.microsoft.com/en-us/library/cc978657.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://technet.microsoft.com/en-us/library/cc978657.aspx&lt;/a&gt; 輪子哥就知道整天刷知乎。。。&lt;/p&gt;
+&lt;p&gt;此方法僅限 BIOS/EFI/UEFI 開啓鍵盤功能的情況下&lt;/p&gt;
+&lt;p&gt;其他解決方法可以試試看下面這個（懶得翻，自己看。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;If the above doesn’t work, maybe you have to set the NumLock state to ON in BIOS settings. So, you have to enter into your BIOS and change the NumLock state to ON. To do that:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Power On your computer and press “DEL” or “F1” or “F2” or “F10” to enter BIOS (CMOS) setup utility. (The way to enter into BIOS Settings depends on the computer manufacturer).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Inside BIOS find the POST Behavior menu.&lt;/li&gt;
+&lt;li&gt;Set the NumLock key (state) option to ON.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Save and exit from BIOS settings.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In some HP laptops the only way to keep NumLock ON, is to search for all “InitialKeyboardIndicators” strings with numeric values inside the registry and set the value to “2147483650” (without quotes). To do that:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Open Registry Editor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;From main menu click Edit and choose Find.&lt;/li&gt;
+&lt;li&gt;Inside Find What box, type InitialKeyboardIndicators and click Find Next.&lt;/li&gt;
+&lt;li&gt;Change the value data to “2147483650” in every “InitialKeyboardIndicators” string inside registry, by using the F3 key to find all of them.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;然後去除桌面的快捷方式小箭頭&lt;/p&gt;
+&lt;p&gt;批處理腳本解決 另存爲 clearArrow.bat 管理員運行權限執行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;reg add &amp;quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;quot; /v 29 /d &amp;quot;%systemroot%\system32\imageres.dll,197&amp;quot; /t reg_sz /f
+taskkill /f /im explorer.exe
+attrib -s -r -h &amp;quot;%userprofile%\AppData\Local\iconcache.db&amp;quot;
+del &amp;quot;%userprofile%\AppData\Local\iconcache.db&amp;quot; /f /q
+start explorer
+pause
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;恢復小箭頭也可以批處理腳本解決 另存爲 recArrow.bat 管理員運行權限執行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;reg delete &amp;quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;quot; /v 29 /f
+taskkill /f /im explorer.exe
+attrib -s -r -h &amp;quot;%userprofile%\AppData\Local\iconcache.db&amp;quot;
+del &amp;quot;%userprofile%\AppData\Local\iconcache.db&amp;quot; /f /q
+start explorer
+pause
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;更新了 TH2 之後發現標題欄主題色也回隨之變化，如果想回到一直白色背景的狀態可以存爲 win10WhiteThemeREC.reg 管理員運行權限執行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Windows Registry Editor Version 5.00
+
+  [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\DWM]
+  &amp;quot;ColorPrevalence&amp;quot;=dword:00000000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;恢復可以存爲 win10ColorThemeREC.reg 管理員運行權限執行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\DWM]
+&amp;quot;ColorPrevalence&amp;quot;=dword:00000001
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然後我發現了更簡單的方法&lt;/p&gt;
+&lt;p&gt;勾選 『顯示開始“菜單”、 任務欄、操作中心和標題欄的顏色 』選項。。。。即可&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/win10colorsetting.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;GTA 全系列用戶音樂軟鏈接&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /d C:\Users\%USERNAME%\Documents\Rockstar Games\GTA V\User Music
+for /r &amp;quot;E:\MusicPath&amp;quot; %I in (*.mp3) do mklink &amp;quot;%~nxI&amp;quot; &amp;quot;%I&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;然後改善 Windows 10 的中文字體顯示，看慣了 Mac OS X 的字體渲染，M$的這個渣優化簡直是瞎眼，坐等微軟推送盲文補丁。。。&lt;/p&gt;
+&lt;p&gt;簡體中文字體渲染很爛，繁體字體渲染更爛。&lt;/p&gt;
+&lt;p&gt;還好大神給出了字體補丁包 &lt;a href=&quot;http://zhuanlan.zhihu.com/ibuick/20194452&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://zhuanlan.zhihu.com/ibuick/20194452&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可以下載覆蓋修復，微軟截至本文發佈時並沒有解決字體問題的方案。&lt;/p&gt;
+&lt;p&gt;反正 Windows 也主要作爲我的“遊戲機”系統，平常大部分作業還是在 Mac OS X 下完成的，我也習慣了 Unix/Linux 的操作方式了（裝完B快逃&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://compass-ssl.xboxlive.com/assets/1f/90/1f907bc1-98e7-440c-956c-74e764ba1c61.jpg?n=Surface_Homepage_no_H_Win10_1920_img.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;近期 M$ 正式向 Windows 10 用戶推送了 Threshold 2 更新，也就是傳說中的 November Update。（微軟改名部工作真多，我只想問一句，你們還缺人嗎？我來幫你們想名字。&lt;/p&gt;
+&lt;p&gt;平時也只是用 Windows 玩玩遊戲，在使用的這個新系統的時候覺得還是有些地方要去修改的。&lt;/p&gt;
+&lt;p&gt;接下來，我要開始裝逼了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Windows" scheme="https://ky0n.xyz/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DualShock 4 手柄有線/藍牙無線連接PC</title>
+    <link href="https://ky0n.xyz/ds4-for-windows/"/>
+    <id>https://ky0n.xyz/ds4-for-windows/</id>
+    <published>2015-11-09T07:41:32.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;之前寫過一篇用ds4tool這個軟件連接windows的方法&lt;/p&gt;
+&lt;p&gt;現在又一個免費開源的連接軟件能幫助大法DualShock 4 手柄有線/藍牙無線連接PC&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/ds4windows.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;首先去 &lt;a href=&quot;http://ds4windows.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ds4windows&lt;/a&gt; 的網站下載最新的版本&lt;/p&gt;
+&lt;p&gt;下載到本地之後 打開 ds4windows&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/ds4index.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;點擊 setting 裡面的 controller driver install 之後 按照提示安裝&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/ds4win_diver_install.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;之後插上 USB 連接 PC 或者藍牙連接 都可以 Windows自己也會按照相應的手柄驅動&lt;/p&gt;
+&lt;p&gt;這部分的設置 見過去寫的原文 &lt;a href=&quot;http://akarin.xyz/ps4-controller-on-pc/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://akarin.xyz/ps4-controller-on-pc/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;成功連接自己的手柄 背後的LED會從白色變成藍色&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/ds4windows.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;這個軟件也有很多的自定義設置  自己慢慢去發現吧&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/ds4settings.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;索尼大法的手柄確實好用 雖然不用 PS4 玩遊戲 但是買一個連接自己的計算機玩遊戲不覺得更好嗎？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/steambigpicture.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/d833c895d143ad4bc695bc3984025aafa50f068b.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前寫過一篇用ds4tool這個軟件連接windows的方法&lt;/p&gt;
+&lt;p&gt;現在又一個免費開源的連接軟件能幫助大法DualShock 4 手柄有線/藍牙無線連接PC&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/ds4windows.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《紳士大概一分鐘》學日語時間</title>
+    <link href="https://ky0n.xyz/hentai-one-minute/"/>
+    <id>https://ky0n.xyz/hentai-one-minute/</id>
+    <published>2015-10-29T08:10:23.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/wanle.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;把山下智博君的《紳士大概一分鐘》的 Youtube 播放列表看完了&lt;/p&gt;
+&lt;p&gt;特地把裡面的日語學習內容整理了一下 （好多奇奇怪怪的東西XD&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;しょぼい&lt;/p&gt;
+&lt;p&gt;sho bo i&lt;/p&gt;
+&lt;p&gt;一點都不厲害&lt;/p&gt;
+&lt;p&gt;形容讓人失望的不顯眼的狀態&lt;/p&gt;
+&lt;p&gt;この携帯本当にしょぼい&lt;/p&gt;
+&lt;p&gt;このけいたいほんとうにしょぼい&lt;/p&gt;
+&lt;p&gt;Kono keitai hontouni shoboi&lt;/p&gt;
+&lt;p&gt;這手機一點都不好用&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;彼の技術はまジしょぼい。&lt;/p&gt;
+&lt;p&gt;かれのぎじゅつはまジしょぼい&lt;/p&gt;
+&lt;p&gt;Kareno gijutsu hamaji shoboi&lt;/p&gt;
+&lt;p&gt;他的技术真让人失望&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;自業自得&lt;/p&gt;
+&lt;p&gt;じごうじとく&lt;/p&gt;
+&lt;p&gt;ji gou ji toku&lt;/p&gt;
+&lt;p&gt;自作自受&lt;/p&gt;
+&lt;p&gt;爲自己做的事情帶來的後果自己承擔。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;通報しますた&lt;/p&gt;
+&lt;p&gt;つうほうしますた&lt;/p&gt;
+&lt;p&gt;tsuuhou shimasuta&lt;/p&gt;
+&lt;p&gt;已報警&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;パンスト破りたい&lt;/p&gt;
+&lt;p&gt;パンストやぶりたい&lt;/p&gt;
+&lt;p&gt;pansuto yaburitai&lt;/p&gt;
+&lt;p&gt;我要撕破連褲襪&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;美女の残り湯&lt;/p&gt;
+&lt;p&gt;びじょののこりゆ&lt;/p&gt;
+&lt;p&gt;bijono nokoriyu&lt;/p&gt;
+&lt;p&gt;美女的洗澡水&lt;/p&gt;
+&lt;p&gt;残り湯 指的是 泡過一次澡之後留下來的熱水&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;俺は新品　あいつわちゅうこひん&lt;/p&gt;
+&lt;p&gt;おれわしんぴん　あいつわちゅうこひん&lt;/p&gt;
+&lt;p&gt;orewashinpin aitsuwachuukohin&lt;/p&gt;
+&lt;p&gt;我是新品 他是二手貨&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;小学生と遊びたい&lt;/p&gt;
+&lt;p&gt;しょうがくせいとあそびたい&lt;/p&gt;
+&lt;p&gt;shougakusei asobitai&lt;/p&gt;
+&lt;p&gt;想和小學生玩&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;秘宝館&lt;/p&gt;
+&lt;p&gt;ひほうかん&lt;/p&gt;
+&lt;p&gt;祕寶館&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;いや、これわアートだ&lt;/p&gt;
+&lt;p&gt;iya korewa a-to da&lt;/p&gt;
+&lt;p&gt;不，這是藝術。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;真顔で何言ってるんですか？&lt;/p&gt;
+&lt;p&gt;まがおでなにいってるんですか？&lt;/p&gt;
+&lt;p&gt;magaode nani itte run desuka?&lt;/p&gt;
+&lt;p&gt;一本正經的胡說八道&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;赤巻紙&lt;/p&gt;
+&lt;p&gt;あかまきがみ&lt;/p&gt;
+&lt;p&gt;青巻紙&lt;/p&gt;
+&lt;p&gt;あおまきがみ&lt;/p&gt;
+&lt;p&gt;黄巻紙&lt;/p&gt;
+&lt;p&gt;きまきがみ&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;ん？何が欲しいか言ってごらん？&lt;/p&gt;
+&lt;p&gt;ん？なにかほしいかいってごらん？&lt;/p&gt;
+&lt;p&gt;n? nanika hoshii ka itte goran?&lt;/p&gt;
+&lt;p&gt;恩，你說，你想要什麼？&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;いい加減にしろ&lt;/p&gt;
+&lt;p&gt;いいかげんにしろ&lt;/p&gt;
+&lt;p&gt;iikangennishiro&lt;/p&gt;
+&lt;p&gt;你夠了&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;人わ見た目が九割引&lt;/p&gt;
+&lt;p&gt;ひとわみためがきゅわり&lt;/p&gt;
+&lt;p&gt;hitowamitamegakyu-wari&lt;/p&gt;
+&lt;p&gt;成敗百分之九十看臉&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;但し、イケメンに限る&lt;/p&gt;
+&lt;p&gt;ただし、イケメンにかぎる&lt;/p&gt;
+&lt;p&gt;tadashi ikemennikagiru&lt;/p&gt;
+&lt;p&gt;看臉&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;合羽橋&lt;/p&gt;
+&lt;p&gt;カッパばし&lt;/p&gt;
+&lt;p&gt;kappabashi&lt;/p&gt;
+&lt;p&gt;動画屋筋商店街&lt;/p&gt;
+&lt;p&gt;どうがやすじしょうてんが&lt;/p&gt;
+&lt;p&gt;dougayasujishoutenga&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;じゅるり&lt;/p&gt;
+&lt;p&gt;jururi&lt;/p&gt;
+&lt;p&gt;よだれが止まらない&lt;/p&gt;
+&lt;p&gt;よだれがやまらない&lt;/p&gt;
+&lt;p&gt;todareyamarinai&lt;/p&gt;
+&lt;p&gt;口水停不下來&lt;/p&gt;
+&lt;p&gt;ウホツ&lt;/p&gt;
+&lt;p&gt;Uho&lt;/p&gt;
+&lt;p&gt;表示驚訝&lt;/p&gt;
+&lt;p&gt;ゴグリ&lt;/p&gt;
+&lt;p&gt;gokuri&lt;/p&gt;
+&lt;p&gt;咕嚕 吞食物的擬聲詞&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;外なまら寒いから&lt;/p&gt;
+&lt;p&gt;そとなまらさむいから&lt;/p&gt;
+&lt;p&gt;satonamarasamuikara&lt;/p&gt;
+&lt;p&gt;外面很冷 (北海道日語方言)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;直視できない&lt;/p&gt;
+&lt;p&gt;ちょくしできない&lt;/p&gt;
+&lt;p&gt;chokushidekinai&lt;/p&gt;
+&lt;p&gt;無法直視&lt;/p&gt;
+&lt;p&gt;画面が美しいすぎて直視できない&lt;/p&gt;
+&lt;p&gt;がめんがうつくしすぎてちょくしてきない&lt;/p&gt;
+&lt;p&gt;gamenga utsukushii sugitee chokushidekinai&lt;/p&gt;
+&lt;p&gt;畫面太美無法直視&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;何かが違う&lt;/p&gt;
+&lt;p&gt;なにかがちがう&lt;/p&gt;
+&lt;p&gt;nanikagachigau&lt;/p&gt;
+&lt;p&gt;哪裡不對？&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;違和感仕事しろ&lt;/p&gt;
+&lt;p&gt;いわかんしごとしろ&lt;/p&gt;
+&lt;p&gt;違和感君你快出現吧&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;白い液体&lt;/p&gt;
+&lt;p&gt;しろいえきたい&lt;/p&gt;
+&lt;p&gt;shiroiekitai&lt;/p&gt;
+&lt;p&gt;白色液體&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;立たない&lt;/p&gt;
+&lt;p&gt;たたない&lt;/p&gt;
+&lt;p&gt;tatanai&lt;/p&gt;
+&lt;p&gt;立不起來&lt;/p&gt;
+&lt;p&gt;大事な時に、立たない&lt;/p&gt;
+&lt;p&gt;だいじなときに、たたない&lt;/p&gt;
+&lt;p&gt;daijinatokini tatanai&lt;/p&gt;
+&lt;p&gt;關鍵時候立不起來&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;はしゃぎすぎ&lt;/p&gt;
+&lt;p&gt;hashagisugi&lt;/p&gt;
+&lt;p&gt;玩脫了&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;無茶ぶり&lt;/p&gt;
+&lt;p&gt;むちゃぶり&lt;/p&gt;
+&lt;p&gt;無理取鬧&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;来たこれ&lt;/p&gt;
+&lt;p&gt;kitakore&lt;/p&gt;
+&lt;p&gt;ktkr　(2ch用語 形容非常開心)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;いけぶくろ&lt;/p&gt;
+&lt;p&gt;ikebukuro&lt;/p&gt;
+&lt;p&gt;池袋　東京地名&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;すみません&lt;/p&gt;
+&lt;p&gt;simimasen&lt;/p&gt;
+&lt;p&gt;打擾一下&lt;/p&gt;
+&lt;p&gt;はい、少々お待ちください&lt;/p&gt;
+&lt;p&gt;はい、しょうしょうおまちください&lt;/p&gt;
+&lt;p&gt;hai、shoushouomachikudasai&lt;/p&gt;
+&lt;p&gt;好，稍等一下&lt;/p&gt;
+&lt;p&gt;すみませんお待たせしました、お伺いいたします&lt;/p&gt;
+&lt;p&gt;すみませんおまたせしました、おうかがいいたします&lt;/p&gt;
+&lt;p&gt;sumimasenomataseshimashita、oukagaiitashimasu&lt;/p&gt;
+&lt;p&gt;讓你久等了，請問你要些什麼？&lt;/p&gt;
+&lt;p&gt;はい、かしこまりました&lt;/p&gt;
+&lt;p&gt;hai、kashikomarimashita&lt;/p&gt;
+&lt;p&gt;好的、我知道了&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;何のい因果だよ！?&lt;/p&gt;
+&lt;p&gt;なにのいんがだよ！?&lt;/p&gt;
+&lt;p&gt;什麼仇什麼怨！?&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;鉄也のアレ、鉄のように硬いね&lt;/p&gt;
+&lt;p&gt;てつやのあれ、てつのようにかたいね&lt;/p&gt;
+&lt;p&gt;tetsuyanoare、tetsunoyounikataine&lt;/p&gt;
+&lt;p&gt;鐵也 的那個，像鐵一樣硬哦&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;視聴者ペレぜント&lt;/p&gt;
+&lt;p&gt;しちょうしゃペレせんと&lt;/p&gt;
+&lt;p&gt;shichousyaperesento&lt;/p&gt;
+&lt;p&gt;觀衆福利&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;髪が後退しているのてわない、私が前進しているのだ&lt;/p&gt;
+&lt;p&gt;かみがこうたいしているのいたわない、わたしがぜんしんしてるのだ&lt;/p&gt;
+&lt;p&gt;kamigakoutaishiteirunoitawanai、watashigazenshinshiterunoda&lt;/p&gt;
+&lt;p&gt;並不是我的頭髮向後退了，而是我在向前進&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;小麦粉か何かだ&lt;/p&gt;
+&lt;p&gt;こむぎこかなにかだ&lt;/p&gt;
+&lt;p&gt;komugikokananikana&lt;/p&gt;
+&lt;p&gt;這個是小麥粉什麼的&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;それってお高いんでしょ？&lt;/p&gt;
+&lt;p&gt;それっておたかいんてしょ？&lt;/p&gt;
+&lt;p&gt;soretteotakashiidesho?&lt;/p&gt;
+&lt;p&gt;這個東西看上去有點貴&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;これが現実だ&lt;/p&gt;
+&lt;p&gt;これがげんじつだ&lt;/p&gt;
+&lt;p&gt;koregagenjitsuda&lt;/p&gt;
+&lt;p&gt;這就是現實啊&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;シマパン&lt;/p&gt;
+&lt;p&gt;shimapan&lt;/p&gt;
+&lt;p&gt;斑馬條紋內褲&lt;/p&gt;
+&lt;p&gt;しまうま&lt;/p&gt;
+&lt;p&gt;shimauma&lt;/p&gt;
+&lt;p&gt;斑馬&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;コオル&lt;/p&gt;
+&lt;p&gt;kooru&lt;/p&gt;
+&lt;p&gt;乾杯&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;アイツ&lt;br&gt;無茶しやがって&lt;/p&gt;
+&lt;p&gt;アイツ&lt;br&gt;むちゃしやがって&lt;/p&gt;
+&lt;p&gt;aitsu&lt;br&gt;wuchashiyagatte&lt;/p&gt;
+&lt;p&gt;那小夥子亂搞一通&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;メシウマ&lt;/p&gt;
+&lt;p&gt;meshiuma&lt;/p&gt;
+&lt;p&gt;幸災樂禍&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;山下君っていい人だよね&lt;/p&gt;
+&lt;p&gt;やましたくんっていいひとだよね&lt;/p&gt;
+&lt;p&gt;yamashitakuntteiihitodayone&lt;/p&gt;
+&lt;p&gt;山下君你是個好人&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;クンカ　クンカ&lt;/p&gt;
+&lt;p&gt;kunakuna&lt;/p&gt;
+&lt;p&gt;問&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;初めてだから優しくしてね&lt;/p&gt;
+&lt;p&gt;はじめてだからやさしくしてね&lt;/p&gt;
+&lt;p&gt;hanemetedakarayasashikushitene&lt;/p&gt;
+&lt;p&gt;我是第一次對人家溫柔一點哦&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;無理ゲーせぎて笑える&lt;/p&gt;
+&lt;p&gt;むりげーすぎてわらえる&lt;/p&gt;
+&lt;p&gt;murigesugitewaraeru&lt;/p&gt;
+&lt;p&gt;完全做不到 只能呵呵呵&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;ヤバイ&lt;/p&gt;
+&lt;p&gt;yabai&lt;/p&gt;
+&lt;p&gt;糟糕&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;クソ ワロタ&lt;/p&gt;
+&lt;p&gt;kuso warota&lt;/p&gt;
+&lt;p&gt;笑尿了&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;店長　やめてください&lt;/p&gt;
+&lt;p&gt;てんちょう　やめてください&lt;/p&gt;
+&lt;p&gt;tenchou yametekudasai&lt;/p&gt;
+&lt;p&gt;店長 不要這樣&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;婚活&lt;/p&gt;
+&lt;p&gt;こんかつ&lt;/p&gt;
+&lt;p&gt;konkatsu&lt;/p&gt;
+&lt;p&gt;相親活動&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;いとおかし&lt;/p&gt;
+&lt;p&gt;itookashi&lt;/p&gt;
+&lt;p&gt;好評&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;ﾌｱーー！&lt;/p&gt;
+&lt;p&gt;fa&lt;/p&gt;
+&lt;p&gt;表示驚訝&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;よいお年を&lt;/p&gt;
+&lt;p&gt;よいおとしを&lt;/p&gt;
+&lt;p&gt;yoiotoshiwo&lt;/p&gt;
+&lt;p&gt;新年快樂(過年前使用)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;あにき&lt;/p&gt;
+&lt;p&gt;兄貴&lt;/p&gt;
+&lt;p&gt;哥哥 或 肌肉男&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;君に似合うと思って&lt;/p&gt;
+&lt;p&gt;きみににあうとおっもって&lt;/p&gt;
+&lt;p&gt;kimininiautoomotte&lt;/p&gt;
+&lt;p&gt;我想很適合你&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;金持ちはワガママ&lt;/p&gt;
+&lt;p&gt;かねもちわワガママ&lt;/p&gt;
+&lt;p&gt;kanemochiwawagamama&lt;/p&gt;
+&lt;p&gt;有錢任性&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;お巡りさん　このひとです&lt;/p&gt;
+&lt;p&gt;おまわりさん　このひとです&lt;/p&gt;
+&lt;p&gt;omawarisan konohitodesu&lt;/p&gt;
+&lt;p&gt;警察叔叔 就是這個人&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;しんどい&lt;/p&gt;
+&lt;p&gt;shindoi&lt;/p&gt;
+&lt;p&gt;心累&lt;/p&gt;
+&lt;p&gt;受験勉強マジでしんどい&lt;/p&gt;
+&lt;p&gt;じゅけんべんきょうまじでしんどい&lt;/p&gt;
+&lt;p&gt;jukenbenkyoumajideshindoi&lt;/p&gt;
+&lt;p&gt;高考真的吃力&lt;/p&gt;
+&lt;p&gt;あの人と話すのマジでしんどい&lt;/p&gt;
+&lt;p&gt;あのひととはなすのまじでしんどい&lt;/p&gt;
+&lt;p&gt;anohitotohanasunomajideshindoi&lt;/p&gt;
+&lt;p&gt;跟那個人談話真的痛苦&lt;/p&gt;
+&lt;p&gt;こんなしんどい仕事嫌だよ&lt;/p&gt;
+&lt;p&gt;こんあしんどいしごといやだよ&lt;/p&gt;
+&lt;p&gt;konnashindoishigotoiyadayo&lt;/p&gt;
+&lt;p&gt;我討厭這麼費勁的工作&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/wanle.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;把山下智博君的《紳士大概一分鐘》的 Youtube 播放列表看完了&lt;/p&gt;
+&lt;p&gt;特地把裡面的日語學習內容整理了一下 （好多奇奇怪怪的東西XD&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="日本語" scheme="https://ky0n.xyz/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FBI Warning 樣式的 SSH 登錄提示</title>
+    <link href="https://ky0n.xyz/fbi-warning-ssh-notification/"/>
+    <id>https://ky0n.xyz/fbi-warning-ssh-notification/</id>
+    <published>2015-10-19T08:10:23.000Z</published>
+    <updated>2016-03-14T05:29:17.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在微博上看到秋大的 SSH 登錄提示 覺得很有意思&lt;/p&gt;
+&lt;p&gt;其實我什麼都不知道 深藏功與名&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/6529f26ajw1ex66moq1x5j21kw0vywl8.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我嘗試著修改 /etc/motd 發現並不支持顏色顯示 噗。。。&lt;/p&gt;
+&lt;p&gt;然後微博上的小夥伴告訴我這個是修改 shell 的 rc 文件，每次啟動 terminal 的時候執行 sh 腳本就可以了&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;代碼參考自 &lt;a href=&quot;http://blog.depressedmarvin.com/2015/10/13/fbi-warning-ssh-banner/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.depressedmarvin.com/2015/10/13/fbi-warning-ssh-banner/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;修改了最後的居中文本&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;打開 &lt;a href=&quot;https://gist.github.com/akar1nchan/aa936fe51acd064ea25e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gist.github.com/akar1nchan/aa936fe51acd064ea25e&lt;/a&gt; 將裡面的代碼複製或另存為 xxx.sh&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保存完成後 chmod +x xxx.sh&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;修改 shell 的 rc 文件最後加入 bash xxx.sh&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以至於啟動 terminal 後執行 shell 腳本&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bash shell 修改 /etc/bash.bashrc&lt;/li&gt;
+&lt;li&gt;zsh 修改 ~/.zshrc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;效果如圖&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/fbi-ssh-banner-pic.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在微博上看到秋大的 SSH 登錄提示 覺得很有意思&lt;/p&gt;
+&lt;p&gt;其實我什麼都不知道 深藏功與名&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/6529f26ajw1ex66moq1x5j21kw0vywl8.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我嘗試著修改 /etc/motd 發現並不支持顏色顯示 噗。。。&lt;/p&gt;
+&lt;p&gt;然後微博上的小夥伴告訴我這個是修改 shell 的 rc 文件，每次啟動 terminal 的時候執行 sh 腳本就可以了&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>粵語金曲分享</title>
+    <link href="https://ky0n.xyz/share-cantonese-songs/"/>
+    <id>https://ky0n.xyz/share-cantonese-songs/</id>
+    <published>2015-09-29T11:08:22.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;剛剛看完港囧，徐崢導演在電影裡面穿插了許許多多的粵語老歌&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/5150731520_13d48e32fe_o.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div align=&quot;right&quot;&gt; &lt;sup&gt;圖片來自 Blue Turky 的 &lt;a href=&quot;https://www.flickr.com/photos/fallenblue/5150731520/in/dateposted/&quot; target=&quot;_blank&quot;&gt;開平騎樓&lt;/a&gt;&lt;/sup&gt;&lt;/div&gt;
+
+&lt;p&gt;每一首歌 也是訴說着一個個故事&lt;/p&gt;
+&lt;p&gt;我想推薦一些我喜歡的粵語歌曲給大家&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;我覺得真正的廣東文化也不只是香港帶給我們的印象&lt;/p&gt;
+&lt;p&gt;但是現在的粵語歌曲也基本來自香港了&lt;/p&gt;
+&lt;p&gt;港囧裡面出現過的粵語老歌 有一些也是耳熟能詳&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;450&quot; src=&quot;http://music.163.com/outchain/player?type=0&amp;id=109323780&amp;auto=0&amp;height=430&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;首先推薦的是一個有才的香港富二代&lt;/p&gt;
+&lt;p&gt;十年 三首歌 訴說了一個悲傷的故事&lt;/p&gt;
+&lt;p&gt;最後，妳根本不懂妳多年來喜歡的 “ta” ，這一切都是自己的猜測與幻想。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=135355&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=30148268&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=33471531&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;前幾天 麥浚龍放出了最後一支歌結束這個故事&lt;/p&gt;
+&lt;p&gt;另外 《耿耿於懷》的 mv 很有意思，與 吳日言 的 《扯線風箏》正好是相反的。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=34834450&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;https://o3ziuzht9.qnssl.com/10year3songs.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;接下來推薦一下天后 謝安琪的幾首歌曲&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/1463582265_c487b76d9d_o.jpg&quot; alt=&quot;&quot;&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;《喜帖街》&lt;/p&gt;
+&lt;p&gt;囍帖街（利東街 位於灣仔）原本是香港一條歷史非常悠久的街道，見證了香港的變遷，但後來港府想拆遷發展商業，市民建議不要動留作紀念，廣泛徵求意見後港府決定把其作為一個旅遊景點。&lt;br&gt;後來黃偉文在這條街的故事裏感悟出很多人生道理，寫了一首歌來紀念這條街道。&lt;/p&gt;
+&lt;p&gt;由Eric Kwok作曲、編曲和監製，黃偉文填詞，成為2008年香港最佳歌曲，至今仍然是香港獲得最多歌曲獎的流行曲，成為香港樂壇標誌性歌曲，亦帶摯謝安琪登上天后寶座及獲得多個大獎。&lt;/p&gt;
+&lt;p&gt;云云獎項中，由商業電台頒發的「叱咤樂壇我最喜愛的歌曲大獎」為全港唯一一座公開票數之公眾投票歌曲獎，囍帖街為香港樂壇史上最高票數之獲獎歌曲，被肯定為千禧港樂之經典。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=308299&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;另外一首《年度之歌》則唱出了 謝安琪 內心的感受&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=308169&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;“《囍帖街》曾經聽哭了，當時真是橫掃各大頒獎禮，可謂”年度之歌“，之後謝安琪就唱了這首《年度之歌》，總感覺這是在呼應她的《囍帖街》所帶來的音樂事業高峯。流行是一首窩心的歌，突然間説過就過。比長夜的冷寂更難忍受的，是絢爛後的重歸落寞，能恬淡看開一切的世間能有幾人。”&lt;/p&gt;
+&lt;p&gt;這是來自網易雲音樂的一則評論，也許真是 Kay 的想法。&lt;/p&gt;
+&lt;p&gt;人生不可能事事風順，總有下坡與低谷，大起大落，淡然面對就夠了。&lt;/p&gt;
+&lt;p&gt;作爲一個歌手，能唱出自己想唱的歌，也是種釋懷。&lt;/p&gt;
+&lt;p&gt;《獨家村》 Kay 的歌曲裡爭議最多的一首歌&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=29431288&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;下面是來自 林滴藍 對這首歌的解讀，認為歌詞與中港矛盾及貧富懸殊有關。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;p&gt;「我相信自求多福 只想販賣與眾不同&lt;/p&gt;
+&lt;p&gt;  若妳為求風光去鞠躬 祝福妳成功&lt;/p&gt;
+&lt;p&gt;  這小店就如美夢 不想因應恩客易容&lt;/p&gt;
+&lt;p&gt;  就算將過得很窮 賣它僅有的種&lt;/p&gt;
+&lt;p&gt;  妳怪我不夠笑容 不懂跟風變通&lt;/p&gt;
+&lt;p&gt;  難及妳沒原則 犧牲那初衷 隨舊情斷送」&lt;/p&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;整首歌中其實主角一直以第一身跟伴侶訴說內心心底話，一如〈富士山下〉中主角規勸對方不要因愛情這虛無之物，傷害自己，劃破手腕，氣氛溫和，偏偏有股淡然的哀傷。〈獨家村〉中主角則有一間小店，販賣夢想，擺售特色，堅持己見，不隨波逐流，委曲求存，但偏偏被對方挑剔批評，不懂變通，不求風光成功，但主角則反問「難及妳沒原則 犧牲那初衷」？&lt;/p&gt;
+&lt;p&gt;主角不欲委曲求存，香港人難道不是一樣嗎？我們所珍以重之的自由、法治、人權，為什麼要為所謂的「中港融合」而拱手相讓？香港這一小店，面積不大，地方淺窄，但我們香港人靠什麼立足於世界？不是靠我們的靈活變通，不是靠我們的本土文化，不是靠我們的原則嗎？&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;p&gt;「盲愛和自愛不易兩全 讓我忍痛一刀就這麼兩斷&lt;/p&gt;
+&lt;p&gt;沒法跟妳輕輕鬆鬆假裝卿卿我我只好放手&lt;/p&gt;
+&lt;p&gt;守護我的獨家村&lt;/p&gt;
+&lt;p&gt;和妳同做過的美夢發完 讓我一個擁抱互相許過的夙願&lt;/p&gt;
+&lt;p&gt;任妳毀我誇我自甘孤僻 都不要自尊心給折損&lt;/p&gt;
+&lt;p&gt;請妳圓滑的嘴臉 別拿幸福來規勸」&lt;/p&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;主角已經想通了：既然妳我早已各走各路，任憑我如何愛妳，也不會放棄自我，倒不如一刀兩斷，忍痛放手，讓我「守護我的獨家村」。既然和妳無法做一個中國夢，既然無法和妳好好醜醜演罷這齣「一國兩制」的大戲，倒不如就此分離吧。明白妳有錢瞧不起我，明白妳以為我自甘墮落，閉關鎖港，但既然分離，就別再張出妳醜陋的嘴臉，用妳口中所謂的「幸福」脅迫我吧。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;p&gt;「我跟妳同床發夢 可惜語言再不相同&lt;/p&gt;
+&lt;p&gt;大概做人不想太委曲 都將要絕種&lt;/p&gt;
+&lt;p&gt;我不屑為求相擁 可啞忍到心裡裂縫&lt;/p&gt;
+&lt;p&gt;若我所見不相同 獨守一角青空&lt;/p&gt;
+&lt;p&gt;我怕折腰妳怕窮 彼此怎可折衷&lt;/p&gt;
+&lt;p&gt;唯願歲月靜好 不好跟妳安寢 情自然壽終」&lt;/p&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;〈同床異夢〉，同一天空下，夢終究不同。妳用妳的普通話，我用我的廣東話；妳有妳的語言藝術，我有我的赤子之心；妳要妳的榮華富貴，我要我的原則腰骨，兩者怎能相通？見盡世態炎涼，真相扭曲，為利益，為權力，不擇手段，打壓異己，濁世中大概找一個赤誠的人也越見困難，但不論處境如何艱巨、如何扭曲，那一片青空，那一腔正氣，依然留守心中。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;p&gt;「忘我和自我不易兩全 讓我忍痛一刀就這麼兩斷&lt;/p&gt;
+&lt;p&gt;若世間愛拖得一天過得一天怕將底牌揭穿&lt;/p&gt;
+&lt;p&gt;抵我懷著我獨眠&lt;/p&gt;
+&lt;p&gt;我亦很怕一心軟 會將就得更辛酸&lt;/p&gt;
+&lt;p&gt;換到飽暖失去自己一世不甘願&lt;/p&gt;
+&lt;p&gt;任妳嘲笑孤僻也好偏激也好只會自詡清高也好&lt;/p&gt;
+&lt;p&gt;好過純淨的嘴臉 被媚俗的唇扭轉」&lt;/p&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;我也有軟弱的時候，我也怕，我也怕失卻普選，將斷送香港，給香港蓋棺，但我有選擇嗎？妳的底牌早已揭穿，我還有退路嗎？今日「袋住先」，換到一身溫飽，但失去了靈魂、失去了原則、失去了自我，這一身銅臭又有何用？要嘲笑要指罵要抨擊，隨便，總「好過純淨的嘴臉 被媚俗的唇扭轉」。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;p&gt;「各走各路如試煉 不知妳或我更安然&lt;/p&gt;
+&lt;p&gt;無悔未曾可將妳改變 都不被妳污染」&lt;/p&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;今日妳我告別，家國分離，不知來日將來。或許，善良的心總究被邪惡抓手劃破，妖魔之言取代發自心中的真誠之話，這一小店最終要倒閉結業，賤賣家當。但我們絕不後悔，至少我有我的牌匾，我的原則，我的腰骨。感謝林夕這一絕妙之詞，讓香港人今日無悔選擇，堅持己見，義無反顧地走下去。民主自由之種子，今天由我們種下，後代來收成吧。&lt;/p&gt;
+&lt;p&gt;我覺得。歌，只是一首歌。覺得歌曲表達戀情也好，政治也罷。聽過看看評論，過去就過去了，不必想的那麼複雜，現在怎麼聽個歌都要按照基本法了。&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;《鍾無艷》 Kay 所演唱的歌曲中最經典的一首&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=308353&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;歌詞裡面這句“永不开封的汽水”真是林夕的點睛之筆，見網友的 &lt;a href=&quot;http://www.zhihu.com/question/26625340&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;討論&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;珍惜現在所擁有的。&lt;/p&gt;
+&lt;p&gt;說道 Kay 的《鍾無艷》，也就不得不提 陳奕迅的 《富士山下》。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=65766&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;同樣也是林夕的作品，旋律基本差不多，講的也是同一個故事，&lt;/p&gt;
+&lt;p&gt;有人就吧這兩首歌串在了一起，毫無違和感 XD&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=29753459&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;陳奕迅 作爲一個老牌的香港歌手，我最喜歡他的歌曲是《單車》&lt;/p&gt;
+&lt;p&gt;這首歌很慢，以至於我也能模仿粵語發音一句一句唱出來。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=32714447&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;聽完這首歌，還是不禁想起童年的那時，父親陪着你玩的畫面。&lt;/p&gt;
+&lt;p&gt;時間走的很快，那個童年也再也回不去了，我們在漸漸長大，陪伴着我們成長的父親也漸漸老去。&lt;/p&gt;
+&lt;p&gt;真是感慨萬千，真想讓時間慢些過去，想讓父親能陪伴更久。&lt;/p&gt;
+&lt;p&gt;父爱如山，不言自明。&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;eason 還有一首 《苦瓜》&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=64293&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;“&lt;br&gt;這首詞借苦瓜寫盡世間百態，過癮。苦瓜的苦，從未變過，變了的是我們，是時間，是際遇，是已經悄悄爬上鬢角的白絲，年輕人永遠無法體會老者的清心寡慾，也無法領悟苦瓜裏的那份禪意，就像是這首歌唱的那樣，青春如快餐，餘生險惡，如藝壇傑作，但有痛苦，就有歡樂。&lt;br&gt;”&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.zhihu.com/question/20334247&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;在陈奕迅的《苦瓜》里你听到了什么？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;p&gt;「青春的快餐只要求快不理哪一家&lt;br&gt;哪有玩味的空档来欣赏细致淡雅 」&lt;/p&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;什麼時候才能大徹大悟呢？值得去思考。&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;壓軸推薦 張敬軒 &amp;amp; 麥家瑜 的 《石徑》&lt;/p&gt;
+&lt;p&gt;舊日的石徑是小情人兩小無猜的見證，曾經爲愛人抵抗惡犬，曾把臂同觀夜星 然而都市與建令石徑未能留存，昔日的感情，又會否隨石徑被遺忘。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=188556&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;p&gt;與你聽風聲&lt;/p&gt;
+&lt;p&gt;觀賞過夜星&lt;/p&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;珍惜那個一直陪在你身邊的人，失去不再擁有。&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;最後&lt;/p&gt;
+&lt;p&gt;分享一下我的歌單，希望大家能夠喜歡。&lt;/p&gt;
+&lt;p&gt;感謝這兩位偉文給我們帶來了那麽多優秀的歌曲填詞&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;450&quot; src=&quot;http://music.163.com/outchain/player?type=0&amp;id=104519652&amp;auto=0&amp;height=430&quot;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;廣東話(gwang2 dong1 waa6)，又稱“粵語 ，作爲母语的国家和地区包括 中国大陆(广东、广西、海南)、 香港、 澳门、 越南、 马来西亚 和 新加坡，地球上約有6700萬人作爲母語使用。（數據來自 &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E4%BB%A5%E4%BA%BA%E5%8F%A3%E6%8E%92%E5%88%97%E7%9A%84%E8%AF%AD%E8%A8%80%E5%88%97%E8%A1%A8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WikiPedia&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;當年作爲中國甚至亞洲文化的輸出，TVB 拍了很多說粵語的電視劇,讓我們也有種”耳濡目染”的感覺。&lt;/p&gt;
+&lt;p&gt;《上海灘》的“浪奔 浪流 萬里濤濤江水永不休”♪~ 這個旋律也是永遠忘不了&lt;/p&gt;
+&lt;p&gt;近些年來，天朝提出推廣普通話的政策，不少方言收到排擠和抵制，不少方言被限制，我小時候上小學的時候，在學校裡面說上海話是要罰站的，我就被罰站過半節課。&lt;/p&gt;
+&lt;p&gt;至少現在的上海小旁友已經勿會的講上海閑話了  不知道廣東話地區的下一代還會不會自己的地區方言了。&lt;/p&gt;
+&lt;p&gt;我認爲只要會用普通話與各地的人流暢溝通就夠了，不必強制於人，要把老祖宗留下的方言流傳下去，這才是真正的文化保護。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;剛剛看完港囧，徐崢導演在電影裡面穿插了許許多多的粵語老歌&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/5150731520_13d48e32fe_o.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div align=&quot;right&quot;&gt; &lt;sup&gt;圖片來自 Blue Turky 的 &lt;a href=&quot;https://www.flickr.com/photos/fallenblue/5150731520/in/dateposted/&quot;  target=&quot;_blank&quot; &gt;開平騎樓&lt;/a&gt;&lt;/sup&gt;&lt;/div&gt;
+
+&lt;p&gt;每一首歌 也是訴說着一個個故事&lt;/p&gt;
+&lt;p&gt;我想推薦一些我喜歡的粵語歌曲給大家&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="hongkong" scheme="https://ky0n.xyz/tags/hongkong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>首都南京游記</title>
+    <link href="https://ky0n.xyz/visit-nanking/"/>
+    <id>https://ky0n.xyz/visit-nanking/</id>
+    <published>2015-09-04T12:25:31.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20629804710_e3294434ae_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div align=&quot;right&quot;&gt; &lt;sup&gt;攝于 南京中山陵 祭堂&lt;/sup&gt;&lt;/div&gt;
+
+&lt;center&gt;南京&lt;center&gt;&lt;br&gt;&lt;center&gt;現虎踞龍盤  望再興中華&lt;/center&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/1280px-Nanjing_DonghuaGate4.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div align=&quot;left&quot;&gt;南京，古稱金陵、秣陵、建业、建邺、建康、升州、蒋州、集庆、应天、江宁等，是中国四大古都之一，有“六朝古都”、“十朝都会”之称，历史上长期是中国南方的政治文化中心，有着厚重的文化底蕴和丰富的历史遗存。&lt;br&gt;&lt;br&gt;這次去我暫時住宿的地方在玄武湖邊上，交通非常方便~&lt;br&gt;&lt;br&gt;環游了玄武湖逛了一圈 大概兩個小時 空氣很清新&lt;div&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20196974084_f20f450b26_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;荷花盛開&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20810099462_7692af73c6_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20631545618_1053bf8c8a_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;清澈的湖水&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20632745819_beee7b6975_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;鐘毓橋  （簡體字真違和233&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20196509494_a4b717e149_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;南京 玄武門 （此門不是玄武門之變的發生地點 唐朝歷史上的玄武門在當時都城長安的太極宮北宮門&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/01735107.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;1945年4月20日 南京總統府被解放軍占領&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/s_201310301707455815.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;淪陷之後 拍攝《建國大業》時期的南京總統府  青天白日旗再次升起&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20826158851_cc8eed854c_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;2015年8月22日 已經沒有青天白日旗飄揚的總統府&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20819054685_07af451ece_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20809581482_ba5c9a6b6b_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;南京 1912&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20196430064_832706d8a8_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;古秦淮&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20792586146_c4f32a6f22_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;夫子廟&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20809541202_845a6e6bdd_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20809457782_25cb5560a4_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20630877690_62b5faed4f_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20630843170_5904109ae5_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;晚上的夫子廟很熱鬧&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20196373754_6c16f3755a_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20197905403_026b08ec5f_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;江南貢院&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20818863665_d80e683d2e_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;秦淮河&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;第二天去了 江北&lt;br&gt;&lt;br&gt;本來想打車經過南京長江大橋過去  無奈司機不認路（畢竟南京乃安徽省會 好多司機都是來自安徽的&lt;br&gt;&lt;br&gt;衹能自己坐船過去了&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20197453203_96d3704ccb_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;中山碼頭&lt;br&gt;&lt;br&gt;過了 長江&lt;br&gt;&lt;br&gt;就能看到一個已經廢棄的火車站 南京北站&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20630820758_ebc869961c_k.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;div align=&quot;left&quot;&gt;“&lt;/div&gt;
+
+&lt;div align=&quot;left&quot;&gt;我與父親不相見已二年餘了，我最不能忘記的是他的背影 。&lt;br&gt;&lt;br&gt;那年冬天，祖母死了，父親的差使也交卸了，正是禍不單行的日子。我從北京到徐州打算跟着父親奔喪回家。到徐州見着父親看見滿院狼藉的東西，又想起祖母，不禁簌簌地流下眼淚。父親說：“事已如此，不必難過，好在天無絕人之路！”&lt;br&gt;&lt;br&gt;回家變賣典質，父親還了虧空；又借錢辦了喪事。這些日子，家中光景很是慘淡，一半爲了喪事，一半爲了父親賦閒。喪事完畢，父親要到南京謀事，我也要回北京唸書，我們便同行。&lt;br&gt;&lt;br&gt;到南京時，有朋友約去遊逛，勾留了一日；第二日上午便須渡江到浦口，下午上車北去。父親因爲事忙，本已說定不送我，叫旅館裏一個熟識的茶房陪我同去。他再三囑咐茶房，甚是仔細。但他終於不放心，怕茶房不妥帖；頗躊躇了一會。其實我那年已二十歲，北京已來往過兩三次，是沒有什麼要緊的了。他躊躇了一會，終於決定還是自己送我去。我再三回勸他不必去；他只說：“不要緊，他們去不好！”&lt;br&gt;&lt;br&gt;我們過了江，進了車站。我買票，他忙着照看行李。行李太多了，得向腳伕行些小費纔可過去。他便又忙着和他們講價錢。我那時真是聰明過分，總覺他說話不大漂亮，非自己插嘴不可，但他終於講定了價錢；就送我上車。他給我揀定了靠車門的一張椅子；我將他給我做的紫毛大衣鋪好座位。他囑我路上小心，夜裏要警醒些，不要受涼。又囑託茶房好好照應我。我心裏暗笑他的迂；他們只認得錢，託他們只是白託！而且我這樣大年紀的人，難道還不能料理自己麼？唉，我現在想想，那時真是太聰明瞭！&lt;br&gt;&lt;br&gt;我說道：“爸爸，你走吧。”他往車外看了看說：“我買幾個橘子去。你就在此地，不要走動。”我看那邊月臺的柵欄外有幾個賣東西的等着顧客。走到那邊月臺，須穿過鐵道，須跳下去又爬上去。父親是一個胖子，走過去自然要費事些。我本來要去的，他不肯，只好讓他去。我看見他戴着黑布小帽，穿着黑布大馬褂，深青布棉袍，蹣跚地走到鐵道邊，慢慢探身下去，尚不大難。可是他穿過鐵道，要爬上那邊月臺，就不容易了。他用兩手攀着上面，兩腳再向上縮；他肥胖的身子向左微傾，顯出努力的樣子。這時我看見他的背影，我的淚很快地流下來了。我趕緊拭乾了淚。怕他看見，也怕別人看見。我再向外看時，他已抱了硃紅的橘子往回走了。過鐵道時，他先將橘子散放在地上，自己慢慢爬下，再抱起橘子走。到這邊時，我趕緊去攙他。他和我走到車上，將橘子一股腦兒放在我的皮大衣上。於是撲撲衣上的泥土，心裏很輕鬆似的。過一會兒說：“我走了，到那邊來信！”我望着他走出去。他走了幾步，回過頭看見我，說：“進去吧，裏邊沒人。”等他的背影混入來來往往的人裏，再找不着了，我便進來坐下，我的眼淚又來了。&lt;br&gt;&lt;br&gt;近幾年來，父親和我都是東奔西走，家中光景是一日不如一日。他少年出外謀生，獨立支持，做了許多大事。哪知老境卻如此頹唐！他觸目傷懷，自然情不能自已。情鬱於中，自然要發之於外；家庭瑣屑便往往觸他之怒。他待我漸漸不同往日。但最近兩年不見，他終於忘卻我的不好，只是惦記着我，惦記着我的兒子。我北來後，他寫了一信給我，信中說道：“我身體平安，唯膀子疼痛厲害，舉箸提筆，諸多不便，大約大去之期不遠矣。”我讀到此處，在晶瑩的淚光中，又看見那肥胖的、青布棉袍黑布馬褂的背影。唉！我不知何時再能與他相見！&lt;div&gt;&lt;br&gt;&lt;div align=&quot;right&quot;&gt;”&lt;/div&gt;
+
+
+&lt;p&gt;當時 朱自清的文章《背影》就是發生于此  現在這個火車站也落寞廢棄 附近再也沒有買桔子的小販了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20818639975_a0156f96ce_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;當時 朱自清和他父親應該就是在這裡買的車票&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20197744253_166102f586_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;通往候車室的走廊再也不是熙熙攘攘&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20196109184_d1b749d06f_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20197789143_4963314078_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20196151774_46b10b3f74_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20197772083_dcb47f7c46_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20197780053_365a9fbd21_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20630726610_40e17c8485_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;仿佛時間已經凝固  候車室還是原來的那個樣子&lt;/p&gt;
+&lt;p&gt;車站月臺也已經不准入内了  我衹能放網上的一些照片了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/wKgB3FFn5tOARFKjAA0DH4YfA1w06.groupinfo.w600.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;開車匆匆路過很多民國的老建築  例如 海軍部 、 國立美術陳列館 、 最高法院&lt;/p&gt;
+&lt;p&gt;所以沒有拍照片 想看的請去 &lt;a href=&quot;http://www.mafengwo.cn/i/1236161.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這裡&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下午我從明故宮步行上山 大概走了兩個小時 到了中山陵&lt;/p&gt;
+&lt;p&gt;沿途的風景很不錯&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20818358465_6974674ae3_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20808650402_4e4ae03a2d_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20630055908_312f5262fe_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20808523772_b3a9e903d4_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20817972015_c2611955a5_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20195342224_7f1b9df84d_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20195320864_a52c97f703_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/zslm.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20824923791_245da2d52b_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20808397632_4754cfd0fe_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20817898175_ccbe883af5_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div align=&quot;left&quot;&gt;墓碑在頂端花紋下方的正反面各刻國民黨黨徽青天白日圖案一枚，這兩枚圖案原爲陽刻，文化革大命中被剷除，1981年辛亥革命七十週年前夕中山陵作了一次全面維修，按照原樣重新修復，改爲陰刻&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20195303474_14d8a17a9b_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div align=&quot;left&quot;&gt;孝經鼎位於中山陵廣場南端正中，是戴季陶和當時中山大學師生捐建，張鏞森設計，金陵兵工廠（南京晨光集團）於1932年鑄造，造價1，3萬元，鼎內有六角銅牌，上刻戴季陶母親黃氏所書《孝經》全文，所以稱孝經鼎。&lt;br&gt;&lt;br&gt;鼎高4，25米，腹徑1，21米，重一萬斤，外觀圓形，三足兩耳，由三節組成，可以拆卸。鼎壁一面鑄有“智，仁，勇”（孫中山對革命軍人要求），另一面鑄有“忠，孝，仁，愛，信，義，和，平八個字，（孫中山在《三民主義》中提出的中國人傳統“八德”，）這八個字解放初被磨去。&lt;br&gt;&lt;br&gt;爲安置孝經鼎在廣場南端建鼎臺（造價2萬餘元，也由中山大學師生捐建），鼎臺由剛從中央大學畢業的陵園工務助理員夏行時設計，鼎臺設計新穎，臺下3米深處埋有一石匣子，內裝一古銅色箱，箱內存有在南京的中山大學師生恭錄的孫中山全部遺教。箱面刻有總理遺囑，爲戴季陶所書。&lt;br&gt;&lt;br&gt;“文化革大命”期間，南京新街口孫中山銅像曾遷於此臺上，孝經鼎移到陵門前廣場，1985年孫中山銅像遷至藏經樓孫中山紀念館前，孝經鼎回原地。&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20631066109_852784b73a_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20629886758_b8cc20d696_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20195224524_5fb643f872_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;祭堂内禁止攝影！抱歉了！
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;div align=&quot;left&quot;&gt;祭堂地面鋪雲南大理石，頂部用彩色馬賽克鑲嵌成青天白日圖案，周圍環繞紅色花紋方格，以符合滿地紅的意象。堂內有12根石柱，下承大理石柱礎，柱心用鋼筋混凝土澆製，外皮包裹青島產黑色花崗石。四周牆壁上半部貼人造石，下半部爲灰黑色大理石板製成的護壁，其中東西兩側護壁上刻孫中山手書《建國大綱》全文，北側護壁上原有蔣中正、胡漢民和譚延闓分別抄錄的《總理遺訓》、《總理遺囑》和《總理告誡黨員演說詞》，在“文化大革命”中被磨平。祭堂內中央偏北處安放孫中山白色大理石坐像一尊，高4.6米，坐像身着長袍馬褂，書卷平攤在膝上，雙目平視遠處，是波蘭裔法國雕刻家保羅·蘭多斯基的作品。坐像底座四周刻反映孫中山生平和革命事蹟的浮雕。祭堂的四角有四間堡壘式方屋，西南角方屋內的牆壁上原有呂彥直的半身雕像，在抗日戰爭中失蹤。&lt;/div&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;中華民國國民政府建國大綱 全文如下&lt;/p&gt;
+&lt;div align=&quot;left&quot;&gt;”&lt;/div&gt;
+
+&lt;div align=&quot;left&quot;&gt;中華民國國民政府建國大綱&lt;br&gt;&lt;br&gt;一、國民政府本革命之三民主義、五權憲法，以建設中華民國。&lt;br&gt;&lt;br&gt;二、建設之首要在民生。故對於全國人民之食、衣、住、行四大需要，政府當與人民協力，共謀農業之發展，以足民食；共謀織造之發展，以裕民衣；建築大計劃之各式屋舍，以樂民居；修治道路、運河，以利民行。&lt;br&gt;&lt;br&gt;三、其次爲民權。對於人民之政治知識、能力，政府當訓導之，以行使其選舉權，行使其罷官權，行使其創制權。&lt;br&gt;&lt;br&gt;四、其三爲民族。故對於國內之弱小民族，政府當扶植之，使之能自決自治；對於國外之侵略強權，政府當抵禦之。並同時修改各國條約， 恢復我國際平等，國家獨立。&lt;br&gt;&lt;br&gt;五、建設之程序分爲三期；一曰軍政時期；二曰訓政時期；三曰憲政時期。&lt;br&gt;&lt;br&gt;六、在軍政時期，一切制度悉隸于軍政之下。政府一面用兵力掃除國內之障礙；一面宣傳主義以開化全國之人心，而促進國家之統一。&lt;br&gt;&lt;br&gt;七、凡一省完全底定之日，則爲訓政開始之時，而軍政停止之日。&lt;br&gt;&lt;br&gt;八、在訓政時期，政府當派曾經訓練、考試合格之員，到各縣協助人民籌備自治。其程度以全縣人口調查清楚，全縣土地測量完竣，全縣警衛辦理妥善，四境縱橫之道路修築成功；而其人民曾受四權使用之訓練，而完畢其國民之義務，誓行革命之主義者得選舉縣官，以執行一縣之政事；得選舉議員，以議立一縣之法律，始成爲一完全自治之縣。&lt;br&gt;&lt;br&gt;九、一完全自治之縣，其國民有直接選舉官員之權，有直接罷免官員之權，有直接創制法律之權，有直接複決法律之權。&lt;br&gt;&lt;br&gt;十、每縣開創自治之時，必須先規定全縣私有土地之價。其法由地主自報之，地方政府則照價徵稅，並可隨時照價收買。自此次報價之後，若土地因政治之改良、社會之進步而增價者，則其利益當爲全縣人民所共享，而原主不得而私之。&lt;br&gt;&lt;br&gt;十一、土地之歲收，地價之增益，公地之生產，山林川澤之息，礦產水力之利，皆爲地方政府之所有；而用以經營地方人民之事業，及育幼、養老、濟貧，救災、醫病與夫種種公共之需。&lt;br&gt;&lt;br&gt;十二、各縣之天然富源與及大規模之工商事業，本縣之資力不能發展與興辦，而須外資乃能經營者，當由中央政府爲之協助；而獲之純利，中央與地方政府各佔其半。&lt;br&gt;&lt;br&gt;十三、各縣對於中央政府之負擔，當以每縣之歲收百分之幾爲中央歲費，每年由國民代表定之；其限度不得少於百分之十，不得加於百分之五十。&lt;br&gt;&lt;br&gt;十四、每縣地方自治政府成立之後，得選國民代表一員，以組織代表會，參預中央政事。&lt;br&gt;&lt;br&gt;十五、凡候選及任命官員，無論中央與地方，皆須經中央考試、定資格者乃可。&lt;br&gt;&lt;br&gt;十六、凡一省全數之縣皆達完全自治者，則爲憲政開始時期，國民代表會得選舉省長，爲本省自治之監督。至於該省內之國家行政，則省長受中央之指揮。&lt;br&gt;&lt;br&gt;十七、在此期間，中央與省之權限採均權制度。凡事務有全國一致之性質者，劃歸中央；有因地制宜之性質者，劃歸地方；不偏於中央集權或地方分權。&lt;br&gt;&lt;br&gt;十八、縣爲自治之單位，省立於中央與縣之間，以收聯絡之效。&lt;br&gt;&lt;br&gt;十九、在憲法開始時期，中央政府當完成設立五院，以試行五權之治。其序列如下：曰行政院；曰立法院；曰司法院；曰考試院；曰監察院。&lt;br&gt;&lt;br&gt;二十、行政院暫設如下各部：一、內政部；二、外交部；三、軍政部；四、財政部；五、農礦部；六、工商部；七、教育部；八、交通部。&lt;br&gt;&lt;br&gt;二十一、憲法未頒佈以前，各院長皆歸總統任免而督率之。&lt;br&gt;&lt;br&gt;二十二、憲法草案當本於建國大綱及訓政、憲政時期之成績，由立法院議訂，隨時宣傳於民衆以備到時採擇施行。&lt;br&gt;&lt;br&gt;二十三、全國有過半數省分達至憲政開始時期，即全省之地方自治完全成立時期，則開國民大會決定憲法而頒佈之。&lt;br&gt;&lt;br&gt;二四、憲法頒佈之後，中央統治權則歸於國民大會行使之，即國民大會對於中央政府官員有選舉權，有罷免權；對於中央法律有創制權，有複決權。&lt;br&gt;&lt;br&gt;二五、憲法頒佈之日，即爲憲政告成之時，而全國國民則依憲法行全國大選舉。國民政府則於選舉完畢之後三個月解職，而授政於民選之政府，是爲建國之大功告成。&lt;/div&gt;
+
+&lt;div align=&quot;right&quot;&gt;民國十三年四月十二日&lt;/div&gt;
+
+&lt;div align=&quot;right&quot;&gt;”&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/2860238674_9c4beb23e9_o.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div align=&quot;right&quot;&gt; &lt;sup&gt;攝于 南京中山陵 祭堂頂&lt;/sup&gt;&lt;/div&gt;
+
+&lt;p&gt;中山陵過後  返回玄武湖&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20824873621_fa8516b6a8_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20629779000_40ef516d30_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;天色漸暗 我也該準備準備回上海了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20631418390_524425b49a_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;南京火車站  依玄武湖而建  地理位置非常好&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20631026699_530d2a51b5_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;這次南京之旅 總體感覺非常不錯&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20150822_044607855_iOS.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;那年宋美齡喜歡法國梧桐 蔣介石便把梧桐樹種滿了整個南京城&lt;/p&gt;
+&lt;p&gt;上海也是如此 猶如淮海路街頭  給夏日的街道帶去一絲清涼&lt;/p&gt;
+&lt;p&gt;南京 背負著復興中華重任的城市&lt;/p&gt;
+&lt;p&gt;今年是民國一百零四年 大陸&lt;del&gt;解(lun)放(xian)&lt;/del&gt;六十六年&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/Lu_Yanzhi&amp;#39;s_Design_of_Sun_Yat-sen&amp;#39;s_Mausoleum.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;中山陵是孫文先生給中華子民的一個警鐘 希望能喚醒沈睡民眾光復國家&lt;/p&gt;
+&lt;p&gt;卻被刻上亡國的碑文&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/11949340_405200909675764_3076064672423958303_n.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;孫文先生懷著三民主義長眠於此 希望早日實現氏王目田、安居樂業、言論自由的國家&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;南京游記更多照片  &lt;a href=&quot;https://www.flickr.com/photos/kawaiiushio/sets/72157655329639393&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;On Flickr&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/wPiPgvZjNtg&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ef3SghEsDZI&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;div align=&quot;right&quot;&gt; &lt;sup&gt;警告：此頁面視頻僅限氏王目田的國家或地區播放。&lt;/sup&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;// 01 的區號暫時給南京保留著 希望有一天可以用上&lt;br&gt;&lt;br&gt;01  南京（目前暫時無法使用）&lt;br&gt;&lt;br&gt;02  基隆市、臺北市、臺北縣&lt;br&gt;&lt;br&gt;03  桃園縣、新竹市、新竹縣、宜蘭縣、花蓮縣&lt;br&gt;&lt;br&gt;037 苗栗縣&lt;br&gt;&lt;br&gt;04  臺中市、臺中縣、彰化縣&lt;br&gt;&lt;br&gt;049 南投縣&lt;br&gt;&lt;br&gt;05  雲林縣、嘉義市、嘉義縣&lt;br&gt;&lt;br&gt;06  臺南市、臺南縣、澎湖縣&lt;br&gt;&lt;br&gt;07  高雄市、高雄縣&lt;br&gt;&lt;br&gt;08  屏東縣&lt;br&gt;&lt;br&gt;089 臺東縣&lt;br&gt;&lt;br&gt;0836  馬祖&lt;br&gt;&lt;br&gt;0839  金門縣、烏丘、東沙、南沙&lt;br&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/center&gt;&lt;/center&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/20629804710_e3294434ae_k.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div align=right&gt; &lt;sup&gt;攝于 南京中山陵 祭堂&lt;/sup&gt;&lt;/div&gt;
+
+&lt;center&gt;南京&lt;center&gt;&lt;br&gt;&lt;center&gt;現虎踞龍盤  望再興中華&lt;/center&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="nanking" scheme="https://ky0n.xyz/tags/nanking/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打開 Android 5.X Lollipop 的 Google Now 教程</title>
+    <link href="https://ky0n.xyz/open-google-now-on-android-lollipop/"/>
+    <id>https://ky0n.xyz/open-google-now-on-android-lollipop/</id>
+    <published>2015-08-16T14:25:31.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/Google-Now.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Google Now（Google即時）是一款由Google開發的智能個人助理軟件，擴充了Google搜索手機應用程序的功能，可在Android、iOS及Google Chrome上使用。&lt;/p&gt;
+&lt;p&gt;Google Now使用自然語言用戶接口（Natural language user interface）通過一系列的Web服務來進行回答問題、提供建議、運行動作之行爲。在迴應用戶時，Google Now會基於用戶過往的的搜索習慣來預測其所可能需要的信息。Google Now最初被包含在Android 4.1 Jelly Bean（果凍豆）之中，首先支持的智能手機爲Galaxy Nexus。&lt;/p&gt;
+&lt;p&gt;美國雜誌《科技新時代》（Popular Science）將Google Now評選爲2012年的“年度創新”（Innovation of the Year）。&lt;/p&gt;
+&lt;div align=&quot;right&quot; &lt;sup=&quot;&quot;&gt;- via Wikipeidia&lt;/div&gt;
+
+&lt;p&gt;這篇文章可幫助各位打開 中文的 Google Now ~&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;現在 Google Now 已經支持 Android、iOS和全平臺的 Chrome 瀏覽器&lt;/p&gt;
+&lt;p&gt;&lt;video src=&quot;http://git.oschina.net/kawaiiushio/cdn/raw/master/Google%20Now%20for%20iPhone%20and%20iPad.mp4&quot; controls=&quot;controls&quot; width=&quot;800px&quot;&gt;&lt;br&gt;您的瀏覽器不支持 video 標籤。&lt;br&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;div align=&quot;right&quot; &lt;sup=&quot;&quot;&gt;- Google Now For iOS 廣告&lt;/div&gt;
+
+&lt;p&gt;&lt;video src=&quot;http://git.oschina.net/kawaiiushio/cdn/raw/master/Introducing%20Google%20Now.mp4&quot; controls=&quot;controls&quot; width=&quot;800px&quot;&gt;&lt;br&gt;您的瀏覽器不支持 video 標籤。&lt;br&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;div align=&quot;right&quot; &lt;sup=&quot;&quot;&gt;- Google Now For Android 廣告&lt;/div&gt;
+
+&lt;p&gt;本教程僅支持 Android 5.x ，舊版本開啓 Google Now 方法請自行 &lt;a href=&quot;https://google.com/ncr&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google&lt;/a&gt; 搜索&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打開 Google Now 首先需要 &lt;a href=&quot;http://wiki.cyanogenmod.org/w/Gapps&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gapps&lt;/a&gt; 和 &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google Search App&lt;/a&gt; 的支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;首先請拔掉手機內的 sim 卡。&lt;/p&gt;
+&lt;p&gt;系統語言需要設置英語&lt;br&gt;設置 -&amp;gt; 語言與輸入設定 -&amp;gt; 語言 -&amp;gt; English - (United States)&lt;/p&gt;
+&lt;p&gt;關閉手機的定位 ， 開啓飛行模式 ， 打開 Wifi ，如果在中國大陸地區，需要 &lt;sup&gt;*&lt;/sup&gt;科學上網&lt;/p&gt;
+&lt;p&gt;在 Settings -&amp;gt; apps -&amp;gt; all 裡面，找到 google play service 、google service framework 、google play store 、google app ，彻底清除應用數據；&lt;/p&gt;
+&lt;p&gt;再次打開 Settings -&amp;gt; Accounts 選擇 Google Account，點擊 sign out，然後再次登錄 Google 賬戶&lt;/p&gt;
+&lt;p&gt;這時打開 Google Search 就可以激活 Google Now 功能了&lt;/p&gt;
+&lt;p&gt;之後可以再次開啓系統定位 關閉飛行模式 和 設置中文語言~&lt;/p&gt;
+&lt;p&gt;開啓 Google Now 可能造成 Play 商店無法正常使用 需要清除 google play service 和 google play store 的 App 數據資料&lt;/p&gt;
+&lt;p&gt;然後重新登錄 Play 商店  又可以繼續使用了&lt;/p&gt;
+&lt;p&gt;使用 Google Now 的功能 ，我推薦 &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.google.android.launcher&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google 即時桌面&lt;/a&gt; 或者 &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Nova Launcher&lt;/a&gt;  可以帶來更好的體驗&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;最後廣告時間  &lt;/p&gt;
+&lt;p&gt;寫代碼 搞程序  要用  &lt;a href=&quot;https://gitcafe.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitCafe&lt;/a&gt; 托管代碼喲~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/Google-Now.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Google Now（Google即時）是一款由Google開發的智能個人助理軟件，擴充了Google搜索手機應用程序的功能，可在Android、iOS及Google Chrome上使用。&lt;/p&gt;
+&lt;p&gt;Google Now使用自然語言用戶接口（Natural language user interface）通過一系列的Web服務來進行回答問題、提供建議、運行動作之行爲。在迴應用戶時，Google Now會基於用戶過往的的搜索習慣來預測其所可能需要的信息。Google Now最初被包含在Android 4.1 Jelly Bean（果凍豆）之中，首先支持的智能手機爲Galaxy Nexus。&lt;/p&gt;
+&lt;p&gt;美國雜誌《科技新時代》（Popular Science）將Google Now評選爲2012年的“年度創新”（Innovation of the Year）。&lt;/p&gt;
+&lt;div align=&quot;right&quot;&lt;sup&gt;- via Wikipeidia&lt;/sup&gt;&lt;/div&gt;
+
+&lt;p&gt;這篇文章可幫助各位打開 中文的 Google Now ~&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="google" scheme="https://ky0n.xyz/tags/google/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux TCP 性能調優筆記</title>
+    <link href="https://ky0n.xyz/linux-tcp-tuning/"/>
+    <id>https://ky0n.xyz/linux-tcp-tuning/</id>
+    <published>2015-08-05T09:21:56.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/youtube_4k.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;本文參考自 &lt;a href=&quot;http://fasterdata.es.net/host-tuning/linux/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Linux Tuning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本文可以幫助您的服務器提高 &lt;code&gt;并發數量&lt;/code&gt; 和改善 &lt;code&gt;高延遲掉包&lt;/code&gt; 情況&lt;/p&gt;
+&lt;p&gt;本文涉及的 hybla 和 htcp 算法已經很火星了  具體釋義請自行Google搜索&lt;/p&gt;
+&lt;p&gt;不推薦使用 openvz 虛擬化技術的 VPS  此類權限較低 推薦使用 KVM 架構的虛擬 Linux VPS&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;請先啓用hybla 和 htcp 算法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# /sbin/modprobe tcp_htcp
+# /sbin/modprobe tcp_hybla
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然後查看是否啓用成功&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# sysctl net.ipv4.tcp_available_congestion_control
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;終端返回以下文字表示啓用成功&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sysctl net.ipv4.tcp_available_congestion_control = htcp cubic reno hybla
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接著設置  &lt;code&gt;/etc/sysctl.conf&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fs.file-max = 51200
+#提高整個系統的文件限制
+net.ipv4.tcp_syncookies = 1
+#表示開啓SYN Cookies。當出現SYN等待隊列溢出時，啓用cookies來處理，可防範少量SYN攻擊，默認爲0，表示關閉；
+net.ipv4.tcp_tw_reuse = 1
+#表示開啓重用。允許將TIME-WAIT sockets重新用於新的TCP連接，默認爲0，表示關閉；
+#表示開啓TCP連接中TIME-WAIT sockets的快速回收，默認爲0，表示關閉；
+net.ipv4.tcp_tw_recycle = 0
+#爲了對NAT設備更友好，建議設置爲0。
+#修改TW快速回收的問題以更好的兼容移動設備。
+net.ipv4.tcp_fin_timeout = 30
+#修改系統默認的 TIMEOUT 時間。
+net.ipv4.tcp_keepalive_time = 1200
+#表示當keepalive起用的時候，TCP發送keepalive消息的頻度。缺省是2小時，改爲20分鐘。
+net.ipv4.ip_local_port_range = 10000 65000 #表示用於向外連接的端口範圍。缺省情況下很小：32768到61000，改爲10000到65000。（注意：這裏不要將最低值設的太低，否則可能會佔用掉正常的端口！）
+net.ipv4.tcp_max_syn_backlog = 8192
+#表示SYN隊列的長度，默認爲1024，加大隊列長度爲8192，可以容納更多等待連接的網絡連接數。
+net.ipv4.tcp_max_tw_buckets = 5000
+#表示系統同時保持TIME_WAIT的最大數量，如果超過這個數字，TIME_WAIT將立刻被清除並打印警告信息。
+#額外的，對於內核版本新於**3.7.1**的，我們可以開啓tcp_fastopen：
+net.ipv4.tcp_fastopen = 3
+# increase TCP max buffer size settable using setsockopt()
+net.core.rmem_max = 67108864
+net.core.wmem_max = 67108864
+# increase Linux autotuning TCP buffer limit
+net.ipv4.tcp_rmem = 4096 87380 67108864
+net.ipv4.tcp_wmem = 4096 65536 67108864
+# increase the length of the processor input queue
+net.core.netdev_max_backlog = 250000
+# recommended for hosts with jumbo frames enabled
+net.ipv4.tcp_mtu_probing=1
+#美帝VPS推薦設置TCP擁塞算法爲 hybla 算法， 十一區VPS推薦設置 htcp 算法
+net.ipv4.tcp_congestion_control=htcp
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;設置文件寫完后執行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# sysctl -p
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Enjoy~&lt;/p&gt;
+&lt;p&gt;各算法優劣對比請見 CSDN 大神的 &lt;a href=&quot;http://blog.csdn.net/zhangskd/article/details/6715751&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;分析&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/youtube_4k.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;本文參考自 &lt;a href=&quot;http://fasterdata.es.net/host-tuning/linux/&quot;&gt;Linux Tuning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本文可以幫助您的服務器提高 &lt;code&gt;并發數量&lt;/code&gt; 和改善 &lt;code&gt;高延遲掉包&lt;/code&gt; 情況&lt;/p&gt;
+&lt;p&gt;本文涉及的 hybla 和 htcp 算法已經很火星了  具體釋義請自行Google搜索&lt;/p&gt;
+&lt;p&gt;不推薦使用 openvz 虛擬化技術的 VPS  此類權限較低 推薦使用 KVM 架構的虛擬 Linux VPS&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="https://ky0n.xyz/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>消失的網站</title>
+    <link href="https://ky0n.xyz/die-away/"/>
+    <id>https://ky0n.xyz/die-away/</id>
+    <published>2015-07-09T09:22:09.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/entry-4-wall.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我用 Line  然後 Line 沒有了,&lt;/p&gt;
+&lt;p&gt;我用 Slack 然後 Slack 沒有了,&lt;/p&gt;
+&lt;p&gt;我用 Instagram 然後 Instagram 沒有了,&lt;/p&gt;
+&lt;p&gt;我用 Telegram 然後 Telegram 也沒有了,&lt;/p&gt;
+&lt;p&gt;那麼 而下一個又會是誰?&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;看我這篇博文之前請大家先看看《慢慢的，它們就沒有了，就像從未存在過》這篇文章，原文在微博、微信、豆瓣上也沒有了，就像從未存在過。&lt;/p&gt;
+&lt;p&gt;那我重新貼下原文：&lt;/p&gt;
+&lt;p&gt;幾年以前，我曾經嘲笑過某科技界大佬。當時他說：也許90後、95後會慢慢不知道Google是什麼網站。&lt;/p&gt;
+&lt;p&gt;那一年，這對於我來說簡直就是世界上最好笑的笑話。谷歌，全世界最卓越的互聯網公司，活在互聯網的一代中國人，會不知道他們的網站？&lt;br&gt;今天，我收回這句嘲笑。因爲這件不可能的事，它慢慢變成了現實。&lt;/p&gt;
+&lt;p&gt;沒有人再關注什麼谷歌不穀歌。對他們來說，百度也蠻好用的，反正他們幾乎沒用過谷歌。沒有谷歌又怎樣？大家還是開心的刷微博，看微信，聽歌，看娛樂節目。對於從來就不知道谷歌的人來說，少了谷歌又有什麼影響？&lt;br&gt;多年前，我們也是可以登陸Facebook的。其實這個網站和校內一樣，也挺蠢的。可在上面你能看到老外們的生活，可以輕易的跟一萬公里以外的人互相拜訪，可以看到很多根本不會開到校內上的主頁。你用漢語回覆，下面給你聊起來的可能是香港仔，可能是臺灣人。你用英語回覆，說不定有比你英語用的更蹩腳的寂寞的北歐人來跟你搭訕。你感覺地球真的變成了地球村，你還沒拉門走出去，別人就推門走了進來。&lt;br&gt;然後，它就沒有了。起初，它的失蹤激起了很大的聲音，後來，聲音就消失了。&lt;/p&gt;
+&lt;p&gt;多年前，我們也是可以登陸Twitter的。其實這個網站和微博一樣，也不過是些信息流，刷上一整天，也不見得有什麼用處。但至少，你可以以最快速度獲取你想知道的任何新事，你會真正瞭解什麼事情在全世界是流行的，而不是經過各種截圖、翻譯、轉發，甚至曲解、斷章取義、黑白顛倒的東西。你知道的是真相，赤裸裸的，也許有點太短的真相。但至少中間不會有無數人的加工與再加工，偏激、片面，就在這個過程中產生了，不管後來者有意還是無意。&lt;/p&gt;
+&lt;p&gt;然後，它就沒有了。首先是它的本體沒有了，然後它的模仿者也沒有了，模仿者的模仿者也沒有了。只剩一個模仿者的模仿者的模仿者，現在你每天能在上面看到無數廣告。&lt;br&gt;多年前，我們也是可以登陸YouTube的。對於有的人來說，這個網站就是個大型優酷，當年有人信誓旦旦的說，沒有YouTube，我們中國人會很快讓優酷超過YouTube。可這麼多年過去了，視頻還是那麼卡，內容還是那麼垃圾，原創還是那麼容易被盜竊，視頻豐富度還是那麼的可憐。在YouTube上，你能看到全世界最棒的手藝人，最逗樂的笑話，最天馬行空的創意，最激盪人心的音樂，最美好的完美瞬間，可在優酷上，你想看一分鐘視頻，請先看半分鐘廣告。&lt;/p&gt;
+&lt;p&gt;哦，對了。Instagram，有些人可能感覺它和QQ空間也差不多。可我在上面關注了六百多個攝影師，它們都是頂好頂好的影像記錄者，每天看他們的作品，我感覺到很幸福，那種即使沒有到那裏去，也身臨其境的幸福。我還在上面認識了一個日本的愛自拍的帥小夥，一個愛喝酒的韓國大叔，一個十年前到過中國今天會在每張我發的紫禁城照片下點讚的美國大爺，一個美麗無比的俄羅斯妹子，我和他們基本上都難以交流，語言是很大的障礙，但幾個簡單的單詞，心意也就到了，這種感覺，有時候比多年老友相聚還興奮。因爲這是人類不同族羣自由交流互相溝通的過程，這種過程很神奇，真的很神奇。&lt;br&gt;可現在，它沒有了，它之所以沒有就因爲在某個特定的時間你在搜索特定的詞彙時，會搜出來特定的照片。雖然這麼搜的人並不多，雖然看到的人也不會大驚小怪，也不會覺得天黑了，天亮了，天要塌了，天要變了。可它就是沒了，Instagram，就這麼沒了。谷歌也是這麼沒的，Twitter也是這麼沒的，Facebook也是這麼沒的。不知道是什麼人，在什麼場合，說了什麼話，下了什麼決定。就要有超過十億人像陷於哥譚市的孤島裏一樣，看着一座又一座橋樑被炸掉，又被炸掉，又被炸掉，然後，就什麼都沒了。&lt;/p&gt;
+&lt;p&gt;我時常覺得悲哀，真的好悲哀，一個我根本不認識也不知道是誰的人，也許是一個羣體，在不斷搶走我身邊的東西，而我卻無能爲力。我抱怨一聲，他聽不到，任何人都聽不到。我怒吼一句，身邊的大多數人卻像看瘋子一樣的看着我。我哀嚎一聲，這聲音被阻礙在黑黑的幕牆以裏。我發出尖銳的嘶吼，這聲音傳不了多遠，就和我那被搶走的東西一樣，消失了，不見了，就像從來沒存在過一樣。&lt;br&gt;對於本來就沒存在過的東西，有誰又會覺得在意呢？那些本來擁有又被掠奪的人的哀愁，後來的人又怎麼懂呢？我曾經是擁有一切的，我曾經是擁有世界的，我站在這片土地上，呼吸的是自由的空氣，飲下的是自由的瓊漿玉液。就在長的無法計數的時間裏，我自由生命的一部分又一部分就這麼被殺死了，突然就殺死了。可我還始終覺得，它們還奄奄一息的活着，就像它們是慢慢的死去的一樣。&lt;br&gt;可它們終歸是死了，而且隨着它們的死，愈來愈多的事情慢慢的發生了，很慢很慢，幾乎不被人察覺，可還是發生了。&lt;/p&gt;
+&lt;p&gt;沒有谷歌，我可以用百度呀。可某些結果被越挪越後，越挪越後，最後就不見了。就像本來就不該搜出這個結果一樣。&lt;/p&gt;
+&lt;p&gt;沒有Facebook，我可以用校內呀。可你想發只有在Facebook上能發的文章，很快在校內上就失蹤了。接着，校內變成了人人，話題變成了人人都關心的話題。大家都在搶着看星座、明星、八卦、娛樂。沒有人會關心什麼消失了，反正它們本來也沒多少存在感。&lt;/p&gt;
+&lt;p&gt;沒有YouTube，我可以用優酷呀。可你卻經常只能在優酷上看到抄襲別人的作品，而且還不署名，而且還洋洋得意，而且還自我陶醉，就好像那個idea本來屬於他自己一樣。你看了還要驚呼，他是如此的有創意！好一個抄襲的創意，可你卻不知道，因爲你不知道這個世界上有個網站叫YouTube。&lt;/p&gt;
+&lt;p&gt;沒有Twitter，我還可以用微博呀。可你想知道最近發生了什麼，你搜的越勤快，越能看到越明顯的“根據相關法律法規，相關搜索結果不予顯示”。時間長了，你想，反正知道了也沒什麼用，不如不看了。&lt;br&gt;慢慢的，一扇又一扇的門關上了。&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;今天你打開世界上最大的博客網站，發現它沒了。明天你一看，世界上最好的設計師分享網站沒了，一開始是刷新的很慢很慢，後來它就沒了。過兩天再一看，平常每天都會讀兩篇文章的媒體網站沒了，那裏的文章繽紛多彩，最後都變成了該頁無法顯示幾個字。再過幾個月，大學的網站不讓上了，攝影師的網站不讓上了，就連百度日本這種自家網站，也沒了。&lt;br&gt;接着，漫畫看不了了，接着，動畫看不成了。接着，美劇英劇失蹤了。下載美劇英劇的網站又又又又又失蹤了。尊重正版，保護權益，行吧，然後字幕網站也沒了。&lt;br&gt;遊戲沒了，你習慣性登陸的遊戲網站，發現下載欄正在整治中。論壇關了，天天都在看的論壇，突然接到相關部門的電話，因爲“報備問題”不讓辦了。個人網站，私人博客，對不起，說沒就沒有，你在上面存了多少多年辛勤耕耘的東西都沒用。&lt;/p&gt;
+&lt;p&gt;你關注的人，有一天你登陸微博，發現他怎麼好久都沒說話了，然後你搜索了一下，發現他的賬號不存在了，而且你搜他的名字，他的名字未予顯示。&lt;br&gt;一盞一盞的燈，滅了。四面八方的光源，消失了。我們生活的五光十色的世界，變成了一片黑色。&lt;br&gt;天黑了，那麼睡覺吧，但願長醉不復醒，臥槽泥馬勒戈壁。&lt;/p&gt;
+&lt;p&gt;最後，我們變成了一羣做夢的人，這個夢的名字，叫根據相關法律法規，相關搜索結果不予顯示夢。&lt;/p&gt;
+&lt;p&gt;作者 小海，原帖地址 &lt;a href=&quot;http://www.douban.com/people/xseac/notes&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.douban.com/people/xseac/notes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;就是這樣，有些網站已經成為了不存在&lt;/p&gt;
+&lt;p&gt;世界上訪問量前十位的網站 (數據來自 &lt;a href=&quot;http://www.alexa.com/topsites&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;alexa&lt;/a&gt; 2015.7) 其中Google、Facebook、Youtube、Wikipedia、Twitter 這五個網站已經在&lt;code&gt;中國&lt;/code&gt;內地無法正常鏈接 也就是說世界上這幾個大網站有一半的我們都看不見&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/alexa1507.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Google 作為世界上訪問量最大的網站  世界上竟然還有三個國家不能正常訪問 我想吐槽為什麼我們的鄰居&lt;code&gt;朝鮮&lt;/code&gt;（或稱為 北韓）這個國家居然沒有在受限制的名單中。。。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/google_transparencyreport.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;數據來自 &lt;a href=&quot;http://www.google.com/transparencyreport/traffic/?hl=zh-TW#expand=TW&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google Transparency Report&lt;/a&gt; 2015.7&lt;/p&gt;
+&lt;video src=&quot;https://git.oschina.net/kawaiiushio/cdn/raw/master/Take%20Action%20Add%20Your%20Voice%20to%20Keep%20the%20Internet%20freeandopen.mp4&quot; controls=&quot;controls&quot; width=&quot;800px&quot;&gt;&lt;br&gt;您的瀏覽器不支持 video 標籤。&lt;br&gt;&lt;/video&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/gfvvcert.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Across the Great Wall we can reach every corner in the world. 這句話放在今天依然適用。只不過加了個Great。&lt;/p&gt;
+&lt;p&gt;而”&lt;a href=&quot;https://zh.wikipedia.org/zh/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8EM&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;牆&lt;/a&gt;“再也不是牆  而變成了一門”&lt;a href=&quot;https://citizenlab.org/2015/04/chinas-great-cannon/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;炮&lt;/a&gt;“ 只要有反對 xx 的聲音 會立即向你開炮&lt;/p&gt;
+&lt;p&gt;上次針對 Github 的 DDOS 攻擊就是一次很好的例子 詳見 &lt;a href=&quot;http://googleonlinesecurity.blogspot.ae/2015/04/a-javascript-based-ddos-attack-as-seen.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google 安全報告&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;都在普及下一代IPV6的時候 我們還在”愚蠢”的研究 NAT轉換 從而還繼續保留在 dang 的關心照顧下 而你並沒有公網 IP 即使你有公網 IP&lt;br&gt;但是那些重要的端口也是封閉的&lt;/p&gt;
+&lt;p&gt;國內的運營商還在一步步的&lt;a href=&quot;http://v2ex.com/go/bb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;縮減出口國際帶寬&lt;/a&gt; 讓你根本出不去&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw1024/6d9bd6a5gw1ethsidy0saj21d610yk9z.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;面對落後的互聯網環境 也只能哀其不幸 怒其不爭了&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/entry-4-wall.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我用 Line  然後 Line 沒有了,&lt;/p&gt;
+&lt;p&gt;我用 Slack 然後 Slack 沒有了,&lt;/p&gt;
+&lt;p&gt;我用 Instagram 然後 Instagram 沒有了,&lt;/p&gt;
+&lt;p&gt;我用 Telegram 然後 Telegram 也沒有了,&lt;/p&gt;
+&lt;p&gt;那麼 而下一個又會是誰?&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>夏至南下</title>
+    <link href="https://ky0n.xyz/visit-shenzhen-and-hongkong/"/>
+    <id>https://ky0n.xyz/visit-shenzhen-and-hongkong/</id>
+    <published>2015-06-18T13:19:02.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;又是一年夏至 每年到了這個時候 天總是格外的熱 這次又正好出差南下 感覺心更累了 T-T&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/mf_tem.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;這次去深圳參加了一年一度的 Maker Faire 我也是第一次去 這次在展會上看到了好多有意思的東西&lt;/p&gt;
+&lt;p&gt;深圳這個城市也是第一次來 之前去過廣州 也是如此悶熱 我無法想象這個城市晚上沒有空調的日子2333&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/2015shenzhen.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;會場上空的天很藍&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/sz_sky.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;這次 Maker Faire 有許多大牌大廠 也有很多創業新項目&lt;/p&gt;
+&lt;p&gt;大疆的多軸飛行器在這次展會上也是出足了風頭  希望這家佔據世界90%的多軸飛行器廠商能走得更遠吧&lt;/p&gt;
+&lt;p&gt;關於此次的更多照片 我之後會上傳至在本人的 Flickr&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/sz-bay-bridge.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;對面是萬惡的資本主義社會 能上一些不存在的網站 為了瞭解一下他們水深火熱的生活 決定過去看看&lt;/p&gt;
+&lt;p&gt;我從深圳灣口岸過去 大概排了二十分鐘的隊伍 才順利過關&lt;/p&gt;
+&lt;p&gt;過了關卡 我坐上了香港的巴士到元朗 之前在X寶如了一個八達通  挺好用的&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/sz_to_hk_bus.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;下來換地鐵到之前在 AirBnb 訂的 flat  位於尖沙咀 下來就是彌敦道 挺不錯的&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/airbnb_hk.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;接下來在香港逛了兩天&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/peking_rd.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;香港最無聊的一條馬路 上面的小店基本都是中國人開的 東西專門買給大陸遊客&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/cqds.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;旁邊的重慶大廈 門口都是來自非洲/印度/東南亞的基佬  不過這個基佬是真的 GAY 喜歡攪基的可以去找他們技術交♂流交♂流  &lt;/p&gt;
+&lt;p&gt;參觀大廈裡面最好還是組團探險吧~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/nightview_hk.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;維港的夜景  也不怎麽樣  沒上海的漂亮 雖然就住外灘邊上 但還是喜歡黃浦江的夜景&lt;/p&gt;
+&lt;p&gt;我之前在X寶上買了一張7日港澳3G手機卡  不限制流量 試了一下  網速挺不錯的 有時候比內地的 FTTH 速度都好&lt;/p&gt;
+&lt;p&gt;沒有內地的互(ju)聯(yu)網審查 我都習慣連 VPN/SS 了…23333&lt;/p&gt;
+&lt;p&gt;兩天之內 我大概尖沙咀地區和整個港島中心  都走了一邊  維港的 ferry 也坐了  如果我是開船的 覺得比上海的 ferry 更難開&lt;/p&gt;
+&lt;p&gt;不過那個假山我沒去看  因為下雨  不想上山&lt;/p&gt;
+&lt;p&gt;挺失望的  這次去沒見到香港的記者  聽說跑得很快的&lt;/p&gt;
+&lt;p&gt;結束行程 回到深圳 還是感嘆社會主義好啊 (回頭想想  除了真志(你懂的),教育,網絡比不上 hk  其他都挺好的 其實給我一個流暢的網絡環境就夠了2333&lt;/p&gt;
+&lt;p&gt;話說這次 hk 自由行  不是很好玩 我聽不懂粵語和速度極快的英語 覺得很吃力&lt;br&gt;另外香港人好像並不喜歡與內地人交流 溝通過於冷漠 或許只是認為內地人只是用來賺錢的工具&lt;br&gt;香港的街道很小 房子很小 電梯很小  市中心各種密密麻麻的樓房 總之也是難為他們了&lt;br&gt;網上一直說上海和香港都是極其排外的城市  我作為一個出生於上海的土著 並不認為是這樣的&lt;br&gt;對於外來的朋友我們都很歡迎 只是不喜歡那些不太文明禮貌的人&lt;br&gt;我覺得大家都應該互相尊重 我們上海人每天都是很忙的 哪有時間去歧視遠道而來的人啊 2333&lt;/p&gt;
+&lt;p&gt;上海比香港更開放 想來基本隨時可以來  也沒有什麼通行證這種複雜無用的東西&lt;br&gt;感謝各位遠道而來的朋友 我們快蓋好的上海新地標-上海中心 也是好多外地朋友花了好幾年建造的  辛苦大家了!&lt;br&gt;有機會可以來外灘看看夜景 來冒險家的樂園看看 我不騙你 這裡的夜景不知道比維港好看多少 維港的夜景真是 naive~&lt;/p&gt;
+&lt;div align=&quot;right&quot;&gt;乙未年 夏至&lt;/div&gt;  
+
+&lt;div align=&quot;right&quot;&gt;記於深圳/香港/上海&lt;/div&gt;  
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;又是一年夏至 每年到了這個時候 天總是格外的熱 這次又正好出差南下 感覺心更累了 T-T&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/mf_tem.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>又一個好用的文本編輯器 Atom</title>
+    <link href="https://ky0n.xyz/atom-editor/"/>
+    <id>https://ky0n.xyz/atom-editor/</id>
+    <published>2015-06-16T11:38:47.000Z</published>
+    <updated>2016-03-14T05:06:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/atom_banner.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;475天前  Github 發佈了 Atom 編輯器的第一個測試版本，基於Chromium Embedded Framework 也算是個 Web App 了。 2333&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;現在 Atom 編輯器已經放出了1.0.0的穩定版本,相對於 Sublime，Atom 的啓動速度和處理代碼速度並不理想 在 Mac 平臺很流暢 或許是因爲 SSD 的關係，如果在 Windows 平臺，爲了保證相應的速度，建議還是放在 SSD 裏面運行。&lt;/p&gt;
+&lt;p&gt;Atom 項目地址 ： &lt;a href=&quot;https://atom.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Atom.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你是前 Sublime Text 的用戶,換到Atom應該感覺變化不大，包括一些快捷鍵還是原來一樣的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/atom_prtsc.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;擴展性和 Sublime 差不多，有很多插件可以選擇，不過安裝插件可以在 Atom 裏面操作也可以用 Terminal裏面使用 apm 安裝插件包&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/atom_plugins.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;或者下載插件包解壓到 ~/.atom&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/atom_dir.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;有幾個插件挺不錯的 可以安利一下&lt;/p&gt;
+&lt;p&gt;script：Atom 裏面運行代碼 支持很多程序語言&lt;br&gt;atom-beautify：代碼格式化工具&lt;br&gt;mini-map：類似 sublime 右邊的代碼縮略圖&lt;br&gt;monokai:sublime 的代碼高亮樣式&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/atom_packages.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;用了一段時間的 VS CODE。  覺得測試版的問題太多了 還是換回 Atom 吧~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/atom_banner.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;475天前  Github 發佈了 Atom 編輯器的第一個測試版本，基於Chromium Embedded Framework 也算是個 Web App 了。 2333&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="atom" scheme="https://ky0n.xyz/tags/atom/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>廣州之行</title>
+    <link href="https://ky0n.xyz/in-canton/"/>
+    <id>https://ky0n.xyz/in-canton/</id>
+    <published>2015-05-26T08:16:17.000Z</published>
+    <updated>2015-05-26T08:28:31.000Z</updated>
+    
+    <content type="html">&lt;p&gt;剛剛回到上海  覺得在廣州玩了幾天挺有意思的 可惜就是天天下雨&lt;/p&gt;
+&lt;p&gt;吃了好多在上海沒見過的  都挺好吃的&lt;/p&gt;
+&lt;p&gt;水果好便宜 買了好多  菠蘿什麼的 3元一斤(差不多一個)難以想象 T-T 上海起碼一個17-20軟妹幣&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xj4mk.com1.z0.glb.clouddn.com/17490408063_15be6b317b_z.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;更多照片 歡迎來我的 &lt;a href=&quot;http://akarin.xyz/Flickr&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Flickr&lt;/a&gt; 玩喲&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;剛剛回到上海  覺得在廣州玩了幾天挺有意思的 可惜就是天天下雨&lt;/p&gt;
+&lt;p&gt;吃了好多在上海沒見過的  都挺好吃的&lt;/p&gt;
+&lt;p&gt;水果好便宜 買了好多  菠蘿什麼的 3元一斤(差不多一個)難以想象 T-T 上海起碼一個17-20軟妹幣&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;ht
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 靜態博客使用指南</title>
+    <link href="https://ky0n.xyz/build-your-hexo-blog/"/>
+    <id>https://ky0n.xyz/build-your-hexo-blog/</id>
+    <published>2015-05-21T08:10:23.000Z</published>
+    <updated>2016-03-24T11:04:32.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/hexo-banner.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;上次我介紹了Hexo的基本搭建方法  近期 &lt;a href=&quot;http://twitter.com/tommy351&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tommy351&lt;/a&gt;大神 又更新了版本&lt;br&gt;和之前的2.x使用步驟略有不同 目前剛剛更新  可能有許多主題和插件不兼容3.x  請等待後續更新&lt;/p&gt;
+&lt;p&gt;本文介紹從零開始搭建的方法 如需從2.x升級到3.x 遷移方法請移至本文最後&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;hr&gt;
+&lt;p&gt;##目錄&lt;/p&gt;
+&lt;p&gt;####I.Hexo簡介&lt;/p&gt;
+&lt;p&gt;####II.Hexo安裝方法&lt;/p&gt;
+&lt;p&gt;####III.Hexo配置方法&lt;/p&gt;
+&lt;p&gt;####IV.Hexo部署方法&lt;/p&gt;
+&lt;p&gt;####V.Hexo更新方法&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;#I.Hexo簡介&lt;br&gt;Hexo 是一個輕量的靜態博客框架。通過Hexo可以快速生成一個靜態博客框架,僅需要幾條命令就可以完成,相當方便。&lt;/p&gt;
+&lt;p&gt;而架設Hexo的環境更簡單了  不需要 lnmp/lamp 這些繁瑣複雜的環境 僅僅需要一個簡單的http服務器即可使用 或者使用互聯網上免費的頁面託管服務&lt;br&gt;比如本人的這個博客 就是託管於 &lt;a href=&quot;https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitCafe&lt;/a&gt; 和 &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt; 的Pages服務上&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本文會更隨 Hexo 的發展同步更新 如需請收藏本文 非常感謝您的閱讀! 如有錯誤,歡迎指出。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;#II.Hexo安裝方法&lt;/p&gt;
+&lt;p&gt;（近期nodejs更新4.0版本 注意此版本暫不兼容hexo編譯 請安裝版本號爲0.12.7的nodejs）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac OS X/Linux或其他UNIX/類UNIX系統 配置 nodejs 環境&lt;ul&gt;
+&lt;li&gt;請去&lt;a href=&quot;http://nodejs.org/download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方網站&lt;/a&gt;下載 &lt;code&gt;.pkg&lt;/code&gt; 文件 或者下載已編譯完成的二進制文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;也可以下載源代碼編譯安裝&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ wget http://nodejs.org/dist/v0.12.4/node-v0.12.7.tar.gz
+$ tar zxvf node-v0.12.7.tar.gz
+$ cd node-v0.12.7
+# ./configure --prefix=/usr
+# make &amp;amp;&amp;amp; make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;npm(node包管理器)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;redhat系&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# yum install npm -y
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;debian系&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# apt-get install npm -y
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其他發行版請自行尋找wiki獲得幫助&lt;/p&gt;
+&lt;p&gt;###通過npm安裝Hexo-Cli 和 hexo&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm install hexo-cli -g
+
+$ npm install hexo --save
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果以上命令不能安裝 可以嘗試把官方源替換爲&lt;a href=&quot;https://npm.taobao.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;淘寶npm源&lt;/a&gt; 再執行安裝Hexo&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;或者你直接通過添加 &lt;code&gt;npm&lt;/code&gt; 參數 &lt;code&gt;alias&lt;/code&gt; 一個新命令:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ alias cnpm=&amp;quot;npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果以上的 cnpm 無法安裝 可以試試看下方的 alias 方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ echo &amp;apos;\n#alias for cnpm\nalias cnpm=&amp;quot;npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc&amp;quot;&amp;apos; &amp;gt;&amp;gt; ~/.zshrc &amp;amp;&amp;amp; source ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Windows系統（具體環境配置請參考&lt;a href=&quot;http://www.cnblogs.com/seanlv/archive/2011/11/22/2258716.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這個&lt;/a&gt;）&lt;ul&gt;
+&lt;li&gt;git&lt;/li&gt;
+&lt;li&gt;node環境&lt;/li&gt;
+&lt;li&gt;npm(node包管理器)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;#III.Hexo配置方法&lt;/p&gt;
+&lt;p&gt;新建一個需要當做博客目錄的文件夾&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mkdir blog
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;進去之後加入hexo主程序和安裝npm&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo init &amp;amp;&amp;amp; npm install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/hexo_install.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;文件夾大致結構如下&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/hexo_tree.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;scaffolds 工具模板&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;scripts hexo的功能js&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;source 博客資源文件夾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;source/_drafts 草稿文件夾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;source/_posts 文章文件夾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;themes 存放皮膚的文件夾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;themes/landscape 默認皮膚文件夾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;_config.yml 全局配置文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;db.json json格式的靜態常量數據庫&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;_posts&lt;/code&gt;目錄：Hexo存放博客文章的文件夾&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;themes&lt;/code&gt;目錄：存放皮膚的文件夾，默認使用官方的主題 你也可以從&lt;a href=&quot;https://github.com/tommy351/hexo/wiki/Themes&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo主題頁面&lt;/a&gt;下載你喜歡的主題&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;##配置Hexo&lt;/p&gt;
+&lt;p&gt;###Hexo全局配置&lt;br&gt;用文本編輯器修改_config.yml這個文件 大致如下 只需要自行修改幾個 其他保持默認即可&lt;/p&gt;
+&lt;p&gt;通常需要修改站點名稱 /URL格式 /歸檔設置 /disqus評論用戶名 /部署配置 這幾項就可以了 注意冒號後面都要添加一個半角空格 之後纔是設置參數&lt;/p&gt;
+&lt;p&gt;自定義域名設置 在&lt;code&gt;source&lt;/code&gt;我文件夾下面新建&lt;code&gt;CNAME&lt;/code&gt;文件 裏面寫入你的自定義域名 並設置您的dns配置cname方式到服務提供商的給的地址即可&lt;/p&gt;
+&lt;h1 id=&quot;網站&quot;&gt;&lt;a href=&quot;#網站&quot; class=&quot;headerlink&quot; title=&quot;網站&quot;&gt;&lt;/a&gt;網站&lt;/h1&gt;&lt;p&gt;參數    描述&lt;br&gt;title    網站標題&lt;br&gt;subtitle    網站副標題&lt;br&gt;description    網站描述&lt;br&gt;author    您的名字&lt;br&gt;language    網站使用的語言&lt;br&gt;timezone    網站時區。Hexo 預設使用您電腦的時區。時區列表&lt;/p&gt;
+&lt;h1 id=&quot;網址&quot;&gt;&lt;a href=&quot;#網址&quot; class=&quot;headerlink&quot; title=&quot;網址&quot;&gt;&lt;/a&gt;網址&lt;/h1&gt;&lt;p&gt;參數    描述    默認值&lt;br&gt;url    網址&lt;br&gt;root    網站根目錄&lt;br&gt;permalink    文章的 永久鏈接 格式    :year/:month/:day/:title/&lt;br&gt;permalink_default    永久鏈接中各部分的默認值&lt;br&gt;網站存放在子目錄&lt;br&gt;如果您的網站存放在子目錄中，例如 &lt;a href=&quot;http://yoursite.com/blog，則請將您的&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://yoursite.com/blog，則請將您的&lt;/a&gt; url 設爲 &lt;a href=&quot;http://yoursite.com/blog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://yoursite.com/blog&lt;/a&gt; 並把 root 設爲 /blog/。&lt;/p&gt;
+&lt;h1 id=&quot;目錄&quot;&gt;&lt;a href=&quot;#目錄&quot; class=&quot;headerlink&quot; title=&quot;目錄&quot;&gt;&lt;/a&gt;目錄&lt;/h1&gt;&lt;p&gt;參數    描述    默認值&lt;br&gt;source_dir    資源文件夾，這個文件夾用來存放內容。    source&lt;br&gt;public_dir    公共文件夾，這個文件夾用於存放生成的站點文件。    public&lt;br&gt;tag_dir    標籤文件夾    tags&lt;br&gt;archive_dir    歸檔文件夾    archives&lt;br&gt;category_dir    分類文件夾    categories&lt;br&gt;code_dir    Include code 文件夾    downloads/code&lt;br&gt;i18n_dir    國際化（i18n）文件夾    :lang&lt;br&gt;skip_render    跳過指定文件的渲染，您可使用 glob 來配置路徑。&lt;/p&gt;
+&lt;h1 id=&quot;文章&quot;&gt;&lt;a href=&quot;#文章&quot; class=&quot;headerlink&quot; title=&quot;文章&quot;&gt;&lt;/a&gt;文章&lt;/h1&gt;&lt;p&gt;參數    描述    默認值&lt;br&gt;new_post_name    新文章的文件名稱    :title.md&lt;br&gt;default_layout    預設佈局    post&lt;br&gt;auto_spacing    在中文和英文之間加入空格    false&lt;br&gt;titlecase    把標題轉換爲 title case    false&lt;br&gt;external_link    在新標籤中打開鏈接    true&lt;br&gt;filename_case    把文件名稱轉換爲 (1) 小寫或 (2) 大寫    0&lt;br&gt;render_drafts    顯示草稿    false&lt;br&gt;post_asset_folder    啓動 Asset 文件夾    false&lt;br&gt;relative_link    把鏈接改爲與根目錄的相對位址    false&lt;br&gt;future    顯示未來的文章    true&lt;br&gt;highlight    代碼塊的設置&lt;/p&gt;
+&lt;h1 id=&quot;分類-amp-標籤&quot;&gt;&lt;a href=&quot;#分類-amp-標籤&quot; class=&quot;headerlink&quot; title=&quot;分類 &amp;amp; 標籤&quot;&gt;&lt;/a&gt;分類 &amp;amp; 標籤&lt;/h1&gt;&lt;p&gt;參數    描述    默認值&lt;br&gt;default_category    默認分類    uncategorized&lt;br&gt;category_map    分類別名&lt;br&gt;tag_map    標籤別名&lt;br&gt;日期 / 時間格式&lt;br&gt;Hexo 使用 Moment.js 來解析和顯示時間。&lt;/p&gt;
+&lt;p&gt;參數    描述    默認值&lt;br&gt;date_format    日期格式    MMM D YYYY&lt;br&gt;time_format    時間格式    H:mm:ss&lt;br&gt;分頁&lt;br&gt;參數    描述    默認值&lt;br&gt;per_page    每頁顯示的文章量 (0 = 關閉分頁功能)    10&lt;br&gt;pagination_dir    分頁目錄    page&lt;/p&gt;
+&lt;h1 id=&quot;擴展&quot;&gt;&lt;a href=&quot;#擴展&quot; class=&quot;headerlink&quot; title=&quot;擴展&quot;&gt;&lt;/a&gt;擴展&lt;/h1&gt;&lt;p&gt;參數    描述&lt;br&gt;theme    當前主題名稱&lt;br&gt;deploy    部署&lt;/p&gt;
+&lt;h3 id=&quot;Hexo常用插件安裝與配置&quot;&gt;&lt;a href=&quot;#Hexo常用插件安裝與配置&quot; class=&quot;headerlink&quot; title=&quot;Hexo常用插件安裝與配置&quot;&gt;&lt;/a&gt;Hexo常用插件安裝與配置&lt;/h3&gt;&lt;p&gt;安裝首頁文章數量  存檔  分類 的插件&lt;br&gt;安裝本地服務器代理插件&lt;br&gt;安裝發佈器插件&lt;br&gt;安裝更新插件 rss site-map之類的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm install hexo-generator-index --save
+$ npm install hexo-generator-archive --save
+$ npm install hexo-generator-category --save
+$ npm install hexo-generator-tag --save
+$ npm install hexo-server --save
+$ npm install hexo-deployer-git --save
+$ npm install hexo-deployer-heroku --save
+$ npm install hexo-deployer-rsync --save
+$ npm install hexo-deployer-openshift --save
+$ npm install hexo-renderer-marked@0.2.10 --save
+$ npm install hexo-renderer-stylus@0.3.1 --save
+$ npm install hexo-generator-feed@1.1.0 --save
+$ npm install hexo-generator-sitemap@1.1.2 --save
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;裝完之後去全局配置文件 _config.yml 修改參數&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;index_generator:
+  per_page: 10 ##首頁默認10篇文章標題 如果值爲0不分頁
+
+archive_generator:
+  per_page: 10 ##歸檔頁面默認10篇文章標題
+  yearly: true  ##生成年視圖
+  monthly: true ##生成月視圖
+
+tag_generator:
+  per_page: 10 ##標籤分類頁面默認10篇文章
+
+category_generator:
+   per_page: 10 ###分類頁面默認10篇文章
+
+
+feed:
+  type: atom ##feed類型 atom或者rss2
+  path: atom.xml ##feed路徑
+  limit: 20  ##feed文章最小數量
+
+
+deploy:
+  type: git ##部署類型 其他類型自行google之
+  repo: &amp;lt;repository url&amp;gt; ##git倉庫地址
+  branch: [branch] ##git 頁面分支
+  message: [message] ##git message建議默認字段update 可以自定義
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;-多部署&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deploy:
+  type: git
+  message: update  ##git message建議默認字段update 可以自定義
+  repo:
+  gitcafe: &amp;lt;repository url&amp;gt;,[branch] ##gitcafe 倉庫地址和分支
+  github: &amp;lt;repository url&amp;gt;,[branch] ##github 倉庫地址和分支
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  例如&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deploy:
+  type: git
+  message: &amp;quot;update&amp;quot;
+  repo:
+  gitcafe: https://gitcafe.com/akar1nchan/akar1nchan.git,gitcafe-pages
+  github: https://github.com/akar1nchan/akar1nchan.github.io.git,master
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitCafe Pages 服務 分支在 gitcafe-pages&lt;/li&gt;
+&lt;li&gt;GitHub Pages 服務 分支在 master&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;更多插件可以去Hexo插件wiki找到 &lt;a href=&quot;https://github.com/hexojs/hexo/wiki/Plugins&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/hexojs/hexo/wiki/Plugins&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;###Hexo主題設置&lt;/p&gt;
+&lt;p&gt;同樣編輯主題文件夾的 &lt;code&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Header&quot;&gt;&lt;a href=&quot;#Header&quot; class=&quot;headerlink&quot; title=&quot;Header&quot;&gt;&lt;/a&gt;Header&lt;/h1&gt;&lt;p&gt;menu:    #導航欄連接&lt;br&gt;Home: /&lt;br&gt;Archives: /archives #歸檔頁面URL&lt;br&gt;自定義頁面標題: /自定義頁面URL&lt;br&gt;rss: /atom.xml  #rss地址  默認即可&lt;/p&gt;
+&lt;h1 id=&quot;Content&quot;&gt;&lt;a href=&quot;#Content&quot; class=&quot;headerlink&quot; title=&quot;Content&quot;&gt;&lt;/a&gt;Content&lt;/h1&gt;&lt;p&gt;excerpt_link: Read More #閱讀更多的文字顯示&lt;br&gt;fancybox: true #開啓fancybox效果&lt;/p&gt;
+&lt;h1 id=&quot;Sidebar-側邊欄設置&quot;&gt;&lt;a href=&quot;#Sidebar-側邊欄設置&quot; class=&quot;headerlink&quot; title=&quot;Sidebar  #側邊欄設置&quot;&gt;&lt;/a&gt;Sidebar  #側邊欄設置&lt;/h1&gt;&lt;p&gt;sidebar: right&lt;br&gt;widgets:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;category&lt;/li&gt;
+&lt;li&gt;tag&lt;/li&gt;
+&lt;li&gt;tagcloud&lt;/li&gt;
+&lt;li&gt;archive&lt;/li&gt;
+&lt;li&gt;recent_posts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;Miscellaneous-社交網絡和統計連接地址&quot;&gt;&lt;a href=&quot;#Miscellaneous-社交網絡和統計連接地址&quot; class=&quot;headerlink&quot; title=&quot;Miscellaneous #社交網絡和統計連接地址&quot;&gt;&lt;/a&gt;Miscellaneous #社交網絡和統計連接地址&lt;/h1&gt;&lt;p&gt;google_analytics: #google analytics ID&lt;br&gt;favicon: /favicon.png #網站的favicon&lt;br&gt;twitter:&lt;br&gt;google_plus:&lt;br&gt;fb_admins:&lt;br&gt;fb_app_id:&lt;/p&gt;
+&lt;p&gt;網站Favicon設置&lt;/p&gt;
+&lt;p&gt;favicon.ico可以去&lt;a href=&quot;http://www.bitbug.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;bitbug&lt;/a&gt;製作 建議大小32x32&lt;/p&gt;
+&lt;p&gt;請把您的favicon.ico放到themes/您的主題名稱/source文件夾下&lt;/p&gt;
+&lt;p&gt;然後去themes/您的主題名稱/layout下 修改header的meta標籤&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;link href=&amp;quot;../favicon.ico&amp;quot; rel=&amp;quot;shortcut icon&amp;quot; type=&amp;quot;image/x-icon&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;##寫文章&lt;br&gt;Hexo使用markdown語法的純文本存放文章 後綴爲&lt;code&gt;.md&lt;/code&gt;  你可以在&lt;code&gt;_post&lt;/code&gt;文件夾裏面新建這個後綴的&lt;code&gt;.md&lt;/code&gt;文件  使用的全是UTF-8編碼&lt;/p&gt;
+&lt;p&gt;也可以輸入命令以生成&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo new &amp;lt;title&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果是新建一個頁面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo new page &amp;lt;title&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;看一下剛纔生成的&lt;title&gt;.md，內容如下：&lt;/title&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;title: title #文章標題
+date: 2015-02-05 12:47:44 #文章生成時間
+categories: #文章分類目錄 可以省略
+tags: #文章標籤 可以省略
+description: #你對本頁的描述 可以省略
+---
+這裏開始使用markdown格式輸入你的正文。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;多標籤注意語法格式 如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tags:
+- 標籤1
+- 標籤2
+- 標籤3
+- etc...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;想在首頁文章預覽添加圖片可以添加photo參數 這個fancybox可以省略 如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;photos:
+  - http://xxx.com/photo.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;正文中可以使用&lt;code&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt;設置文章摘要 如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;以上是文章摘要
+&amp;lt;!--more--&amp;gt;
+以下是餘下全文
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;more以上內容即是文章摘要，在主頁顯示，more以下內容點擊『&amp;gt; Read More』鏈接打開全文才顯示。&lt;/p&gt;
+&lt;p&gt;如果您曾經是 Wordpress 的用戶可以使用 hexo 的插件把之前的文章進行轉換成 md 的無格式文件&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先從 Wordpress 後臺導出所有的文章為 XML 格式.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;2.安裝 hexo 的插件 hexo-migrator-wordpress&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm install hexo-migrator-wordpress --save
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.使用 hexo-migrator-wordpress 轉換 xml 為 md 文件 (export.xml 請換成您的具體文件名)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo migrate wordpress export.xml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;命令執行後 您會在 &lt;code&gt;source/_post&lt;/code&gt; 目錄內就可以看到剛剛轉換完成的博客文章 md 文件&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;#IV.Hexo部署方法&lt;br&gt;寫完文章之後 就可以啓動本地服務器測試了&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo s
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;這個時候hexo啓動localhost的4000端口 靜態的網站架設完成&lt;br&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/hexo_server.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;推薦部署在 &lt;a href=&quot;https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitCafe&lt;/a&gt; 或者 &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt; 的pages服務上&lt;/p&gt;
+&lt;p&gt;修改後就可以部署上去了&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo clean #清除緩存
+$ hexo g #生成靜態網頁
+$ hexo d #開始部署
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;#V.Hexo更新方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm update -g
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;cnpm 源也許會同步官方源失敗 造成 hexo 無法更新到最新版本&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;hexo 同時也需要最新的 nodejs&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm install n -g
+# n stable
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上就是Hexo的基本使用方法  進階的可以在Hexo的官方文檔裏找到  感謝閱讀!&lt;/p&gt;
+&lt;p&gt;Enjoy~&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;hexo3.x帶來了更好的性能，更新了API，模塊化了大部分組件。更多變化看這裏： &lt;a href=&quot;https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;hexo2.x到3.x遷移指南：&lt;/p&gt;
+&lt;p&gt;原文： &lt;a href=&quot;https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.08&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.08&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/hexo-banner.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;上次我介紹了Hexo的基本搭建方法  近期 &lt;a href=&quot;http://twitter.com/tommy351&quot;&gt;tommy351&lt;/a&gt;大神 又更新了版本&lt;br&gt;和之前的2.x使用步驟略有不同 目前剛剛更新  可能有許多主題和插件不兼容3.x  請等待後續更新&lt;/p&gt;
+&lt;p&gt;本文介紹從零開始搭建的方法 如需從2.x升級到3.x 遷移方法請移至本文最後&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://ky0n.xyz/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>M$大法好 VisualStudio Code閃亮登場</title>
+    <link href="https://ky0n.xyz/visualstudio-code/"/>
+    <id>https://ky0n.xyz/visualstudio-code/</id>
+    <published>2015-04-30T02:23:32.000Z</published>
+    <updated>2015-05-24T04:51:40.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6d9bd6a5gw1erne44i0w2j21kw111qcq.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;昨天M$的Build 2015大會  釋出了一個面向全平臺的編輯器 VisualStudio Code&lt;/p&gt;
+&lt;p&gt;看了一下 根據Github的Atom編輯器改的  雖然不是類似完整的VisualStudio這種IDE 但是作爲一個輕量的IDE &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6d9bd6a5gw1ernea8d84uj21kw124dmb.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;改變的了以往Atom的卡慢情況 不知道他們該怎麼想。。23333  M$的魔改真心diao炸天&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://code.visualstudio.com/Download&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下載地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;具體評測還是看&lt;a href=&quot;http://www.zhihu.com/question/29984607&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知乎&lt;/a&gt;上同♂志們的體驗吧~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6d9bd6a5gw1erne44i0w2j21kw111qcq.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;昨天M$的Build 2015大會  釋出了一個面向全平臺的編輯器 VisualStudio
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PS4手柄有線/藍牙無線連接PC</title>
+    <link href="https://ky0n.xyz/ps4-controller-on-pc/"/>
+    <id>https://ky0n.xyz/ps4-controller-on-pc/</id>
+    <published>2015-03-28T12:49:01.000Z</published>
+    <updated>2015-03-30T14:32:14.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6d9bd6a5gw1eqlqcnpkucj21kw16o4h2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;本文將講解Windows 7系統下如何將PS4手柄與PC電腦配對，並模擬成Xbox 360手柄的設置&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 
+&lt;p&gt;需要無線連接之前請先嚐試有線連接是否正常&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有線連接&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;拿一條安卓設備常見的microusb連接線   連接PC等待安裝完驅動即可使用&lt;br&gt;但此時是兼容的DirectInput遊戲手柄設備 PS4手柄背部此時LED顯示爲黃色常亮&lt;/p&gt;
+&lt;p&gt;需要去這個論壇下載 &lt;a href=&quot;http://forums.pcsx2.net/Thread-DS4-To-XInput-Wrapper&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DS4 TO XInput Wrapper&lt;/a&gt; 這個軟件模擬XBOX遊戲手柄 *最新版本是DS4TOOL 1.2.2.zip&lt;/p&gt;
+&lt;p&gt;下載完成之後解壓壓縮包  &lt;/p&gt;
+&lt;p&gt;打開Virtual Bus Driver子目錄&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6d9bd6a5gw1eqlotemroxj20r00idadq.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;安裝ScpDriver.exe&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/6d9bd6a5gw1eqlov6vfmnj20go0bm0u2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;然後返回解壓之後的文件根目錄  打開ScpServer.exe&lt;br&gt;這時主程序最小化到任務欄右下角去了&lt;/p&gt;
+&lt;p&gt;連接正常 PS4手柄背部LED燈顯示藍色常亮&lt;br&gt;DS4TOOL會顯示手柄的mac地址  內置電池電量  和觸控板開啓狀態&lt;/p&gt;
+&lt;p&gt;如果沒有正常連接 則沒有顯示  需要重新插拔設備即可&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6d9bd6a5gw1eqloyh86ewj20m209vgpt.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;DS4TOOL支持手柄的更多設置（反正默認夠用&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;熱鍵說明&lt;/p&gt;
+&lt;p&gt;L2+按下觸摸板 | 關閉觸摸板&lt;br&gt;L2+R2+按下觸摸板 | 開啓觸摸板&lt;br&gt;雙指上滑/下滑 | 向上/向下滾動&lt;br&gt;單擊觸摸板 | 相當於鼠標左鍵&lt;br&gt;觸摸板右側單擊後左側單擊 | 相當於鼠標右鍵&lt;br&gt;PS鍵+Option鍵 | 關閉藍牙  &lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;無線設置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果是搭載了Windows 7/Windows 8/8.1的筆記本  可以打開系統藍牙設置並配對&lt;/p&gt;
+&lt;p&gt;如果是臺式機 請買個支持藍牙2.1+EDR的適配器  例如:&lt;a href=&quot;http://www.amazon.cn/ORICO-%E5%A5%A5%E7%9D%BF%E7%A7%91-BTA-402-%E8%93%9D%E7%89%99V4-0-%E9%80%82%E9%85%8D%E5%99%A8-USB2-0%E8%93%9D%E7%89%99%E6%8E%A5%E6%94%B6%E5%99%A8%E6%94%AF%E6%8C%81Windows-P-Vista-7-8/dp/B00AKO7XOW/ref=sr_1_1?ie=UTF8&amp;amp;qid=1427546082&amp;amp;sr=8-1&amp;amp;keywords=%E8%93%9D%E7%89%99%E9%80%82%E9%85%8D%E5%99%A8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ORICO 奧睿科 BTA-402 藍牙V4.0 適配器&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;*本文以此適配器作爲演示&lt;/p&gt;
+&lt;p&gt;插入主板的USB2.0接口  等待安裝驅動完成&lt;/p&gt;
+&lt;p&gt;右鍵底部狀態欄的藍牙圖標 搜索新設備&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6d9bd6a5gw1eqlq2yvmdfj20hg0eh755.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;此時 按住手柄的PS鍵和Share鍵 此時PS手柄背部的LED燈顯示白色並閃爍 開始配對&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/6d9bd6a5gw1eqlq6ak2cpj20ff0b73zk.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;等待配對完成  此時PS手柄背部的LED燈顯示白色常亮&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6d9bd6a5gw1eqlq6ogn1ij20m209v774.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;此時打開DS4TOOL可以正常顯示設備狀態&lt;br&gt;具體手柄設置參考上文 以上～&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6d9bd6a5gw1eqlqcnpkucj21kw16o4h2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;本文將講解Windows 7系統下如何將PS4手柄與PC電腦配對，並模擬成Xbox 360手柄的設置&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Playstation4" scheme="https://ky0n.xyz/tags/Playstation4/"/>
+    
+  </entry>
+  
+</feed>

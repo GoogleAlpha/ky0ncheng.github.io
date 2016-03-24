@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google" content="notranslate">
+    <title>遇見</title>
+    <link rel="stylesheet" href="./css/style.css" media="all">
+    <script src="./js//jquery.min.js" type="text/javascript"></script>
+    <script src="./js/script.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        document.ready = function() {
+            $(window).resize();
+            updateNumbers();
+            updateBackground();
+            setInterval('updateBackground()', 250 );
+        };
+    </script>
+
+  </head>
+  <body>
+    <div class="tab">
+      <ul>
+        <li><a class="active" href="index.html">Color Clock</a></li>
+        <li><a href="http://akarin.xyz/deai/rainyday/">Rain Day</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="days">
+        <span class="days-number">1314</span>
+        <span class="days-label">days</span>
+      </div>
+      <div class="seconds">
+        00:00:00
+      </div>
+    </div>
+    <a class="about" title="About Ever Since the Day We Met" href="http://akarin.xyz/deai" target="_blank"></a>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteCond %{HTTP:KERSSL} !on
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+ErrorDocument 404 /404.html
+ExpiresActive On
+ExpiresDefault "access plus 3 days"
+<FilesMatch "\.(css|gif|jpeg|jpg|js|png|ico|bmp|svg|doc|pdf|mp3|ogg|mp4|mpeg|webm|eot|ttf|woff)$">
+ExpiresDefault "access plus 5 days"
+</FilesMatch>
+<FilesMatch "\.(htm|html|xhtml|shtml|xml|rss|atom|txt)$">
+ExpiresDefault "access plus 1 days"
+</FilesMatch>
+
+

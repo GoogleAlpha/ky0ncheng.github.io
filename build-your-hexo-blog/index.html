@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    
+        <title>無名小站</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="上次我介紹了Hexo的基本搭建方法  近期 tommy351大神 又更新了版本和之前的2.x使用步驟略有不同 目前剛剛更新  可能有許多主題和插件不兼容3.x  請等待後續更新
+本文介紹從零開始搭建的方法 如需從2.x升級到3.x 遷移方法請移至本文最後">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 靜態博客使用指南">
+<meta property="og:url" content="https://ky0n.xyz/build-your-hexo-blog/index.html">
+<meta property="og:site_name" content="無名小站">
+<meta property="og:description" content="上次我介紹了Hexo的基本搭建方法  近期 tommy351大神 又更新了版本和之前的2.x使用步驟略有不同 目前剛剛更新  可能有許多主題和插件不兼容3.x  請等待後續更新
+本文介紹從零開始搭建的方法 如需從2.x升級到3.x 遷移方法請移至本文最後">
+<meta property="og:image" content="https://o3ziuzht9.qnssl.com/hexo-banner.jpg">
+<meta property="og:image" content="https://o3ziuzht9.qnssl.com/hexo_install.jpg">
+<meta property="og:image" content="https://o3ziuzht9.qnssl.com/hexo_tree.jpg">
+<meta property="og:image" content="https://o3ziuzht9.qnssl.com/hexo_server.jpg">
+<meta property="og:updated_time" content="2016-03-24T11:04:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo 靜態博客使用指南">
+<meta name="twitter:description" content="上次我介紹了Hexo的基本搭建方法  近期 tommy351大神 又更新了版本和之前的2.x使用步驟略有不同 目前剛剛更新  可能有許多主題和插件不兼容3.x  請等待後續更新
+本文介紹從零開始搭建的方法 如需從2.x升級到3.x 遷移方法請移至本文最後">
+<meta name="twitter:image" content="https://o3ziuzht9.qnssl.com/hexo-banner.jpg">
+            
+                    <link rel="icon" href="../favicon.ico">
+                    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+                    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+                    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+                    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+                    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+                    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+                    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+                    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+                    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+                    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+                    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+                    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+                    <link rel="manifest" href="/manifest.json">
+                    <meta name="msapplication-TileColor" content="#ffffff">
+                    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+                    <meta name="theme-color" content="#ffffff">
+                    <meta name="google" content="notranslate">
+                    <link rel="stylesheet" href="/css/style.css">
+                        <style type="text/css">
+                            html {
+                                background-color: white
+                            }
+                        </style>
+                        <script language="JavaScript">
+                            function check_secure() {
+                                var httpsRE = /^https/i;
+                                if (!window.location.origin.match(httpsRE)) {
+                                    window.location = "https://" + window.location.hostname + window.location.pathname + window.location.search;
+                                }
+                            }
+                            check_secure();
+                        </script>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+      </h1>
+      
+      <div id="rss-wrap">
+      
+      
+      </div>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <a class="title"></a>
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+    </nav>
+    <nav id="sub-nav">
+      <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ky0n.xyz"></form>
+    </div>
+    <div id="sub-profile">
+    </div>
+  </div>
+  <div class="site-nav">
+    <ul>
+    
+      <li>
+        <a href="/">首頁</a>
+      </li>
+    
+      <li>
+        <a href="/archives">過往</a>
+      </li>
+    
+      <li>
+        <a href="/friends">摯友</a>
+      </li>
+    
+      <li>
+        <a href="/atom.xml">訂閱</a>
+      </li>
+    
+      <li>
+        <a href="/about">關於</a>
+      </li>
+    
+    </ul>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-build-your-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/build-your-hexo-blog/" class="article-date">
+  <!--<time datetime="2015-05-21T08:10:23.000Z" itemprop="datePublished">2015-05-21</time>-->
+</a>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo 靜態博客使用指南
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://o3ziuzht9.qnssl.com/hexo-banner.jpg" alt=""></p>
+<p>上次我介紹了Hexo的基本搭建方法  近期 <a href="http://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>大神 又更新了版本<br>和之前的2.x使用步驟略有不同 目前剛剛更新  可能有許多主題和插件不兼容3.x  請等待後續更新</p>
+<p>本文介紹從零開始搭建的方法 如需從2.x升級到3.x 遷移方法請移至本文最後</p>
+<a id="more"></a>
+<hr>
+<p>##目錄</p>
+<p>####I.Hexo簡介</p>
+<p>####II.Hexo安裝方法</p>
+<p>####III.Hexo配置方法</p>
+<p>####IV.Hexo部署方法</p>
+<p>####V.Hexo更新方法</p>
+<hr>
+<p>#I.Hexo簡介<br>Hexo 是一個輕量的靜態博客框架。通過Hexo可以快速生成一個靜態博客框架,僅需要幾條命令就可以完成,相當方便。</p>
+<p>而架設Hexo的環境更簡單了  不需要 lnmp/lamp 這些繁瑣複雜的環境 僅僅需要一個簡單的http服務器即可使用 或者使用互聯網上免費的頁面託管服務<br>比如本人的這個博客 就是託管於 <a href="https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9" target="_blank" rel="external">GitCafe</a> 和 <a href="https://pages.github.com/" target="_blank" rel="external">GitHub</a> 的Pages服務上</p>
+<ul>
+<li>本文會更隨 Hexo 的發展同步更新 如需請收藏本文 非常感謝您的閱讀! 如有錯誤,歡迎指出。</li>
+</ul>
+<p>#II.Hexo安裝方法</p>
+<p>（近期nodejs更新4.0版本 注意此版本暫不兼容hexo編譯 請安裝版本號爲0.12.7的nodejs）</p>
+<ul>
+<li>Mac OS X/Linux或其他UNIX/類UNIX系統 配置 nodejs 環境<ul>
+<li>請去<a href="http://nodejs.org/download/" target="_blank" rel="external">官方網站</a>下載 <code>.pkg</code> 文件 或者下載已編譯完成的二進制文件</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>也可以下載源代碼編譯安裝</p>
+<pre><code>$ wget http://nodejs.org/dist/v0.12.4/node-v0.12.7.tar.gz
+$ tar zxvf node-v0.12.7.tar.gz
+$ cd node-v0.12.7
+# ./configure --prefix=/usr
+# make &amp;&amp; make install
+</code></pre></li>
+</ul>
+<ul>
+<li><p>npm(node包管理器)</p>
+<ul>
+<li><p>redhat系</p>
+<pre><code># yum install npm -y
+</code></pre></li>
+<li><p>debian系</p>
+<pre><code># apt-get install npm -y
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<p>其他發行版請自行尋找wiki獲得幫助</p>
+<p>###通過npm安裝Hexo-Cli 和 hexo</p>
+<pre><code>$ npm install hexo-cli -g
+
+$ npm install hexo --save
+</code></pre><p>如果以上命令不能安裝 可以嘗試把官方源替換爲<a href="https://npm.taobao.org/" target="_blank" rel="external">淘寶npm源</a> 再執行安裝Hexo</p>
+<pre><code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre><p>或者你直接通過添加 <code>npm</code> 參數 <code>alias</code> 一個新命令:</p>
+<pre><code>$ alias cnpm=&quot;npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc&quot;
+</code></pre><p>如果以上的 cnpm 無法安裝 可以試試看下方的 alias 方法</p>
+<pre><code>$ echo &apos;\n#alias for cnpm\nalias cnpm=&quot;npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc&quot;&apos; &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc
+</code></pre><ul>
+<li>Windows系統（具體環境配置請參考<a href="http://www.cnblogs.com/seanlv/archive/2011/11/22/2258716.html" target="_blank" rel="external">這個</a>）<ul>
+<li>git</li>
+<li>node環境</li>
+<li>npm(node包管理器)</li>
+</ul>
+</li>
+</ul>
+<p>#III.Hexo配置方法</p>
+<p>新建一個需要當做博客目錄的文件夾</p>
+<pre><code>$ mkdir blog
+</code></pre><p>進去之後加入hexo主程序和安裝npm</p>
+<pre><code>$ hexo init &amp;&amp; npm install
+</code></pre><p><img src="https://o3ziuzht9.qnssl.com/hexo_install.jpg" alt=""></p>
+<p>文件夾大致結構如下</p>
+<p><img src="https://o3ziuzht9.qnssl.com/hexo_tree.jpg" alt=""></p>
+<ul>
+<li><p>scaffolds 工具模板</p>
+</li>
+<li><p>scripts hexo的功能js</p>
+</li>
+<li><p>source 博客資源文件夾</p>
+</li>
+<li><p>source/_drafts 草稿文件夾</p>
+</li>
+<li><p>source/_posts 文章文件夾</p>
+</li>
+<li><p>themes 存放皮膚的文件夾</p>
+</li>
+<li><p>themes/landscape 默認皮膚文件夾</p>
+</li>
+<li><p>_config.yml 全局配置文件</p>
+</li>
+<li><p>db.json json格式的靜態常量數據庫</p>
+</li>
+</ul>
+<p><code>_posts</code>目錄：Hexo存放博客文章的文件夾</p>
+<p><code>themes</code>目錄：存放皮膚的文件夾，默認使用官方的主題 你也可以從<a href="https://github.com/tommy351/hexo/wiki/Themes" target="_blank" rel="external">hexo主題頁面</a>下載你喜歡的主題</p>
+<hr>
+<p>##配置Hexo</p>
+<p>###Hexo全局配置<br>用文本編輯器修改_config.yml這個文件 大致如下 只需要自行修改幾個 其他保持默認即可</p>
+<p>通常需要修改站點名稱 /URL格式 /歸檔設置 /disqus評論用戶名 /部署配置 這幾項就可以了 注意冒號後面都要添加一個半角空格 之後纔是設置參數</p>
+<p>自定義域名設置 在<code>source</code>我文件夾下面新建<code>CNAME</code>文件 裏面寫入你的自定義域名 並設置您的dns配置cname方式到服務提供商的給的地址即可</p>
+<h1 id="網站"><a href="#網站" class="headerlink" title="網站"></a>網站</h1><p>參數    描述<br>title    網站標題<br>subtitle    網站副標題<br>description    網站描述<br>author    您的名字<br>language    網站使用的語言<br>timezone    網站時區。Hexo 預設使用您電腦的時區。時區列表</p>
+<h1 id="網址"><a href="#網址" class="headerlink" title="網址"></a>網址</h1><p>參數    描述    默認值<br>url    網址<br>root    網站根目錄<br>permalink    文章的 永久鏈接 格式    :year/:month/:day/:title/<br>permalink_default    永久鏈接中各部分的默認值<br>網站存放在子目錄<br>如果您的網站存放在子目錄中，例如 <a href="http://yoursite.com/blog，則請將您的" target="_blank" rel="external">http://yoursite.com/blog，則請將您的</a> url 設爲 <a href="http://yoursite.com/blog" target="_blank" rel="external">http://yoursite.com/blog</a> 並把 root 設爲 /blog/。</p>
+<h1 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h1><p>參數    描述    默認值<br>source_dir    資源文件夾，這個文件夾用來存放內容。    source<br>public_dir    公共文件夾，這個文件夾用於存放生成的站點文件。    public<br>tag_dir    標籤文件夾    tags<br>archive_dir    歸檔文件夾    archives<br>category_dir    分類文件夾    categories<br>code_dir    Include code 文件夾    downloads/code<br>i18n_dir    國際化（i18n）文件夾    :lang<br>skip_render    跳過指定文件的渲染，您可使用 glob 來配置路徑。</p>
+<h1 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h1><p>參數    描述    默認值<br>new_post_name    新文章的文件名稱    :title.md<br>default_layout    預設佈局    post<br>auto_spacing    在中文和英文之間加入空格    false<br>titlecase    把標題轉換爲 title case    false<br>external_link    在新標籤中打開鏈接    true<br>filename_case    把文件名稱轉換爲 (1) 小寫或 (2) 大寫    0<br>render_drafts    顯示草稿    false<br>post_asset_folder    啓動 Asset 文件夾    false<br>relative_link    把鏈接改爲與根目錄的相對位址    false<br>future    顯示未來的文章    true<br>highlight    代碼塊的設置</p>
+<h1 id="分類-amp-標籤"><a href="#分類-amp-標籤" class="headerlink" title="分類 &amp; 標籤"></a>分類 &amp; 標籤</h1><p>參數    描述    默認值<br>default_category    默認分類    uncategorized<br>category_map    分類別名<br>tag_map    標籤別名<br>日期 / 時間格式<br>Hexo 使用 Moment.js 來解析和顯示時間。</p>
+<p>參數    描述    默認值<br>date_format    日期格式    MMM D YYYY<br>time_format    時間格式    H:mm:ss<br>分頁<br>參數    描述    默認值<br>per_page    每頁顯示的文章量 (0 = 關閉分頁功能)    10<br>pagination_dir    分頁目錄    page</p>
+<h1 id="擴展"><a href="#擴展" class="headerlink" title="擴展"></a>擴展</h1><p>參數    描述<br>theme    當前主題名稱<br>deploy    部署</p>
+<h3 id="Hexo常用插件安裝與配置"><a href="#Hexo常用插件安裝與配置" class="headerlink" title="Hexo常用插件安裝與配置"></a>Hexo常用插件安裝與配置</h3><p>安裝首頁文章數量  存檔  分類 的插件<br>安裝本地服務器代理插件<br>安裝發佈器插件<br>安裝更新插件 rss site-map之類的</p>
+<pre><code>$ npm install hexo-generator-index --save
+$ npm install hexo-generator-archive --save
+$ npm install hexo-generator-category --save
+$ npm install hexo-generator-tag --save
+$ npm install hexo-server --save
+$ npm install hexo-deployer-git --save
+$ npm install hexo-deployer-heroku --save
+$ npm install hexo-deployer-rsync --save
+$ npm install hexo-deployer-openshift --save
+$ npm install hexo-renderer-marked@0.2.10 --save
+$ npm install hexo-renderer-stylus@0.3.1 --save
+$ npm install hexo-generator-feed@1.1.0 --save
+$ npm install hexo-generator-sitemap@1.1.2 --save
+</code></pre><p>裝完之後去全局配置文件 _config.yml 修改參數</p>
+<pre><code>index_generator:
+  per_page: 10 ##首頁默認10篇文章標題 如果值爲0不分頁
+
+archive_generator:
+  per_page: 10 ##歸檔頁面默認10篇文章標題
+  yearly: true  ##生成年視圖
+  monthly: true ##生成月視圖
+
+tag_generator:
+  per_page: 10 ##標籤分類頁面默認10篇文章
+
+category_generator:
+   per_page: 10 ###分類頁面默認10篇文章
+
+
+feed:
+  type: atom ##feed類型 atom或者rss2
+  path: atom.xml ##feed路徑
+  limit: 20  ##feed文章最小數量
+
+
+deploy:
+  type: git ##部署類型 其他類型自行google之
+  repo: &lt;repository url&gt; ##git倉庫地址
+  branch: [branch] ##git 頁面分支
+  message: [message] ##git message建議默認字段update 可以自定義
+</code></pre><p>-多部署</p>
+<pre><code>deploy:
+  type: git
+  message: update  ##git message建議默認字段update 可以自定義
+  repo:
+  gitcafe: &lt;repository url&gt;,[branch] ##gitcafe 倉庫地址和分支
+  github: &lt;repository url&gt;,[branch] ##github 倉庫地址和分支
+</code></pre><p>  例如</p>
+<pre><code>deploy:
+  type: git
+  message: &quot;update&quot;
+  repo:
+  gitcafe: https://gitcafe.com/akar1nchan/akar1nchan.git,gitcafe-pages
+  github: https://github.com/akar1nchan/akar1nchan.github.io.git,master
+</code></pre><p>注意:</p>
+<ul>
+<li>GitCafe Pages 服務 分支在 gitcafe-pages</li>
+<li>GitHub Pages 服務 分支在 master</li>
+</ul>
+<p>更多插件可以去Hexo插件wiki找到 <a href="https://github.com/hexojs/hexo/wiki/Plugins" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Plugins</a></p>
+<p>###Hexo主題設置</p>
+<p>同樣編輯主題文件夾的 <code>_config.yml</code></p>
+<h1 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h1><p>menu:    #導航欄連接<br>Home: /<br>Archives: /archives #歸檔頁面URL<br>自定義頁面標題: /自定義頁面URL<br>rss: /atom.xml  #rss地址  默認即可</p>
+<h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><p>excerpt_link: Read More #閱讀更多的文字顯示<br>fancybox: true #開啓fancybox效果</p>
+<h1 id="Sidebar-側邊欄設置"><a href="#Sidebar-側邊欄設置" class="headerlink" title="Sidebar  #側邊欄設置"></a>Sidebar  #側邊欄設置</h1><p>sidebar: right<br>widgets:</p>
+<ul>
+<li>category</li>
+<li>tag</li>
+<li>tagcloud</li>
+<li>archive</li>
+<li>recent_posts</li>
+</ul>
+<h1 id="Miscellaneous-社交網絡和統計連接地址"><a href="#Miscellaneous-社交網絡和統計連接地址" class="headerlink" title="Miscellaneous #社交網絡和統計連接地址"></a>Miscellaneous #社交網絡和統計連接地址</h1><p>google_analytics: #google analytics ID<br>favicon: /favicon.png #網站的favicon<br>twitter:<br>google_plus:<br>fb_admins:<br>fb_app_id:</p>
+<p>網站Favicon設置</p>
+<p>favicon.ico可以去<a href="http://www.bitbug.net/" target="_blank" rel="external">bitbug</a>製作 建議大小32x32</p>
+<p>請把您的favicon.ico放到themes/您的主題名稱/source文件夾下</p>
+<p>然後去themes/您的主題名稱/layout下 修改header的meta標籤</p>
+<pre><code>&lt;link href=&quot;../favicon.ico&quot; rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; /&gt;
+</code></pre><hr>
+<p>##寫文章<br>Hexo使用markdown語法的純文本存放文章 後綴爲<code>.md</code>  你可以在<code>_post</code>文件夾裏面新建這個後綴的<code>.md</code>文件  使用的全是UTF-8編碼</p>
+<p>也可以輸入命令以生成</p>
+<pre><code>$ hexo new &lt;title&gt;
+</code></pre><p>如果是新建一個頁面</p>
+<pre><code>$ hexo new page &lt;title&gt;
+</code></pre><p>看一下剛纔生成的<title>.md，內容如下：</title></p>
+<pre><code>title: title #文章標題
+date: 2015-02-05 12:47:44 #文章生成時間
+categories: #文章分類目錄 可以省略
+tags: #文章標籤 可以省略
+description: #你對本頁的描述 可以省略
+---
+這裏開始使用markdown格式輸入你的正文。
+</code></pre><p>多標籤注意語法格式 如下:</p>
+<pre><code>tags:
+- 標籤1
+- 標籤2
+- 標籤3
+- etc...
+</code></pre><p>想在首頁文章預覽添加圖片可以添加photo參數 這個fancybox可以省略 如下:</p>
+<pre><code>photos:
+  - http://xxx.com/photo.jpg
+</code></pre><p>正文中可以使用<code>&lt;!--more--&gt;</code>設置文章摘要 如下:</p>
+<pre><code>以上是文章摘要
+&lt;!--more--&gt;
+以下是餘下全文
+</code></pre><p>more以上內容即是文章摘要，在主頁顯示，more以下內容點擊『&gt; Read More』鏈接打開全文才顯示。</p>
+<p>如果您曾經是 Wordpress 的用戶可以使用 hexo 的插件把之前的文章進行轉換成 md 的無格式文件</p>
+<ol>
+<li>先從 Wordpress 後臺導出所有的文章為 XML 格式.</li>
+</ol>
+<p>2.安裝 hexo 的插件 hexo-migrator-wordpress</p>
+<pre><code>$ npm install hexo-migrator-wordpress --save
+</code></pre><p>3.使用 hexo-migrator-wordpress 轉換 xml 為 md 文件 (export.xml 請換成您的具體文件名)</p>
+<pre><code>$ hexo migrate wordpress export.xml
+</code></pre><p>命令執行後 您會在 <code>source/_post</code> 目錄內就可以看到剛剛轉換完成的博客文章 md 文件</p>
+<hr>
+<p>#IV.Hexo部署方法<br>寫完文章之後 就可以啓動本地服務器測試了</p>
+<pre><code>$ hexo s
+</code></pre><p>這個時候hexo啓動localhost的4000端口 靜態的網站架設完成<br><img src="https://o3ziuzht9.qnssl.com/hexo_server.jpg" alt=""></p>
+<p>推薦部署在 <a href="https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9" target="_blank" rel="external">GitCafe</a> 或者 <a href="https://pages.github.com/" target="_blank" rel="external">Github</a> 的pages服務上</p>
+<p>修改後就可以部署上去了</p>
+<pre><code>$ hexo clean #清除緩存
+$ hexo g #生成靜態網頁
+$ hexo d #開始部署
+</code></pre><hr>
+<p>#V.Hexo更新方法</p>
+<pre><code>$ npm update -g
+</code></pre><ul>
+<li><p>cnpm 源也許會同步官方源失敗 造成 hexo 無法更新到最新版本</p>
+</li>
+<li><p>hexo 同時也需要最新的 nodejs</p>
+<pre><code>$ npm install n -g
+# n stable
+</code></pre></li>
+</ul>
+<p>以上就是Hexo的基本使用方法  進階的可以在Hexo的官方文檔裏找到  感謝閱讀!</p>
+<p>Enjoy~</p>
+<hr>
+<p>hexo3.x帶來了更好的性能，更新了API，模塊化了大部分組件。更多變化看這裏： <a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0</a></p>
+<p>hexo2.x到3.x遷移指南：</p>
+<p>原文： <a href="https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.08" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.08</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ky0n.xyz/build-your-hexo-blog/" data-id="cim669r2q0006x05fpyphw7ig" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/in-canton/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          廣州之行
+        
+      </div>
+    </a>
+  
+  
+    <a href="/visualstudio-code/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">M$大法好 VisualStudio Code閃亮登場</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            Copyleft
+            2016
+              <br> #freeandopen
+              <br>This site is licensed under a <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0</a>
+          </div>
+          <script>
+            (function(i, s, o, g, r, a, m) {
+              i['GoogleAnalyticsObject'] = r;
+              i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+              }, i[r].l = 1 * new Date();
+              a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+              a.async = 1;
+              a.src = g;
+              m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-70500040-1', 'auto', {'allowLinker': true});
+            ga('require', 'linker');
+            ga('linker:autoLink', ['blog.akarin.xyz']);
+            ga('send', 'pageview');
+          </script>
+          <script src="../console.js" type="text/javascript"></script>
+        </div>
+        </div>
+        </div>
+</footer>
+
+    </div>
+    
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/0.1.2/scrollReveal.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script>
+  window.scrollReveal = new scrollReveal();
+</script>
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
