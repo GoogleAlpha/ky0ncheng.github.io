@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>無名小站</title>
+  <title>Depression</title>
   
   <link href="/atom.xml" rel="self"/>
   
@@ -9,7 +9,7 @@
   <id>https://ky0n.xyz/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>ky0ncheng</name>
     
   </author>
   
@@ -161,11 +161,10 @@ CERT_DOMAINS=&amp;quot;example.com www.example.com im.example.com&amp;quot;
     <link href="https://ky0n.xyz/fall-in-2015/"/>
     <id>https://ky0n.xyz/fall-in-2015/</id>
     <published>2016-02-06T14:40:36.000Z</published>
-    <updated>2016-03-14T05:06:15.000Z</updated>
+    <updated>2016-03-27T19:02:45.000Z</updated>
     
     <content type="html">&lt;p&gt;令人失望的一年又過去了，在這一年裡，努力過、堅持過、認真過，但是最後的結果都是失望。&lt;/p&gt;
 &lt;p&gt;這漫長的一年，夢想的公司倒了，喜歡的人也和別人走了，一個個希望都破碎了。&lt;/p&gt;
-&lt;p&gt;我之前許諾的或許再也完不成了，我尊重你的選擇。&lt;/p&gt;
 &lt;p&gt;怒過，痛恨自己是多麼沒用。沉迷於酒精的效果裡，醒來還是這個**的世界。&lt;/p&gt;
 &lt;p&gt;接下來要在一個不熟悉的城市裡繼續生活了，希望來年能和我想像的一樣，希望付出能獲得令人滿意的收穫。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://o3ziuzht9.qnssl.com/photo_2016-02-06_23-08-19.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -178,8 +177,8 @@ CERT_DOMAINS=&amp;quot;example.com www.example.com im.example.com&amp;quot;
     
       &lt;p&gt;令人失望的一年又過去了，在這一年裡，努力過、堅持過、認真過，但是最後的結果都是失望。&lt;/p&gt;
 &lt;p&gt;這漫長的一年，夢想的公司倒了，喜歡的人也和別人走了，一個個希望都破碎了。&lt;/p&gt;
-&lt;p&gt;我之前許諾的或許再也完不成了，我尊重你的選擇。&lt;/p&gt;
-&lt;p&gt;怒過，痛恨自己是多麼沒用
+&lt;p&gt;怒過，痛恨自己是多麼沒用。沉迷於酒精的效果裡，醒來還是這個**的世界。&lt;/p&gt;
+&lt;p&gt;
     
     </summary>
     
